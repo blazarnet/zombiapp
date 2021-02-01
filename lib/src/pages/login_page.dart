@@ -34,12 +34,14 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  //
   Widget _btnsLog() {
     return Row(
       children: _btns(),
     );
   }
 
+  //Método que crea los botones situados en el appBar
   List<Widget> _btns() {
     return [
       SizedBox(
@@ -70,6 +72,7 @@ class _LoginPageState extends State<LoginPage> {
     ];
   }
 
+  //Método que llama a la página sobre el home_page
   Widget _callPages(int pageCurrent) {
     switch (pageCurrent) {
       case 0:
