@@ -28,7 +28,8 @@ class _LoginPageState extends State<LoginPage> {
             width: double.infinity, //ancho: toda la pantalla
             height: size.height * 1.0, //largo: 100% de la pantalla
             child: Padding(
-              padding: EdgeInsets.all(25),
+              padding: EdgeInsets.only(bottom: 25),
+              // padding: EdgeInsets.all(25),
               child: _callPages(_currentPage),
             )),
       ),
