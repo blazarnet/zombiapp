@@ -9,9 +9,21 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Form(
-        child: Column(
-          children: <Widget>[_widgetsLogin()],
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            children: <Widget>[_widgetsLogin()],
+          ),
         ),
+        // child: Column(
+        //   children: <Widget>[
+        //     Padding(
+        //       padding: EdgeInsets.all(20),
+        //       child: ,
+        //     ),
+        //     _widgetsLogin()
+        //   ],
+        // ),
       ),
     );
   }
@@ -72,10 +84,10 @@ class SignInPage extends StatelessWidget {
         child: Column(
           children: <Widget>[
             ButtonRoundWidget('Olvidé mi contraseña', 15, FontWeight.bold,
-                Colors.black, Colors.transparent, 0, 60, 350),
+                Colors.black, Colors.transparent, 0, 60, 400),
             Padding(padding: EdgeInsets.only(top: 13)),
             ButtonRoundWidget('INICIAR SESIÓN', 15, FontWeight.bold,
-                Colors.black, Colors.greenAccent, 0, 60, 350),
+                Colors.black, Colors.greenAccent, 0, 60, 400),
           ],
         ),
       );
