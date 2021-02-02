@@ -14,20 +14,21 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Container(
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.grey[300],
           primary: true,
-          centerTitle: true,
+          // centerTitle: true,
           title: _btnsLog(),
           elevation: 10,
         ),
         body: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+            width: double.infinity, //ancho: toda la pantalla
+            height: size.height * 1.0, //largo: 100% de la pantalla
             child: Padding(
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.all(25),
               child: _callPages(_currentPage),
             )),
       ),
@@ -36,17 +37,20 @@ class _LoginPageState extends State<LoginPage> {
 
   //
   Widget _btnsLog() {
-    return Row(
-      children: _btns(),
+    return Padding(
+      padding: EdgeInsets.all(2),
+      child: Row(
+        children: _btns(),
+      ),
     );
   }
 
   //Método que crea los botones situados en el appBar
   List<Widget> _btns() {
     return [
-      SizedBox(
-        width: 51.5,
-      ),
+      // SizedBox(
+      //   width: 50,
+      // ),
       MaterialButton(
         onPressed: () {
           setState(() {
@@ -55,6 +59,7 @@ class _LoginPageState extends State<LoginPage> {
           });
         },
         child: Text('INICIAR SESIÓN'),
+        minWidth: 185,
         color: Colors.grey[300],
         // shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero)
       ),
@@ -66,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
           });
         },
         child: Text('REGISTRARSE'),
-        minWidth: 100,
+        minWidth: 185,
         color: Colors.grey[300],
       ),
     ];
