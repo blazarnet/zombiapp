@@ -125,7 +125,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
           prefixIcon: Icon(
             widget.icon,
-            color: widget.iconColor,
+            color: Colors.black,
           ),
           labelText: widget.lableText,
           hintText: widget.hintText,
