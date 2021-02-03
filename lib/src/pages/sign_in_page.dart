@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zombifi_app/src/pages/home_page.dart';
 
 //Importaciones propias
 import 'package:zombifi_app/widgets/button_round.dart';
@@ -12,22 +13,31 @@ class SignInPage extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(20),
           child: Column(
-            children: <Widget>[_widgetsLogin()],
+            children: <Widget>[_widgetsLogin(context)],
           ),
         ),
-        // child: Column(
-        //   children: <Widget>[
-        //     Padding(
-        //       padding: EdgeInsets.all(20),
-        //       child: ,
-        //     ),
-        //     _widgetsLogin()
-        //   ],
-        // ),
       ),
     );
   }
 
+  //Método que será compuesto por los métodos que serán los que van a componer
+  //el body de la vista
+  _widgetsLogin(BuildContext context) => Container(
+        child: Form(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              _textFormFields(),
+              Padding(padding: EdgeInsets.only(top: 15)),
+              _buttons(context),
+              // _buttons(),
+            ],
+          ),
+        ),
+      );
+
+  //Método que instancia los métodos que generan los textforms
   _textFormFields() => Container(
         child: Column(
           children: <Widget>[
@@ -60,35 +70,52 @@ class SignInPage extends StatelessWidget {
     );
   }
 
-  //Método que será compuesto por los métodos que serán los que van a componer
-  //el body de la vista
-  _widgetsLogin() => Container(
-        child: Form(
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.spaceAround,
-            // mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              _textFormFields(),
-              Padding(padding: EdgeInsets.only(top: 25)),
-              _buttons(),
-            ],
-          ),
-        ),
-      );
-
-  //Método que importa el widget personalizado ButtonRound,
-  //y se le pasan los parametros que lo van a componer
-  //ButtonRoundWidget(descripcion, fontSize, fontWeight, colorText,
-  //  colorButton, elevetion, height, minWidth)
-  _buttons() => Container(
+  //Método que instancia los métodos que generan los buttons
+  _buttons(BuildContext context) => Container(
         child: Column(
           children: <Widget>[
-            ButtonRoundWidget('Olvidé mi contraseña', 15, FontWeight.bold,
-                Colors.black, Colors.transparent, 0, 60, 400),
-            Padding(padding: EdgeInsets.only(top: 13)),
-            ButtonRoundWidget('INICIAR SESIÓN', 15, FontWeight.bold,
-                Colors.black, Colors.greenAccent, 0, 60, 400),
+            Padding(padding: EdgeInsets.only(top: 30)),
+            _lostPassword(),
+            Padding(padding: EdgeInsets.only(top: 10)),
+            _login(context),
           ],
         ),
       );
+
+  //Método que importa el widget personalizado ButtonRound
+  ButtonRoundWidget _lostPassword() {
+    return ButtonRoundWidget(
+      child: Text(
+        'Olvidé mi contraseña',
+        style: TextStyle(
+            fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
+      ),
+      colorButton: Colors.transparent,
+      elevetion: 0,
+      height: 60,
+      minWidth: 400,
+      onPressed: () {},
+    );
+  }
+
+  //Método que importa el widget personalizado ButtonRound
+  ButtonRoundWidget _login(BuildContext context) {
+    return ButtonRoundWidget(
+      child: Text(
+        'INICIAR SESIÓN',
+        style: TextStyle(
+            fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white),
+      ),
+      colorButton: Color.fromRGBO(24, 210, 134, 1),
+      elevetion: 1,
+      height: 60,
+      minWidth: 400,
+      onPressed: () {
+        final route = MaterialPageRoute(builder: (context) {
+          return HomePage();
+        });
+        Navigator.push(context, route);
+      },
+    );
+  }
 }
