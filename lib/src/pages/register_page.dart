@@ -3,7 +3,15 @@ import 'package:zombifi_app/widgets/background.dart';
 import 'package:zombifi_app/widgets/select_date.dart';
 import 'package:zombifi_app/widgets/text_form_field.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
+  @override
+  _RegisterPageState createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  List<String> _codes = ['+52', '+48', '-35', '+15'];
+  String _codeSelected = '+52';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,17 +36,21 @@ class RegisterPage extends StatelessWidget {
         children: <Widget>[
           SafeArea(
               child: Container(
-            height: 300.0,
+            height: size.height * 0.37,
           )),
           Container(
-            width: size.width * 0.85,
+            width: size.width * .95,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Padding(padding: EdgeInsets.symmetric(vertical: 20)),
-                _textFormsNameComplete(),
-                Padding(padding: EdgeInsets.only(top: 10)),
-                _textFormsData(),
+                // Padding(padding: EdgeInsets.only(top: 5)),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  child: _textFormsNameComplete(),
+                ),
+                Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    child: _textFormsData()),
               ],
             ),
           )
@@ -63,6 +75,7 @@ class RegisterPage extends StatelessWidget {
     return TextFormFieldWidget(
       controller: null,
       keyboardType: TextInputType.emailAddress,
+      textCapitalization: TextCapitalization.words,
       icon: Icons.person_outline_rounded,
       hintText: '',
       lableText: 'Nombre(s)',
@@ -74,6 +87,7 @@ class RegisterPage extends StatelessWidget {
     return TextFormFieldWidget(
       controller: null,
       keyboardType: TextInputType.emailAddress,
+      textCapitalization: TextCapitalization.words,
       // icon: Icons.person_outline_rounded,
       hintText: '',
       lableText: 'Apellido paterno',
@@ -85,6 +99,7 @@ class RegisterPage extends StatelessWidget {
     return TextFormFieldWidget(
       controller: null,
       keyboardType: TextInputType.emailAddress,
+      textCapitalization: TextCapitalization.words,
       // icon: Icons.person_outline_rounded,
       hintText: '',
       lableText: 'Apellido materno',
@@ -95,40 +110,31 @@ class RegisterPage extends StatelessWidget {
   _textFormsData() => Container(
         child: Column(
           children: [
-            _email(),
             Padding(padding: EdgeInsets.only(top: 10)),
-            // Row(children: <Widget>[
-            //   Column(
-            //     children: [
-            //       Row(
-            //         children: <Widget>[
-            //           SizedBox(
-            //             width: 10.0,
-            //           ),
-            //           Expanded(
-            //             child: DropdownButton(
-            //               value: '',
-            //               items: _getCode().toList(),
-            //               hint: Text('Código de país'),
-            //               onChanged: (newVal) {
-            //                 // setState(() {
-
-            //                 // });
-            //               },
-            //             ),
-            //           )
-            //         ],
-            //       )
-            //     ],
-            //   ),
-            // ]),
+            _dateBirth(),
+            Padding(padding: EdgeInsets.only(top: 10)),
+            // Row(
+            //   children: <Widget>[
+            //     Column(
+            //       children: <Widget>[
+            //         Expanded(
+            //           child: _dropdownCodes(),
+            //         ),
+            //         _phoneNumber(),
+            //       ],
+            //     )
+            //   ],
+            // ),
+            _dropdownCodes(),
+            Padding(padding: EdgeInsets.only(top: 10)),
             _phoneNumber(),
+            // _number(),
+            Padding(padding: EdgeInsets.only(top: 10)),
+            _email(),
             Padding(padding: EdgeInsets.only(top: 10)),
             _password(),
             Padding(padding: EdgeInsets.only(top: 10)),
             _confirmPassword(),
-            Padding(padding: EdgeInsets.only(top: 10)),
-            _dateBirth(),
           ],
         ),
       );
@@ -144,10 +150,49 @@ class RegisterPage extends StatelessWidget {
     );
   }
 
+  List<DropdownMenuItem<String>> _getCodes() {
+    List<DropdownMenuItem<String>> list = new List();
+    _codes.forEach((code) {
+      list.add(DropdownMenuItem(
+        child: Text(code),
+        value: code,
+      ));
+    });
+
+    return list;
+  }
+
+  // _number() => Container(
+  //       child: Row(
+  //         children: <Widget>[
+  //           Column(
+  //             children: <Widget>[_dropdownCodes()],
+  //           ),
+  //           Column(
+  //             children: <Widget>[_phoneNumber()],
+  //           )
+  //         ],
+  //       ),
+  //     );
+
+  Widget _dropdownCodes() {
+    return DropdownButton(
+      value: _codeSelected,
+      items: _getCodes(),
+      hint: Text('Código del país'),
+      onChanged: (opt) {
+        setState(() {
+          _codeSelected = opt;
+        });
+      },
+    );
+  }
+
   TextFormFieldWidget _phoneNumber() {
     return TextFormFieldWidget(
       controller: null,
       keyboardType: TextInputType.phone,
+      enableInteractiveSelection: false,
       icon: Icons.phone_iphone_outlined,
       hintText: '',
       lableText: 'Número de celular',
@@ -162,6 +207,7 @@ class RegisterPage extends StatelessWidget {
   TextFormFieldWidget _password() {
     return TextFormFieldWidget(
       controller: null,
+      enableInteractiveSelection: false,
       icon: Icons.lock_outline_rounded,
       hintText: '',
       lableText: 'Contraseña',
@@ -172,34 +218,11 @@ class RegisterPage extends StatelessWidget {
   TextFormFieldWidget _confirmPassword() {
     return TextFormFieldWidget(
       controller: null,
-      icon: Icons.lock_outline_rounded,
+      enableInteractiveSelection: false,
+      // icon: Icons.lock_outline_rounded,
       hintText: '',
-      lableText: 'Contraseña',
+      lableText: 'Confirmar contraseña',
       obscureText: true,
     );
   }
-
-  // TextFormFieldWidget _dateBirth() {
-  //   return TextFormFieldWidget(
-  //     controller: null,
-  //     keyboardType: TextInputType.datetime,
-  //     icon: Icons.date_range_outlined,
-  //     hintText: '',
-  //     lableText: 'Fecha de nacimiento',
-  //     obscureText: false,
-  //   );
-  // }
-
-  // List<DropdownMenuItem<String>> _getCode() {
-  //   List<DropdownMenuItem<String>> lista = new List();
-
-  //   code.forEach((categoria)  {
-  //     lista.add(DropdownMenuItem(
-  //       child: Text(code.descripcion),
-  //       value: code.id.toString(),
-  //     ));
-  //   });
-
-  //   return lista;
-  // }
 }
