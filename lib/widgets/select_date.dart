@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/utils/responsive_screen.dart';
-import 'package:zombifi_app/widgets/text_form_field.dart';
 
 class SelectDateWidget extends StatefulWidget {
   final Color focusBorderColor;
@@ -12,7 +11,7 @@ class SelectDateWidget extends StatefulWidget {
 }
 
 class _SelectDateWidgetState extends State<SelectDateWidget> {
-  String _date;
+  String _date = "";
 
   TextEditingController _dateBirth = TextEditingController();
 
@@ -38,8 +37,13 @@ class _SelectDateWidgetState extends State<SelectDateWidget> {
         children: <Widget>[
           Expanded(
               child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.white,
+            ),
             child: TextField(
               obscureText: false,
+              enableInteractiveSelection: false,
               controller: _dateBirth,
               decoration: InputDecoration(
                 border:
@@ -47,10 +51,10 @@ class _SelectDateWidgetState extends State<SelectDateWidget> {
                 hintText: 'Fecha de nacmiento',
                 prefixIcon: Icon(Icons.calendar_today, color: Colors.black),
               ),
-              // onTap: () {
-              //   FocusScope.of(context).requestFocus(new FocusNode());
-              //   _selectDate(context);
-              // },
+              onTap: () {
+                FocusScope.of(context).requestFocus(new FocusNode());
+                _selectDate(context);
+              },
             ),
           )),
         ],
