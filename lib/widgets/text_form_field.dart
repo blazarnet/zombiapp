@@ -13,6 +13,7 @@ class TextFormFieldWidget extends StatefulWidget {
   final bool autofocus;
   final bool obscureText;
   final bool autocorrect;
+  final bool enableInteractiveSelection;
   final int maxLines;
   final Key key;
   final int maxLength;
@@ -65,6 +66,7 @@ class TextFormFieldWidget extends StatefulWidget {
     this.onEditingComplete,
     this.onSubmitted,
     this.onTap,
+    this.enableInteractiveSelection = true,
     this.iconColor,
     this.inputFormatters,
     this.enabled,
@@ -79,6 +81,7 @@ class TextFormFieldWidget extends StatefulWidget {
   })  : assert(textAlign != null),
         assert(autofocus != null),
         assert(obscureText != null),
+        assert(enableInteractiveSelection != null),
         assert(autocorrect != null),
         assert(maxLengthEnforced != null),
         assert(maxLines == null || maxLines > 0),
@@ -115,12 +118,20 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
 
     return Container(
       alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        // boxShadow:
+      ),
       child: TextFormField(
         obscureText: widget.obscureText,
         controller: widget.controller,
+        keyboardType: widget.keyboardType,
+        textCapitalization: widget.textCapitalization,
         onSaved: widget.onSaved,
         validator: widget.validator,
         onFieldSubmitted: widget.onFieldSubmitted,
+        enableInteractiveSelection: widget.enableInteractiveSelection,
         decoration: InputDecoration(
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
           prefixIcon: Icon(
