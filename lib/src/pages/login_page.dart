@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/src/pages/register_page.dart';
 import 'package:zombifi_app/src/pages/sign_in_page.dart';
