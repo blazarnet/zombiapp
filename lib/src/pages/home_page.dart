@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/widgets/card_status_on.dart';
 
@@ -30,10 +32,13 @@ class HomePage extends StatelessWidget {
             Padding(padding: EdgeInsets.all(7)),
             _welcome(),
             Container(
-              width: size.width * .93,
+              width: size.width * 1,
               color: Colors.white,
-              child: Column(
-                children: <Widget>[_statusOnWidget()],
+              child: Padding(
+                padding: const EdgeInsets.only(top: 15),
+                child: Column(
+                  children: <Widget>[_statusOnWidget()],
+                ),
               ),
             )
           ],
@@ -48,7 +53,10 @@ class HomePage extends StatelessWidget {
         left: 10,
       ),
       child: CircleAvatar(
-        child: Text('SL'),
+        child: Text(
+          'AM',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
     );
   }
@@ -57,7 +65,7 @@ class HomePage extends StatelessWidget {
     return Row(
       children: <Widget>[
         Stack(
-          children: [
+          children: <Widget>[
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
