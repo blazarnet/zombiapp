@@ -12,8 +12,10 @@ class SignInPage extends StatelessWidget {
       child: Form(
         child: Padding(
           padding: EdgeInsets.all(20),
-          child: Column(
-            children: <Widget>[_widgetsLogin(context)],
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[_widgetsLogin(context)],
+            ),
           ),
         ),
       ),
