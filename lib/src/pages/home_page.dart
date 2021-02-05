@@ -1,7 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:zombifi_app/widgets/card_map_widget.dart';
 import 'package:zombifi_app/widgets/card_status_on.dart';
+import 'package:zombifi_app/widgets/horizontal_scroll.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -26,22 +26,34 @@ class HomePage extends StatelessWidget {
       body: Container(
         width: size.width * 1,
         color: Colors.white,
-        child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(padding: EdgeInsets.all(7)),
-            _welcome(),
-            Container(
-              width: size.width * 1,
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: Column(
-                  children: <Widget>[_statusOnWidget()],
+        child: SingleChildScrollView(
+          child: Column(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Padding(padding: EdgeInsets.all(7)),
+              _welcome(),
+              Container(
+                width: size.width * 1,
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20, bottom: 20),
+                  child: Column(
+                    children: <Widget>[
+                      _statusOnWidget(),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20),
+                      ),
+                      _cardMapWidget(),
+                      Padding(padding: EdgeInsets.only(top: 20)),
+                      _scrollWidget(),
+                      Padding(padding: EdgeInsets.only(top: 20)),
+                      _scrollWidget(),
+                    ],
+                  ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -94,5 +106,13 @@ class HomePage extends StatelessWidget {
 
   CardStatusOnWidget _statusOnWidget() {
     return CardStatusOnWidget();
+  }
+
+  CardMapWidget _cardMapWidget() {
+    return CardMapWidget();
+  }
+
+  HorizontalScrollWidget _scrollWidget() {
+    return HorizontalScrollWidget();
   }
 }
