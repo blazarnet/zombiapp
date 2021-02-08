@@ -17,16 +17,24 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
         });
         Navigator.push(context, route);
       },
-      child: Card(
-        elevation: 5,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        color: Colors.greenAccent,
+      child: Container(
+        // elevation: 5,
+        // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25),
+            gradient: LinearGradient(colors: <Color>[
+              Color.fromRGBO(7, 227, 131, .80),
+              Color.fromRGBO(0, 126, 70, .70),
+            ], end: Alignment.topLeft)
+            // gradient: LinearGradient
+            ),
+        // color: Colors.greenAccent,
         child: Column(
           children: <Widget>[
             Container(
               width: size.width * 1,
               child: Padding(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(7),
                 child: Column(
                   children: <Widget>[
                     Row(
@@ -48,7 +56,7 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 100),
+                          padding: const EdgeInsets.only(left: 90, right: 10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -65,7 +73,7 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
                     ),
                     Row(
                       // crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.symmetric(
@@ -134,13 +142,13 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
                     ),
                     Padding(padding: EdgeInsets.only(top: 20)),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Column(
                           children: <Widget>[
                             FlatButton(
                                 onPressed: () {},
-                                padding: EdgeInsets.all(6),
+                                padding: EdgeInsets.all(5),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)),
                                 color: Color.fromRGBO(0, 190, 107, 0.5),
@@ -160,7 +168,7 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
                           children: <Widget>[
                             FlatButton(
                               onPressed: () {},
-                              padding: EdgeInsets.all(6),
+                              padding: EdgeInsets.all(5),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10)),
                               color: Color.fromRGBO(0, 190, 107, 0.5),
@@ -183,7 +191,7 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
                           children: <Widget>[
                             FlatButton(
                                 onPressed: () {},
-                                padding: EdgeInsets.all(6),
+                                padding: EdgeInsets.all(5),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)),
                                 color: Color.fromRGBO(0, 190, 107, 0.5),
