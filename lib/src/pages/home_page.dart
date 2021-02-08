@@ -94,7 +94,7 @@ class HomePage extends StatelessWidget {
                   padding: EdgeInsets.only(left: 12),
                   child: Text(
                     'Alan Moreno Martinez',
-                    style: TextStyle(fontSize: 25),
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
@@ -139,118 +139,121 @@ class HomePage extends StatelessWidget {
   CardFichasWidget _cardFichas(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return CardFichasWidget(
-      child: FlatButton(
-        onPressed: () {},
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              width: size.width * .45,
-              child: Padding(
-                padding: EdgeInsets.all(6),
-                child: Column(
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.only(left: 0),
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                decoration: BoxDecoration(
-                                    // color: Color.fromARGB(5, 175, 102, 1),
-                                    color: Color.fromRGBO(5, 175, 102, .5),
-                                    borderRadius: BorderRadius.circular(8)),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Icon(
-                                    Icons.shopping_cart_rounded,
-                                    color: Colors.white,
-                                    size: 30,
+      child: Container(
+        child: FlatButton(
+          onPressed: () {},
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                width: size.width * .45,
+                child: Padding(
+                  padding: EdgeInsets.all(6),
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.only(left: 0),
+                            child: Column(
+                              children: <Widget>[
+                                Container(
+                                  decoration: BoxDecoration(
+                                      // color: Color.fromARGB(5, 175, 102, 1),
+                                      color: Color.fromRGBO(5, 175, 102, .5),
+                                      borderRadius: BorderRadius.circular(8)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Icon(
+                                      Icons.shopping_cart_rounded,
+                                      color: Colors.white,
+                                      size: 30,
+                                    ),
                                   ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 5),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Basic 15',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                              )
-                            ],
+                                Text(
+                                  '15.50',
+                                  style: TextStyle(fontSize: 18),
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(right: 5),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                'Basic 15',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                '15.50',
-                                style: TextStyle(fontSize: 18),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20.0, top: 8),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Text('Tipo: '),
-                                  Text(
-                                    'Tiempo',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                              Row(
-                                children: <Widget>[
-                                  Text('Duración: '),
-                                  Text(
-                                    '1h',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                              Row(
-                                children: <Widget>[
-                                  Text('Descarga: '),
-                                  Text(
-                                    '2Mbps',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                              Row(
-                                children: <Widget>[
-                                  Text('Subida: '),
-                                  Text(
-                                    '1Mbps',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    )
-                  ],
+                        ],
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0, top: 8),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Row(
+                                  children: <Widget>[
+                                    Text('Tipo: '),
+                                    Text(
+                                      'Tiempo',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Text('Duración: '),
+                                    Text(
+                                      '1h',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Text('Descarga: '),
+                                    Text(
+                                      '2Mbps',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Text('Subida: '),
+                                    Text(
+                                      '1Mbps',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
