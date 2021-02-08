@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
       // SizedBox(
       //   width: 50,
       // ),
-      MaterialButton(
+      FlatButton(
         onPressed: () {
           setState(() {
             _currentPage = 0;
@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
         color: Colors.grey[300],
         // shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero)
       ),
-      MaterialButton(
+      FlatButton(
         onPressed: () {
           setState(() {
             _currentPage = 1;
