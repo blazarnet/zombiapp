@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 
 class HorizontalScrollWidget extends StatefulWidget {
+  final List<Widget> children;
+
+  const HorizontalScrollWidget({this.children});
   @override
   _HorizontalScrollWidgetState createState() => _HorizontalScrollWidgetState();
 }
@@ -11,7 +13,7 @@ class _HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      width: size.width * .95,
+      width: size.width * .90,
       child: Column(
         children: <Widget>[
           Row(
@@ -27,23 +29,27 @@ class _HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
           Row(
             children: <Widget>[
               Container(
-                padding: EdgeInsets.only(top: 10.0),
-                width: size.width * .95,
-                height: 150.0,
-                child: Swiper(
-                  itemBuilder: (BuildContext context, int index) {
-                    return new Image.network(
-                      "http://via.placeholder.com/350x150",
-                      fit: BoxFit.fill,
-                    );
-                  },
+                width: size.width * .9,
+                height: 165.0,
+                child: ListView(
                   scrollDirection: Axis.horizontal,
-                  layout: SwiperLayout.STACK,
-                  itemWidth: 200.0,
-                  itemCount: 5,
-                  // pagination: SwiperPagination(),
-                  // control: SwiperControl(),
+                  shrinkWrap: true,
+                  children: widget.children,
                 ),
+                // child: Swiper(
+                //   itemBuilder: (BuildContext context, int index) {
+                //     return new Image.network(
+                //       "http://via.placeholder.com/350x150",
+                //       fit: BoxFit.fill,
+                //     );
+                //   },
+                //   scrollDirection: Axis.horizontal,
+                //   layout: SwiperLayout.STACK,
+                //   itemWidth: 200.0,
+                //   itemCount: 5,
+                //   // pagination: SwiperPagination(),
+                //   // control: SwiperControl(),
+                // ),
               ),
             ],
           )
