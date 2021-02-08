@@ -85,15 +85,14 @@ class SignInPage extends StatelessWidget {
       );
 
   //Método que importa el widget personalizado ButtonRound
-  ButtonRoundWidget _lostPassword() {
-    return ButtonRoundWidget(
+  FlatButton _lostPassword() {
+    return FlatButton(
       child: Text(
         'Olvidé mi contraseña',
         style: TextStyle(
             fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
       ),
-      colorButton: Colors.transparent,
-      elevetion: 0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       height: 60,
       minWidth: 400,
       onPressed: () {},
