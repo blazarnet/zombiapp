@@ -22,11 +22,52 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   _background() => Stack(
-        children: <Widget>[_colorBackground()],
+        children: <Widget>[_colorBackground(), _buttonsPhoto()],
       );
 
   BackgroundWidget _colorBackground() {
     return BackgroundWidget();
+  }
+
+  Widget _buttonsPhoto() {
+    final size = MediaQuery.of(context).size;
+    final double _iconSize = 25;
+
+    return Stack(
+      children: <Widget>[
+        Container(
+          height: size.height * 0.345,
+          margin: EdgeInsets.all(4),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                children: [
+                  IconButton(
+                      icon: Icon(
+                        Icons.add_photo_alternate_outlined,
+                        size: _iconSize,
+                      ),
+                      onPressed: () {}),
+                  Text(
+                    'Cargar foto',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  IconButton(
+                      icon: Icon(
+                        Icons.add_a_photo_outlined,
+                        size: _iconSize,
+                      ),
+                      onPressed: () {})
+                ],
+              ),
+            ],
+          ),
+        )
+      ],
+    );
   }
 
   Widget _textFormField(BuildContext context) {
@@ -45,11 +86,11 @@ class _RegisterPageState extends State<RegisterPage> {
               children: <Widget>[
                 // Padding(padding: EdgeInsets.only(top: 5)),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  padding: EdgeInsets.symmetric(horizontal: 17),
                   child: _textFormsNameComplete(),
                 ),
                 Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    padding: EdgeInsets.symmetric(horizontal: 17),
                     child: _textFormsData()),
               ],
             ),
@@ -64,6 +105,7 @@ class _RegisterPageState extends State<RegisterPage> {
           children: [
             _names(),
             Padding(padding: EdgeInsets.only(top: 10)),
+            // _lastNames(context),
             _lastName(),
             Padding(padding: EdgeInsets.only(top: 10)),
             _secondLastName()
@@ -83,6 +125,54 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
+  // Widget _lastNames(BuildContext context) {
+  //   final size = MediaQuery.of(context).size;
+  //   return Container(
+  //     width: size.width * 0.95,
+  //     height: size.height * 0.25,
+  //     color: Colors.red,
+  //     child: Column(
+  //       // mainAxisAlignment: MainAxisAlignment.center,
+  //       children: <Widget>[
+  //         Container(
+  //           width: size.width * 1,
+  //           child: Padding(
+  //             padding: const EdgeInsets.all(8.0),
+  //             child: Column(
+  //               children: [
+  //                 Row(
+  //                   // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //                   children: <Widget>[
+  //                     Padding(
+  //                       padding: const EdgeInsets.symmetric(
+  //                           horizontal: 0, vertical: 4),
+  //                       child: Column(
+  //                         children: <Widget>[
+  //                           _lastName(),
+  //                         ],
+  //                       ),
+  //                     ),
+  //                     Padding(
+  //                       padding: const EdgeInsets.symmetric(
+  //                           horizontal: 0, vertical: 4),
+  //                       child: Column(
+  //                         children: <Widget>[_secondLastName()],
+  //                       ),
+  //                     )
+  //                   ],
+  //                 ),
+  //               ],
+  //             ),
+  //           ),
+  //         ),
+  //         // _lastName(),
+  //         // Padding(padding: EdgeInsets.only(top: 5)),
+  //         // _secondLastName()
+  //       ],
+  //     ),
+  //   );
+  // }
+
   TextFormFieldWidget _lastName() {
     return TextFormFieldWidget(
       controller: null,
@@ -90,7 +180,7 @@ class _RegisterPageState extends State<RegisterPage> {
       textCapitalization: TextCapitalization.words,
       // icon: Icons.person_outline_rounded,
       hintText: '',
-      lableText: 'Apellido paterno',
+      lableText: 'Paterno',
       obscureText: false,
     );
   }
@@ -102,7 +192,7 @@ class _RegisterPageState extends State<RegisterPage> {
       textCapitalization: TextCapitalization.words,
       // icon: Icons.person_outline_rounded,
       hintText: '',
-      lableText: 'Apellido materno',
+      lableText: 'Materno',
       obscureText: false,
     );
   }
