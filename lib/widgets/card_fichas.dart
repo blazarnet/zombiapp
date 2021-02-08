@@ -18,7 +18,7 @@ class _CardFichasWidgetState extends State<CardFichasWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
-        elevation: 2,
+        elevation: 5,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         color: Colors.white,
         child: widget.child);
