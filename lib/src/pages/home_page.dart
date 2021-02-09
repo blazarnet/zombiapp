@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:zombifi_app/widgets/card_fichas.dart';
+import 'package:zombifi_app/widgets/card_chips.dart';
 import 'package:zombifi_app/widgets/card_map_widget.dart';
 import 'package:zombifi_app/widgets/card_status_on.dart';
 import 'package:zombifi_app/widgets/horizontal_scroll.dart';
+import 'package:zombifi_app/widgets/horizontal_scroll_promo.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -46,9 +47,9 @@ class HomePage extends StatelessWidget {
                       ),
                       _cardMapWidget(),
                       Padding(padding: EdgeInsets.only(top: 20)),
-                      _scrollWidget(context),
+                      _scrollWidgetChips(context),
                       Padding(padding: EdgeInsets.only(top: 20)),
-                      _scrollWidget(context),
+                      _scrollWidgetPromotions(context),
                     ],
                   ),
                 ),
@@ -113,32 +114,57 @@ class HomePage extends StatelessWidget {
     return CardMapWidget();
   }
 
-  HorizontalScrollWidget _scrollWidget(BuildContext context) {
+  HorizontalScrollWidget _scrollWidgetChips(BuildContext context) {
     return HorizontalScrollWidget(
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.all(3.0),
-          child: _cardFichas(context),
+          child: _cardChips(context),
         ),
         Padding(
           padding: const EdgeInsets.all(3.0),
-          child: _cardFichas(context),
+          child: _cardChips(context),
         ),
         Padding(
           padding: const EdgeInsets.all(3.0),
-          child: _cardFichas(context),
+          child: _cardChips(context),
         ),
         Padding(
           padding: const EdgeInsets.all(3.0),
-          child: _cardFichas(context),
+          child: _cardChips(context),
         ),
       ],
     );
   }
 
-  CardFichasWidget _cardFichas(BuildContext context) {
+  HorizontalScrollPromoWidget _scrollWidgetPromotions(BuildContext context) {
+    return HorizontalScrollPromoWidget(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(3.0),
+          child: _cardPromotions(context),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(3.0),
+          child: _cardPromotions(context),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(3.0),
+          child: _cardPromotions(context),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(3.0),
+          child: _cardPromotions(context),
+        ),
+      ],
+    );
+  }
+
+  CardChipsWidget _cardChips(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return CardFichasWidget(
+    return CardChipsWidget(
+      elevation: 5,
+      color: Colors.white,
       child: Container(
         child: FlatButton(
           onPressed: () {},
@@ -253,6 +279,28 @@ class HomePage extends StatelessWidget {
                 ),
               )
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  CardChipsWidget _cardPromotions(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return CardChipsWidget(
+      elevation: 5,
+      child: Container(
+        child: FlatButton(
+          onPressed: () {},
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          child: Container(
+            width: size.width * 0.52,
+            child: Image(
+              fit: BoxFit.fill,
+              image: NetworkImage(
+                  "https://image.freepik.com/free-vector/flat-cartoon-quick-rocket-rocketship-launch-from-mobile-phone-cellphone_101884-411.jpg"),
+            ),
           ),
         ),
       ),
