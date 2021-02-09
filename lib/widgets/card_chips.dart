@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
-class CardFichasWidget extends StatefulWidget {
+class CardChipsWidget extends StatefulWidget {
   final Widget child;
+  final Color color;
+  final double elevation;
 
-  const CardFichasWidget({this.child});
+  const CardChipsWidget({this.child, this.color, this.elevation});
 
   @override
   _CardFichasWidgetState createState() => _CardFichasWidgetState();
 }
 
-class _CardFichasWidgetState extends State<CardFichasWidget> {
+class _CardFichasWidgetState extends State<CardChipsWidget> {
   @override
   void initState() {
     super.initState();
@@ -18,9 +20,9 @@ class _CardFichasWidgetState extends State<CardFichasWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
-        elevation: 5,
+        elevation: widget.elevation,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        color: Colors.white,
+        color: widget.color,
         child: widget.child);
   }
 }
