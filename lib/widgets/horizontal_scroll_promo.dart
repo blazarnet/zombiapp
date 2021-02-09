@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class HorizontalScrollWidget extends StatefulWidget {
+class HorizontalScrollPromoWidget extends StatefulWidget {
   final List<Widget> children;
 
-  const HorizontalScrollWidget({this.children});
+  const HorizontalScrollPromoWidget({this.children});
   @override
   _HorizontalScrollWidgetState createState() => _HorizontalScrollWidgetState();
 }
 
-class _HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
+class _HorizontalScrollWidgetState extends State<HorizontalScrollPromoWidget> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -19,7 +19,7 @@ class _HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
           Row(
             children: <Widget>[
               Text(
-                'Comprar fichas',
+                'Promociones',
                 style: TextStyle(fontSize: 16),
               ),
               Icon(Icons.arrow_forward_ios_rounded)
