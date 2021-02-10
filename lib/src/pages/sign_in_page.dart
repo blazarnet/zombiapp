@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/home_page.dart';
 
 //Importaciones propias
@@ -30,7 +31,7 @@ class SignInPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              _textFormFields(),
+              _textFormFields(context),
               Padding(padding: EdgeInsets.only(top: 15)),
               _buttons(context),
               // _buttons(),
@@ -40,35 +41,35 @@ class SignInPage extends StatelessWidget {
       );
 
   //Método que instancia los métodos que generan los textforms
-  _textFormFields() => Container(
+  _textFormFields(BuildContext context) => Container(
         child: Column(
           children: <Widget>[
             Padding(padding: EdgeInsets.symmetric(vertical: 20)),
-            _email(),
+            _email(context),
             Padding(padding: EdgeInsets.only(top: 18)),
-            _password(),
+            _password(context),
           ],
         ),
       );
   //TextFormField para el email
-  TextFormFieldWidget _email() {
+  TextFormFieldWidget _email(BuildContext context) {
     return TextFormFieldWidget(
       controller: null,
       keyboardType: TextInputType.emailAddress,
       icon: Icons.person_outline_rounded,
       hintText: 'ejemplo@correo.com',
-      lableText: 'Correo',
+      lableText: AppLocalizations.of(context).email,
       obscureText: false,
     );
   }
 
   //TextFormField para el password
-  TextFormFieldWidget _password() {
+  TextFormFieldWidget _password(BuildContext context) {
     return TextFormFieldWidget(
       controller: null,
       obscureText: true,
       icon: Icons.lock_outline_rounded,
-      lableText: 'Contraseña',
+      lableText: AppLocalizations.of(context).password,
     );
   }
 
@@ -77,7 +78,7 @@ class SignInPage extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Padding(padding: EdgeInsets.only(top: 30)),
-            _lostPassword(),
+            _lostPassword(context),
             Padding(padding: EdgeInsets.only(top: 10)),
             _login(context),
           ],
@@ -85,10 +86,10 @@ class SignInPage extends StatelessWidget {
       );
 
   //Método que importa el widget personalizado ButtonRound
-  FlatButton _lostPassword() {
+  FlatButton _lostPassword(BuildContext context) {
     return FlatButton(
       child: Text(
-        'Olvidé mi contraseña',
+        AppLocalizations.of(context).forgotPassword,
         style: TextStyle(
             fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
       ),
@@ -103,7 +104,7 @@ class SignInPage extends StatelessWidget {
   ButtonRoundWidget _login(BuildContext context) {
     return ButtonRoundWidget(
       child: Text(
-        'INICIAR SESIÓN',
+        AppLocalizations.of(context).logIn,
         style: TextStyle(
             fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white),
       ),

@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/widgets/button_round.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
@@ -42,8 +43,11 @@ class StatusTab extends StatelessWidget {
                     )),
                     Padding(padding: EdgeInsets.all(7)),
                     Text(
-                      'Estatus Ficha',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      AppLocalizations.of(context).statusChip,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                     Padding(padding: EdgeInsets.only(top: 7)),
                     SingleChildScrollView(
@@ -51,7 +55,7 @@ class StatusTab extends StatelessWidget {
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [_progressBar()],
+                            children: [_progressBar(context)],
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -69,7 +73,8 @@ class StatusTab extends StatelessWidget {
                                             color: Colors.white,
                                             size: _iconSize,
                                           ),
-                                          Text('Nombre: ',
+                                          Text(
+                                              "${AppLocalizations.of(context).nameChip}: ",
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: _textSize)),
@@ -82,7 +87,8 @@ class StatusTab extends StatelessWidget {
                                             color: Colors.white,
                                             size: _iconSize,
                                           ),
-                                          Text('Duración: ',
+                                          Text(
+                                              "${AppLocalizations.of(context).duration}: ",
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: _textSize)),
@@ -95,7 +101,8 @@ class StatusTab extends StatelessWidget {
                                             color: Colors.white,
                                             size: _iconSize,
                                           ),
-                                          Text('Descarga: ',
+                                          Text(
+                                              "${AppLocalizations.of(context).download}: ",
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: _textSize)),
@@ -108,7 +115,8 @@ class StatusTab extends StatelessWidget {
                                             color: Colors.white,
                                             size: _iconSize,
                                           ),
-                                          Text('Subida: ',
+                                          Text(
+                                              "${AppLocalizations.of(context).upload}: ",
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: _textSize)),
@@ -164,19 +172,23 @@ class StatusTab extends StatelessWidget {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: <Widget>[
-                                  Text('Dirección IP: ',
+                                  Text(
+                                      "${AppLocalizations.of(context).ipAddress}: ",
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize: _textSize)),
-                                  Text('Tiempo de conexión: ',
+                                  Text(
+                                      "${AppLocalizations.of(context).connectionTime}: ",
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize: _textSize)),
-                                  Text('bytes Subida: ',
+                                  Text(
+                                      "${AppLocalizations.of(context).bytesUpload}: ",
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize: _textSize)),
-                                  Text('bytes Descarga: ',
+                                  Text(
+                                      "${AppLocalizations.of(context).bytesDownload}: ",
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize: _textSize))
@@ -212,7 +224,7 @@ class StatusTab extends StatelessWidget {
                           Padding(padding: EdgeInsets.only(top: 30)),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [_disconect()],
+                            children: [_disconect(context)],
                           ),
                         ],
                       ),
@@ -227,13 +239,13 @@ class StatusTab extends StatelessWidget {
     );
   }
 
-  ButtonRoundWidget _disconect() {
+  ButtonRoundWidget _disconect(BuildContext context) {
     return ButtonRoundWidget(
       onPressed: () {},
       child: Row(
         children: [
           Text(
-            'Desconectar ',
+            "${AppLocalizations.of(context).disconnect} ",
             style: TextStyle(color: Colors.white),
           ),
           Icon(
@@ -248,7 +260,7 @@ class StatusTab extends StatelessWidget {
     );
   }
 
-  _progressBar() {
+  _progressBar(BuildContext context) {
     return Stack(children: <Widget>[
       Container(
         width: 300,
@@ -258,11 +270,11 @@ class StatusTab extends StatelessWidget {
           painter: _RadialProgress(),
         ),
       ),
-      _containerProgress()
+      _containerProgress(context)
     ]);
   }
 
-  Widget _containerProgress() {
+  Widget _containerProgress(BuildContext context) {
     return Stack(
       children: <Widget>[
         Column(
@@ -283,7 +295,7 @@ class StatusTab extends StatelessWidget {
                           fontSize: 32,
                           fontWeight: FontWeight.bold)),
                   Padding(padding: EdgeInsets.only(top: 5)),
-                  Text('Tiempo restante',
+                  Text(AppLocalizations.of(context).timeRemaining,
                       style: TextStyle(color: Colors.white, fontSize: 22))
                 ],
               ),

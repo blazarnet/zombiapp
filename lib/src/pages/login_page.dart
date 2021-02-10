@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/register_page.dart';
 import 'package:zombifi_app/src/pages/sign_in_page.dart';
 
@@ -39,6 +40,7 @@ class _LoginPageState extends State<LoginPage> {
     return Padding(
       padding: EdgeInsets.all(2),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: _btns(),
       ),
     );
@@ -57,8 +59,8 @@ class _LoginPageState extends State<LoginPage> {
             _callPages(_currentPage);
           });
         },
-        child: Text('INICIAR SESIÓN'),
-        minWidth: 185,
+        child: Text(AppLocalizations.of(context).logIn),
+        minWidth: 180,
         color: Colors.grey[300],
         // shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero)
       ),
@@ -69,8 +71,8 @@ class _LoginPageState extends State<LoginPage> {
             _callPages(_currentPage);
           });
         },
-        child: Text('REGISTRARSE'),
-        minWidth: 185,
+        child: Text(AppLocalizations.of(context).sigIn),
+        minWidth: 180,
         color: Colors.grey[300],
       ),
     ];

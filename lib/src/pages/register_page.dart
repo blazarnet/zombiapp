@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/widgets/background.dart';
 import 'package:zombifi_app/widgets/select_date.dart';
 import 'package:zombifi_app/widgets/text_form_field.dart';
@@ -52,7 +53,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       onPressed: () {}),
                   Text(
-                    'Cargar foto',
+                    AppLocalizations.of(context).uploadPhoto,
                     style: TextStyle(fontSize: 18),
                   ),
                   IconButton(
@@ -120,7 +121,7 @@ class _RegisterPageState extends State<RegisterPage> {
       textCapitalization: TextCapitalization.words,
       icon: Icons.person_outline_rounded,
       hintText: '',
-      lableText: 'Nombre(s)',
+      lableText: AppLocalizations.of(context).names,
       obscureText: false,
     );
   }
@@ -180,7 +181,7 @@ class _RegisterPageState extends State<RegisterPage> {
       textCapitalization: TextCapitalization.words,
       // icon: Icons.person_outline_rounded,
       hintText: '',
-      lableText: 'Paterno',
+      lableText: AppLocalizations.of(context).lastName,
       obscureText: false,
     );
   }
@@ -192,7 +193,7 @@ class _RegisterPageState extends State<RegisterPage> {
       textCapitalization: TextCapitalization.words,
       // icon: Icons.person_outline_rounded,
       hintText: '',
-      lableText: 'Materno',
+      lableText: AppLocalizations.of(context).secondLastName,
       obscureText: false,
     );
   }
@@ -235,7 +236,7 @@ class _RegisterPageState extends State<RegisterPage> {
       keyboardType: TextInputType.emailAddress,
       icon: Icons.email_outlined,
       hintText: 'ejemplo@correo.com',
-      lableText: 'Correo',
+      lableText: AppLocalizations.of(context).email,
       obscureText: false,
     );
   }
@@ -269,7 +270,7 @@ class _RegisterPageState extends State<RegisterPage> {
     return DropdownButton(
       value: _codeSelected,
       items: _getCodes(),
-      hint: Text('Código del país'),
+      hint: Text(AppLocalizations.of(context).countryCode),
       onChanged: (opt) {
         setState(() {
           _codeSelected = opt;
@@ -285,7 +286,7 @@ class _RegisterPageState extends State<RegisterPage> {
       enableInteractiveSelection: false,
       icon: Icons.phone_iphone_outlined,
       hintText: '',
-      lableText: 'Número de celular',
+      lableText: AppLocalizations.of(context).phoneNumber,
       obscureText: false,
     );
   }
@@ -300,7 +301,7 @@ class _RegisterPageState extends State<RegisterPage> {
       enableInteractiveSelection: false,
       icon: Icons.lock_outline_rounded,
       hintText: '',
-      lableText: 'Contraseña',
+      lableText: AppLocalizations.of(context).password,
       obscureText: true,
     );
   }
@@ -311,7 +312,7 @@ class _RegisterPageState extends State<RegisterPage> {
       enableInteractiveSelection: false,
       // icon: Icons.lock_outline_rounded,
       hintText: '',
-      lableText: 'Confirmar contraseña',
+      lableText: AppLocalizations.of(context).confirmPassword,
       obscureText: true,
     );
   }

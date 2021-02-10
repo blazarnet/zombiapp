@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/widgets/card_chips.dart';
 import 'package:zombifi_app/widgets/card_map_widget.dart';
 import 'package:zombifi_app/widgets/card_status_on.dart';
 import 'package:zombifi_app/widgets/horizontal_scroll.dart';
 import 'package:zombifi_app/widgets/horizontal_scroll_promo.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  String _name = 'Alan';
+  String _lastName = 'Moreno';
+  String _secondaLastName = 'Martinez';
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -32,8 +42,10 @@ class HomePage extends StatelessWidget {
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Padding(padding: EdgeInsets.all(7)),
-              _welcome(),
+              Padding(
+                padding: const EdgeInsets.only(top: 7),
+                child: _welcome(context),
+              ),
               Container(
                 width: size.width * 1,
                 color: Colors.white,
@@ -75,7 +87,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _welcome() {
+  Widget _welcome(BuildContext context) {
     return Row(
       children: <Widget>[
         Stack(
@@ -87,14 +99,14 @@ class HomePage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 12),
                   child: Text(
-                    'Hola,',
+                    "${AppLocalizations.of(context).hello},",
                     style: TextStyle(fontSize: 25),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 12),
                   child: Text(
-                    'Alan Moreno Martinez',
+                    "$_name " + "$_lastName " + "$_secondaLastName",
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -118,19 +130,19 @@ class HomePage extends StatelessWidget {
     return HorizontalScrollWidget(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(3.0),
+          padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
           child: _cardChips(context),
         ),
         Padding(
-          padding: const EdgeInsets.all(3.0),
+          padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
           child: _cardChips(context),
         ),
         Padding(
-          padding: const EdgeInsets.all(3.0),
+          padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
           child: _cardChips(context),
         ),
         Padding(
-          padding: const EdgeInsets.all(3.0),
+          padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
           child: _cardChips(context),
         ),
       ],
@@ -141,19 +153,20 @@ class HomePage extends StatelessWidget {
     return HorizontalScrollPromoWidget(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(3.0),
+          // padding: const EdgeInsets.all(3.0),
+          padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
           child: _cardPromotions(context),
         ),
         Padding(
-          padding: const EdgeInsets.all(3.0),
+          padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
           child: _cardPromotions(context),
         ),
         Padding(
-          padding: const EdgeInsets.all(3.0),
+          padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
           child: _cardPromotions(context),
         ),
         Padding(
-          padding: const EdgeInsets.all(3.0),
+          padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
           child: _cardPromotions(context),
         ),
       ],
@@ -163,7 +176,7 @@ class HomePage extends StatelessWidget {
   CardChipsWidget _cardChips(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return CardChipsWidget(
-      elevation: 5,
+      elevation: 10,
       color: Colors.white,
       child: Container(
         child: FlatButton(
@@ -231,7 +244,8 @@ class HomePage extends StatelessWidget {
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    Text('Tipo: '),
+                                    Text(
+                                        "${AppLocalizations.of(context).type}: "),
                                     Text(
                                       'Tiempo',
                                       style: TextStyle(
@@ -241,7 +255,8 @@ class HomePage extends StatelessWidget {
                                 ),
                                 Row(
                                   children: <Widget>[
-                                    Text('Duración: '),
+                                    Text(
+                                        "${AppLocalizations.of(context).duration}: "),
                                     Text(
                                       '1h',
                                       style: TextStyle(
@@ -251,7 +266,8 @@ class HomePage extends StatelessWidget {
                                 ),
                                 Row(
                                   children: <Widget>[
-                                    Text('Descarga: '),
+                                    Text(
+                                        "${AppLocalizations.of(context).download}: "),
                                     Text(
                                       '2Mbps',
                                       style: TextStyle(
@@ -261,7 +277,8 @@ class HomePage extends StatelessWidget {
                                 ),
                                 Row(
                                   children: <Widget>[
-                                    Text('Subida: '),
+                                    Text(
+                                        "${AppLocalizations.of(context).upload}: "),
                                     Text(
                                       '1Mbps',
                                       style: TextStyle(
@@ -288,7 +305,7 @@ class HomePage extends StatelessWidget {
   CardChipsWidget _cardPromotions(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return CardChipsWidget(
-      elevation: 5,
+      elevation: 10,
       child: Container(
         child: FlatButton(
           onPressed: () {},

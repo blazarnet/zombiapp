@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/utils/responsive_screen.dart';
 
 class SelectDateWidget extends StatefulWidget {
@@ -48,7 +49,7 @@ class _SelectDateWidgetState extends State<SelectDateWidget> {
               decoration: InputDecoration(
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-                hintText: 'Fecha de nacmiento',
+                hintText: AppLocalizations.of(context).dateBirth,
                 prefixIcon: Icon(Icons.calendar_today, color: Colors.black),
               ),
               onTap: () {

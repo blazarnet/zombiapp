@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zombifi_app/generated/l10n.dart';
 
 class HorizontalScrollPromoWidget extends StatefulWidget {
   final List<Widget> children;
@@ -19,7 +20,7 @@ class _HorizontalScrollWidgetState extends State<HorizontalScrollPromoWidget> {
           Row(
             children: <Widget>[
               Text(
-                'Promociones',
+                AppLocalizations.of(context).promotions,
                 style: TextStyle(fontSize: 16),
               ),
               Icon(Icons.arrow_forward_ios_rounded)
@@ -30,7 +31,7 @@ class _HorizontalScrollWidgetState extends State<HorizontalScrollPromoWidget> {
             children: <Widget>[
               Container(
                 width: size.width * .9,
-                height: 165.0,
+                height: 170.0,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
