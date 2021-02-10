@@ -157,7 +157,7 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
                             children: <Widget>[
                               FlatButton(
                                   onPressed: () {},
-                                  padding: EdgeInsets.all(5),
+                                  padding: EdgeInsets.all(3),
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10)),
                                   color: Color.fromRGBO(0, 190, 107, 0.5),
@@ -167,11 +167,12 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
                                           "${AppLocalizations.of(context).timeRemaining}",
                                           style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 12)),
+                                              fontSize: 11)),
                                       Text('--',
                                           style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 14)),
+                                              fontSize: 12.25,
+                                              fontWeight: FontWeight.bold)),
                                     ],
                                   )),
                             ],
@@ -180,7 +181,7 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
                             children: <Widget>[
                               FlatButton(
                                 onPressed: () {},
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(3),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)),
                                 color: Color.fromRGBO(0, 190, 107, 0.5),
@@ -189,11 +190,13 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
                                     Text(
                                         "${AppLocalizations.of(context).downloadRemaining}",
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 12)),
+                                            color: Colors.white, fontSize: 11)),
                                     Text(
                                       '--',
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 14),
+                                          color: Colors.white,
+                                          fontSize: 12.25,
+                                          fontWeight: FontWeight.bold),
                                     ),
                                   ],
                                 ),
@@ -204,7 +207,7 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
                             children: <Widget>[
                               FlatButton(
                                   onPressed: () {},
-                                  padding: EdgeInsets.all(5),
+                                  padding: EdgeInsets.all(3),
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10)),
                                   color: Color.fromRGBO(0, 190, 107, 0.5),
@@ -214,11 +217,13 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
                                           "${AppLocalizations.of(context).uploadRemaining}",
                                           style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 12)),
+                                              fontSize: 11)),
                                       Text(
                                         '--',
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 14),
+                                            color: Colors.white,
+                                            fontSize: 12.25,
+                                            fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   )),
