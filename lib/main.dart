@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:zombifi_app/generated/l10n.dart';
+
 // import 'package:flutter_svg/flutter_svg.dart';
 
 //Mis importaciones
@@ -17,11 +19,9 @@ class MyApp extends StatelessWidget {
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
+          AppLocalizations.delegate
         ],
-        supportedLocales: [
-          const Locale('en', 'US'), //English
-          const Locale('es', 'ES'), //Spanish
-        ],
+        supportedLocales: AppLocalizations.delegate.supportedLocales,
         home: LoginPage());
   }
 }
