@@ -17,6 +17,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.grey[300],
           primary: true,
           // centerTitle: true,
