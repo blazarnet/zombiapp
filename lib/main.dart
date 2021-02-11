@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:zombifi_app/generated/l10n.dart';
-
-// import 'package:flutter_svg/flutter_svg.dart';
 
 //Mis importaciones
-import 'package:zombifi_app/src/pages/login_page.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:zombifi_app/generated/l10n.dart';
+import 'package:zombifi_app/src/pages/animation_page.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:zombifi_app/src/pages/login_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,6 +22,6 @@ class MyApp extends StatelessWidget {
           AppLocalizations.delegate
         ],
         supportedLocales: AppLocalizations.delegate.supportedLocales,
-        home: LoginPage());
+        home: AnimationPage());
   }
 }
