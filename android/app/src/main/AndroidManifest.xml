@@ -9,6 +9,7 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="zombifi_app"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.mapbox.token" android:value="pk.eyJ1IjoiYWxhbm1hcjExIiwiYSI6ImNrbDE4cm9kYjAwcHIycG1yempqbXdocDIifQ.pXKWhJfI6SfTSxzfgYSNpQ"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

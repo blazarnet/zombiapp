@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>io.flutter.embedded_view_preview</key>
+	<true/>
+	<key>MGLMapboxAccessToker<key/>
+	<string>pk.eyJ1IjoiYWxhbm1hcjExIiwiYSI6ImNrbDE4cm9kYjAwcHIycG1yempqbXdocDIifQ.pXKWhJfI6SfTSxzfgYSNpQ</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Se necesita la ubicación para encontrar puntos de venta cercanos</string>
+
+
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
