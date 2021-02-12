@@ -6,11 +6,11 @@ class BackgroundWidget extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.height * 0.35,
+      height: size.height * 0.32,
       width: double.infinity,
       decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: <Color>[Colors.green[600], Colors.green[400]])),
+              colors: <Color>[Colors.green[400], Colors.green[300]])),
     );
   }
 }
