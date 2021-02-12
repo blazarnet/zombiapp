@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
-import 'package:zombifi_app/generated/l10n.dart';
+// import 'package:zombifi_app/generated/l10n.dart';
 
 class FullScreenMap extends StatefulWidget {
   @override
