@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:zombifi_app/generated/l10n.dart';
+
 import 'package:zombifi_app/widgets/background.dart';
+import 'package:zombifi_app/widgets/profile_photo.dart';
 import 'package:zombifi_app/widgets/select_date.dart';
 import 'package:zombifi_app/widgets/text_form_field.dart';
+
+import 'package:zombifi_app/generated/l10n.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -12,18 +17,26 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   List<String> _codes = ['+52', '+48', '-35', '+15'];
   String _codeSelected = '+52';
+  File file;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: <Widget>[_background(), _textFormField(context)],
+        children: <Widget>[
+          _background(),
+          _textFormField(context),
+        ],
       ),
     );
   }
 
   _background() => Stack(
-        children: <Widget>[_colorBackground(), _buttonsPhoto()],
+        children: <Widget>[
+          _colorBackground(),
+          _photoWidget(),
+          _buttonsPhoto(),
+        ],
       );
 
   BackgroundWidget _colorBackground() {
@@ -34,24 +47,28 @@ class _RegisterPageState extends State<RegisterPage> {
     final size = MediaQuery.of(context).size;
     final double _iconSize = 25;
 
-    return Stack(
+    return Column(
       children: <Widget>[
         Container(
-          height: size.height * 0.345,
+          height: size.height * 0.32,
           margin: EdgeInsets.all(4),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.baseline,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   IconButton(
                       icon: Icon(
                         Icons.add_photo_alternate_outlined,
                         size: _iconSize,
                       ),
-                      onPressed: () {}),
+                      onPressed: () {
+                        // _selectPhoto();
+                        _processFile(ImageSource.gallery);
+                        // print("Clic");
+                      }),
                   Text(
                     AppLocalizations.of(context).uploadPhoto,
                     style: TextStyle(fontSize: 18),
@@ -61,7 +78,9 @@ class _RegisterPageState extends State<RegisterPage> {
                         Icons.add_a_photo_outlined,
                         size: _iconSize,
                       ),
-                      onPressed: () {})
+                      onPressed: () {
+                        _processFile(ImageSource.camera);
+                      })
                 ],
               ),
             ],
@@ -69,6 +88,17 @@ class _RegisterPageState extends State<RegisterPage> {
         )
       ],
     );
+  }
+
+  _processFile(ImageSource source) async {
+    // ignore: deprecated_member_use
+    file = await ImagePicker.pickImage(source: source);
+    if (file != null) {}
+    setState(() {});
+  }
+
+  ProfilePhotoWidget _photoWidget() {
+    return ProfilePhotoWidget();
   }
 
   Widget _textFormField(BuildContext context) {
@@ -86,6 +116,7 @@ class _RegisterPageState extends State<RegisterPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 // Padding(padding: EdgeInsets.only(top: 5)),
+                // _buttonsPhoto(),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 17),
                   child: _textFormsNameComplete(),
