@@ -4,6 +4,8 @@
     "signInUpper"         : "SIGN IN",
     "signInLower"         : "Sign In",
     "dontAccount"         : "Don't have an account?",
+    "haveAccount"         : "Already have an account?",
+    "createAccount"       : "Create Account",
     "orSignInWith"        : "Or sign in with:", 
     "forgotPassword"      : "Forgot my password",
     "uploadPhoto"         : "Upload photo",

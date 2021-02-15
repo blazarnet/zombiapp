@@ -65,10 +65,10 @@ class AppLocalizations {
     );
   }
 
-  /// `Iniciar sesión`
+  /// `Iniciar Sesión`
   String get signInLower {
     return Intl.message(
-      'Iniciar sesión',
+      'Iniciar Sesión',
       name: 'signInLower',
       desc: '',
       args: [],
@@ -80,6 +80,26 @@ class AppLocalizations {
     return Intl.message(
       '¿No tienes una cuenta?',
       name: 'dontAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `¿Ya tienes una cuenta?`
+  String get haveAccount {
+    return Intl.message(
+      '¿Ya tienes una cuenta?',
+      name: 'haveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crear Cuenta`
+  String get createAccount {
+    return Intl.message(
+      'Crear Cuenta',
+      name: 'createAccount',
       desc: '',
       args: [],
     );
@@ -125,20 +145,20 @@ class AppLocalizations {
     );
   }
 
-  /// `Apellido Paterno`
+  /// `Primer apellido`
   String get lastName {
     return Intl.message(
-      'Apellido Paterno',
+      'Primer apellido',
       name: 'lastName',
       desc: '',
       args: [],
     );
   }
 
-  /// `Apellido Materno`
+  /// `Segundo apellido`
   String get secondLastName {
     return Intl.message(
-      'Apellido Materno',
+      'Segundo apellido',
       name: 'secondLastName',
       desc: '',
       args: [],
