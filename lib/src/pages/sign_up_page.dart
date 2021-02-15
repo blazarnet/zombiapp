@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:zombifi_app/src/pages/sign_in_page.dart';
+import 'package:zombifi_app/widgets/button_round.dart';
 
-import 'package:zombifi_app/widgets/background.dart';
-import 'package:zombifi_app/widgets/profile_photo.dart';
 import 'package:zombifi_app/widgets/select_date.dart';
 import 'package:zombifi_app/widgets/text_form_field.dart';
 
 import 'package:zombifi_app/generated/l10n.dart';
-import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class SignUpPage extends StatefulWidget {
@@ -22,115 +21,126 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          _background(),
-          _textFormField(context),
-        ],
-      ),
-    );
-  }
-
-  _background() => Stack(
-        children: <Widget>[
-          _colorBackground(),
-          _photoWidget(),
-          _buttonsPhoto(),
-        ],
-      );
-
-  BackgroundWidget _colorBackground() {
-    return BackgroundWidget();
-  }
-
-  Widget _buttonsPhoto() {
-    final size = MediaQuery.of(context).size;
-    final double _iconSize = 25;
-
-    return Column(
-      children: <Widget>[
-        Container(
-          height: size.height * 0.32,
-          margin: EdgeInsets.all(4),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  IconButton(
-                      icon: Icon(
-                        Icons.add_photo_alternate_outlined,
-                        size: _iconSize,
-                      ),
-                      onPressed: () {
-                        // _selectPhoto();
-                        _processFile(ImageSource.gallery);
-                        // print("Clic");
-                      }),
+        body: Center(
+      child: Form(
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 30, bottom: 30),
+              child: Column(
+                children: <Widget>[
+                  // Padding(padding: EdgeInsets.only(top: 30)),
                   Text(
-                    AppLocalizations.of(context).uploadPhoto,
-                    style: TextStyle(fontSize: 18),
+                    AppLocalizations.of(context).createAccount,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 23,
+                    ),
                   ),
-                  IconButton(
-                      icon: Icon(
-                        Icons.add_a_photo_outlined,
-                        size: _iconSize,
-                      ),
-                      onPressed: () {
-                        _processFile(ImageSource.camera);
-                      })
+                  _widgetSignUp()
                 ],
               ),
+            ),
+          ),
+        ),
+      ),
+    ));
+  }
+
+  // _background() => Stack(
+  //       children: <Widget>[
+  //         _colorBackground(),
+  //         _photoWidget(),
+  //         _buttonsPhoto(),
+  //       ],
+  //     );
+
+  // BackgroundWidget _colorBackground() {
+  //   return BackgroundWidget();
+  // }
+
+  // Widget _buttonsPhoto() {
+  //   final size = MediaQuery.of(context).size;
+  //   final double _iconSize = 25;
+
+  //   return Column(
+  //     children: <Widget>[
+  //       Container(
+  //         height: size.height * 0.32,
+  //         margin: EdgeInsets.all(4),
+  //         child: Column(
+  //           mainAxisAlignment: MainAxisAlignment.end,
+  //           children: [
+  //             Row(
+  //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //               crossAxisAlignment: CrossAxisAlignment.end,
+  //               children: [
+  //                 IconButton(
+  //                     icon: Icon(
+  //                       Icons.add_photo_alternate_outlined,
+  //                       size: _iconSize,
+  //                     ),
+  //                     onPressed: () {
+  //                       // _selectPhoto();
+  //                       _processFile(ImageSource.gallery);
+  //                       // print("Clic");
+  //                     }),
+  //                 Text(
+  //                   AppLocalizations.of(context).uploadPhoto,
+  //                   style: TextStyle(fontSize: 18),
+  //                 ),
+  //                 IconButton(
+  //                     icon: Icon(
+  //                       Icons.add_a_photo_outlined,
+  //                       size: _iconSize,
+  //                     ),
+  //                     onPressed: () {
+  //                       _processFile(ImageSource.camera);
+  //                     })
+  //               ],
+  //             ),
+  //           ],
+  //         ),
+  //       )
+  //     ],
+  //   );
+  // }
+
+  // _processFile(ImageSource source) async {
+  //   // ignore: deprecated_member_use
+  //   file = await ImagePicker.pickImage(source: source);
+  //   if (file != null) {}
+  //   setState(() {});
+  // }
+
+  // ProfilePhotoWidget _photoWidget() {
+  //   return ProfilePhotoWidget();
+  // }
+
+  _widgetSignUp() => Container(
+        child: Form(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              _textFormField(context),
+              Padding(padding: EdgeInsets.only(top: 20)),
+              _buttons(context),
             ],
           ),
-        )
-      ],
-    );
-  }
+        ),
+      );
 
-  _processFile(ImageSource source) async {
-    // ignore: deprecated_member_use
-    file = await ImagePicker.pickImage(source: source);
-    if (file != null) {}
-    setState(() {});
-  }
-
-  ProfilePhotoWidget _photoWidget() {
-    return ProfilePhotoWidget();
-  }
-
-  Widget _textFormField(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          SafeArea(
-              child: Container(
-            height: size.height * 0.37,
-          )),
-          Container(
-            width: size.width * .95,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                // Padding(padding: EdgeInsets.only(top: 5)),
-                // _buttonsPhoto(),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 17),
-                  child: _textFormsNameComplete(),
-                ),
-                Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 17),
-                    child: _textFormsData()),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
+  Widget _textFormField(BuildContext context) => Container(
+        child: Column(
+          children: <Widget>[
+            Padding(padding: EdgeInsets.symmetric(vertical: 20)),
+            _textFormsNameComplete(),
+            _textFormsData(),
+          ],
+        ),
+      );
 
   _textFormsNameComplete() => Container(
         child: Column(
@@ -138,9 +148,16 @@ class _SignUpPageState extends State<SignUpPage> {
             _names(),
             Padding(padding: EdgeInsets.only(top: 10)),
             // _lastNames(context),
-            _lastName(),
-            Padding(padding: EdgeInsets.only(top: 10)),
-            _secondLastName()
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  _lastName(),
+                  // Padding(padding: EdgeInsets.only(top: 10)),
+                  _secondLastName()
+                ],
+              ),
+            ),
           ],
         ),
       );
@@ -150,63 +167,19 @@ class _SignUpPageState extends State<SignUpPage> {
       controller: null,
       keyboardType: TextInputType.emailAddress,
       textCapitalization: TextCapitalization.words,
-      icon: Icons.person_outline_rounded,
+      prefixIcon: Icon(
+        Icons.person_outline_outlined,
+        color: Colors.black,
+      ),
       hintText: '',
       lableText: AppLocalizations.of(context).names,
       obscureText: false,
     );
   }
 
-  // Widget _lastNames(BuildContext context) {
-  //   final size = MediaQuery.of(context).size;
-  //   return Container(
-  //     width: size.width * 0.95,
-  //     height: size.height * 0.25,
-  //     color: Colors.red,
-  //     child: Column(
-  //       // mainAxisAlignment: MainAxisAlignment.center,
-  //       children: <Widget>[
-  //         Container(
-  //           width: size.width * 1,
-  //           child: Padding(
-  //             padding: const EdgeInsets.all(8.0),
-  //             child: Column(
-  //               children: [
-  //                 Row(
-  //                   // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-  //                   children: <Widget>[
-  //                     Padding(
-  //                       padding: const EdgeInsets.symmetric(
-  //                           horizontal: 0, vertical: 4),
-  //                       child: Column(
-  //                         children: <Widget>[
-  //                           _lastName(),
-  //                         ],
-  //                       ),
-  //                     ),
-  //                     Padding(
-  //                       padding: const EdgeInsets.symmetric(
-  //                           horizontal: 0, vertical: 4),
-  //                       child: Column(
-  //                         children: <Widget>[_secondLastName()],
-  //                       ),
-  //                     )
-  //                   ],
-  //                 ),
-  //               ],
-  //             ),
-  //           ),
-  //         ),
-  //         // _lastName(),
-  //         // Padding(padding: EdgeInsets.only(top: 5)),
-  //         // _secondLastName()
-  //       ],
-  //     ),
-  //   );
-  // }
-
   TextFormFieldWidget _lastName() {
     return TextFormFieldWidget(
+      width: 180,
       controller: null,
       keyboardType: TextInputType.emailAddress,
       textCapitalization: TextCapitalization.words,
@@ -219,6 +192,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
   TextFormFieldWidget _secondLastName() {
     return TextFormFieldWidget(
+      width: 180,
       controller: null,
       keyboardType: TextInputType.emailAddress,
       textCapitalization: TextCapitalization.words,
@@ -247,7 +221,7 @@ class _SignUpPageState extends State<SignUpPage> {
             //     )
             //   ],
             // ),
-            _dropdownCodes(),
+            // _dropdownCodes(),
             Padding(padding: EdgeInsets.only(top: 10)),
             _phoneNumber(),
             // _number(),
@@ -265,7 +239,10 @@ class _SignUpPageState extends State<SignUpPage> {
     return TextFormFieldWidget(
       controller: null,
       keyboardType: TextInputType.emailAddress,
-      icon: Icons.email_outlined,
+      prefixIcon: Icon(
+        Icons.email_outlined,
+        color: Colors.black,
+      ),
       hintText: 'ejemplo@correo.com',
       lableText: AppLocalizations.of(context).email,
       obscureText: false,
@@ -284,29 +261,21 @@ class _SignUpPageState extends State<SignUpPage> {
     return list;
   }
 
-  // _number() => Container(
-  //       child: Row(
-  //         children: <Widget>[
-  //           Column(
-  //             children: <Widget>[_dropdownCodes()],
-  //           ),
-  //           Column(
-  //             children: <Widget>[_phoneNumber()],
-  //           )
-  //         ],
-  //       ),
-  //     );
-
   Widget _dropdownCodes() {
-    return DropdownButton(
-      value: _codeSelected,
-      items: _getCodes(),
-      hint: Text(AppLocalizations.of(context).countryCode),
-      onChanged: (opt) {
-        setState(() {
-          _codeSelected = opt;
-        });
-      },
+    return Container(
+      width: 52,
+      child: DropdownButton(
+        value: _codeSelected,
+        items: _getCodes(),
+        isDense: true,
+        isExpanded: true,
+        hint: Text(AppLocalizations.of(context).countryCode),
+        onChanged: (opt) {
+          setState(() {
+            _codeSelected = opt;
+          });
+        },
+      ),
     );
   }
 
@@ -315,7 +284,12 @@ class _SignUpPageState extends State<SignUpPage> {
       controller: null,
       keyboardType: TextInputType.phone,
       enableInteractiveSelection: false,
-      icon: Icons.phone_iphone_outlined,
+      prefix: _dropdownCodes(),
+      maxLength: 5,
+      prefixIcon: Icon(
+        Icons.phone_iphone_outlined,
+        color: Colors.black,
+      ),
       hintText: '',
       lableText: AppLocalizations.of(context).phoneNumber,
       obscureText: false,
@@ -330,7 +304,10 @@ class _SignUpPageState extends State<SignUpPage> {
     return TextFormFieldWidget(
       controller: null,
       enableInteractiveSelection: false,
-      icon: Icons.lock_outline_rounded,
+      prefixIcon: Icon(
+        Icons.lock_outline_rounded,
+        color: Colors.black,
+      ),
       hintText: '',
       lableText: AppLocalizations.of(context).password,
       obscureText: true,
@@ -345,6 +322,72 @@ class _SignUpPageState extends State<SignUpPage> {
       hintText: '',
       lableText: AppLocalizations.of(context).confirmPassword,
       obscureText: true,
+    );
+  }
+
+  _buttons(BuildContext context) => Container(
+        child: Column(
+          children: <Widget>[
+            _signUp(context),
+            Padding(padding: EdgeInsets.only(top: 15)),
+            _signIn(context),
+          ],
+        ),
+      );
+
+  ButtonRoundWidget _signUp(BuildContext context) {
+    return ButtonRoundWidget(
+      child: Text(
+        AppLocalizations.of(context).signUpLower,
+        style: TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
+      ),
+      colorButton: Color.fromRGBO(24, 210, 134, 1),
+      elevetion: 1,
+      height: 60,
+      minWidth: 400,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30),
+      ),
+      onPressed: () {
+        final route = MaterialPageRoute(
+          builder: (context) {
+            return SignInPage();
+          },
+        );
+        Navigator.push(context, route);
+      },
+    );
+  }
+
+  Widget _signIn(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text(
+          AppLocalizations.of(context).haveAccount,
+          style: TextStyle(fontSize: 15),
+        ),
+        Padding(padding: EdgeInsets.only(left: 10)),
+        GestureDetector(
+          onTap: () {
+            final route = MaterialPageRoute(builder: (context) {
+              return SignInPage();
+            });
+            Navigator.push(context, route);
+          },
+          child: Text(
+            AppLocalizations.of(context).signInLower,
+            style: TextStyle(
+              color: Color.fromRGBO(24, 210, 134, 1),
+              fontSize: 15,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
