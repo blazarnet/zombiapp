@@ -20,6 +20,7 @@ class SignInPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
+                  Padding(padding: EdgeInsets.only(top: 20)),
                   Text(
                     AppLocalizations.of(context).signInLower,
                     style: TextStyle(
@@ -178,6 +179,7 @@ class SignInPage extends StatelessWidget {
   Widget _orSignIn(BuildContext context) {
     return Container(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           Divider(
             indent: 50,
@@ -227,9 +229,10 @@ class SignInPage extends StatelessWidget {
 
   ButtonRoundWidget _facebook(BuildContext context) {
     return ButtonRoundWidget(
-      child: Text(
-        'Facebook',
-        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+      child: Container(
+        height: 25,
+        width: 25,
+        child: Image.asset('assets/facebook.png', fit: BoxFit.contain),
       ),
       height: 40,
       minWidth: 120,
@@ -245,9 +248,10 @@ class SignInPage extends StatelessWidget {
 
   ButtonRoundWidget _google(BuildContext context) {
     return ButtonRoundWidget(
-      child: Text(
-        'Google',
-        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+      child: Container(
+        height: 25,
+        width: 25,
+        child: Image.asset('assets/google.png', fit: BoxFit.contain),
       ),
       height: 40,
       minWidth: 120,
