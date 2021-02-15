@@ -9,12 +9,12 @@ import 'package:zombifi_app/generated/l10n.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
-class RegisterPage extends StatefulWidget {
+class SignUpPage extends StatefulWidget {
   @override
-  _RegisterPageState createState() => _RegisterPageState();
+  _SignUpPageState createState() => _SignUpPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _SignUpPageState extends State<SignUpPage> {
   List<String> _codes = ['+52', '+48', '-35', '+15'];
   String _codeSelected = '+52';
   File file;
