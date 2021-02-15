@@ -32,6 +32,7 @@ class _SelectDateWidgetState extends State<SelectDateWidget> {
     height = MediaQuery.of(context).size.height;
     size = Screen(MediaQuery.of(context).size);
     return Container(
+      height: 55,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -50,6 +51,7 @@ class _SelectDateWidgetState extends State<SelectDateWidget> {
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
                 hintText: AppLocalizations.of(context).dateBirth,
+                hintStyle: TextStyle(fontSize: 14),
                 prefixIcon: Icon(Icons.calendar_today, color: Colors.black),
               ),
               onTap: () {
