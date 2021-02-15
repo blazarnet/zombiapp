@@ -5,8 +5,9 @@ class ButtonRoundWidget extends StatefulWidget {
   final String descripcion;
   final double fontSize, elevetion, height, minWidth;
   final FontWeight fontWeight;
-  final Color colorText, colorButton;
+  final Color colorText, colorButton, hoverColor;
   final VoidCallback onPressed;
+  final ShapeBorder shape;
 
   const ButtonRoundWidget({
     this.child,
@@ -15,10 +16,12 @@ class ButtonRoundWidget extends StatefulWidget {
     this.fontWeight,
     this.colorText,
     this.colorButton,
+    this.hoverColor,
     this.elevetion,
     this.height,
     this.minWidth,
     this.onPressed,
+    this.shape,
   });
 
   @override
@@ -43,11 +46,12 @@ class _ButtonRoundWidgetState extends State<ButtonRoundWidget> {
       //       fontWeight: widget.fontWeight,
       //       color: widget.colorText),
       // ),
+      hoverColor: widget.hoverColor,
       color: widget.colorButton,
       elevation: widget.elevetion,
       height: widget.height,
       minWidth: widget.minWidth,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      shape: widget.shape,
     );
   }
 }
