@@ -28,7 +28,7 @@ class SignInPage extends StatelessWidget {
                       fontSize: 23,
                     ),
                   ),
-                  _widgetsLogin(context),
+                  _widgetsSignIn(context),
                 ],
               ),
             ),
@@ -40,7 +40,7 @@ class SignInPage extends StatelessWidget {
 
   //Método que será compuesto por los métodos que serán los que van a componer
   //el body de la vista
-  _widgetsLogin(BuildContext context) => Container(
+  _widgetsSignIn(BuildContext context) => Container(
         child: Form(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -71,7 +71,10 @@ class SignInPage extends StatelessWidget {
     return TextFormFieldWidget(
       controller: null,
       keyboardType: TextInputType.emailAddress,
-      icon: Icons.person_outline_rounded,
+      prefixIcon: Icon(
+        Icons.email_outlined,
+        color: Colors.black,
+      ),
       hintText: 'ejemplo@correo.com',
       lableText: AppLocalizations.of(context).email,
       obscureText: false,
@@ -83,7 +86,11 @@ class SignInPage extends StatelessWidget {
     return TextFormFieldWidget(
       controller: null,
       obscureText: true,
-      icon: Icons.lock_outline_rounded,
+      prefixIcon: Icon(
+        Icons.lock_outline_rounded,
+        color: Colors.black,
+      ),
+      suffix: _lostPassword(context),
       lableText: AppLocalizations.of(context).password,
     );
   }
@@ -92,8 +99,8 @@ class SignInPage extends StatelessWidget {
   _buttons(BuildContext context) => Container(
         child: Column(
           children: <Widget>[
-            Padding(padding: EdgeInsets.only(top: 10)),
-            _lostPassword(context),
+            // Padding(padding: EdgeInsets.only(top: 10)),
+            // // _lostPassword(context),
             Padding(padding: EdgeInsets.only(top: 10)),
             _signIn(context),
             Padding(padding: EdgeInsets.only(top: 25)),
@@ -116,7 +123,7 @@ class SignInPage extends StatelessWidget {
             child: Text(
               AppLocalizations.of(context).forgotPassword,
               style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 10,
                   fontWeight: FontWeight.bold,
                   color: Colors.black),
             ),
@@ -132,17 +139,24 @@ class SignInPage extends StatelessWidget {
       child: Text(
         AppLocalizations.of(context).signInUpper,
         style: TextStyle(
-            fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white),
+          fontSize: 15,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
       ),
       colorButton: Color.fromRGBO(24, 210, 134, 1),
       elevetion: 1,
       height: 60,
       minWidth: 400,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30),
+      ),
       onPressed: () {
-        final route = MaterialPageRoute(builder: (context) {
-          return HomePage();
-        });
+        final route = MaterialPageRoute(
+          builder: (context) {
+            return HomePage();
+          },
+        );
         Navigator.push(context, route);
       },
     );
