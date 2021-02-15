@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rive/rive.dart';
-import 'package:zombifi_app/src/pages/login_page.dart';
+import 'package:zombifi_app/src/pages/sign_in_page.dart';
 
 class AnimationPage extends StatefulWidget {
   @override
@@ -68,7 +68,7 @@ class _AnimationPageState extends State<AnimationPage> {
           _timer.cancel();
           if (_counter == 0) {
             final route = MaterialPageRoute(builder: (context) {
-              return LoginPage();
+              return SignInPage();
             });
             Navigator.pushReplacement(context, route);
             _riveArtboard.remove();
