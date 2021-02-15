@@ -135,10 +135,10 @@ class AppLocalizations {
     );
   }
 
-  /// `Nombres(s)`
+  /// `Nombre(s)`
   String get names {
     return Intl.message(
-      'Nombres(s)',
+      'Nombre(s)',
       name: 'names',
       desc: '',
       args: [],

@@ -46,7 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ipAddress" : MessageLookupByLibrary.simpleMessage("IP Address"),
     "lastName" : MessageLookupByLibrary.simpleMessage("Last name"),
     "nameChip" : MessageLookupByLibrary.simpleMessage("Name"),
-    "names" : MessageLookupByLibrary.simpleMessage("Names(s)"),
+    "names" : MessageLookupByLibrary.simpleMessage("Name(s)"),
     "orSignInWith" : MessageLookupByLibrary.simpleMessage("Or sign in with:"),
     "password" : MessageLookupByLibrary.simpleMessage("Password"),
     "payChip" : MessageLookupByLibrary.simpleMessage("Pay chip"),
