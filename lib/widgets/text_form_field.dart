@@ -120,7 +120,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(30),
         // boxShadow:
       ),
       child: TextFormField(
@@ -133,7 +133,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
         onFieldSubmitted: widget.onFieldSubmitted,
         enableInteractiveSelection: widget.enableInteractiveSelection,
         decoration: InputDecoration(
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
           prefixIcon: Icon(
             widget.icon,
             color: Colors.black,
