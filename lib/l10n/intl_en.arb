@@ -1,6 +1,10 @@
 {
-    "sigIn"               : "SIGN IN",
-    "logIn"               : "LOGIN",
+    "signUpUpper"         : "SIGN UP",
+    "signUpLower"         : "Sign Up",
+    "signInUpper"         : "SIGN IN",
+    "signInLower"         : "Sign In",
+    "dontAccount"         : "Don't have an account?",
+    "orSignInWith"        : "Or sign in with:", 
     "forgotPassword"      : "Forgot my password",
     "uploadPhoto"         : "Upload photo",
     "names"               : "Names(s)",

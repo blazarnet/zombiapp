@@ -1,6 +1,10 @@
 {
-    "sigIn"               : "REGISTRARSE",
-    "logIn"               : "INICIAR SESIÓN",
+    "signUpUpper"         : "REGISTRARSE",
+    "signUpLower"         : "Registrarse",
+    "signInUpper"         : "INICIAR SESIÓN",
+    "signInLower"         : "Iniciar sesión",
+    "dontAccount"         : "¿No tienes una cuenta?",
+    "orSignInWith"        : "O registrate con:", 
     "forgotPassword"      : "Olvidé mi contraseña",
     "uploadPhoto"         : "Subir foto",
     "names"               : "Nombres(s)",

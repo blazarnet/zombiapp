@@ -36,20 +36,60 @@ class AppLocalizations {
   }
 
   /// `REGISTRARSE`
-  String get sigIn {
+  String get signUpUpper {
     return Intl.message(
       'REGISTRARSE',
-      name: 'sigIn',
+      name: 'signUpUpper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Registrarse`
+  String get signUpLower {
+    return Intl.message(
+      'Registrarse',
+      name: 'signUpLower',
       desc: '',
       args: [],
     );
   }
 
   /// `INICIAR SESIÓN`
-  String get logIn {
+  String get signInUpper {
     return Intl.message(
       'INICIAR SESIÓN',
-      name: 'logIn',
+      name: 'signInUpper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Iniciar sesión`
+  String get signInLower {
+    return Intl.message(
+      'Iniciar sesión',
+      name: 'signInLower',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `¿No tienes una cuenta?`
+  String get dontAccount {
+    return Intl.message(
+      '¿No tienes una cuenta?',
+      name: 'dontAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `O registrate con:`
+  String get orSignInWith {
+    return Intl.message(
+      'O registrate con:',
+      name: 'orSignInWith',
       desc: '',
       args: [],
     );
