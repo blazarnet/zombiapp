@@ -39,7 +39,7 @@ class _SelectDateWidgetState extends State<SelectDateWidget> {
           Expanded(
               child: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(30),
               color: Colors.white,
             ),
             child: TextField(
@@ -48,7 +48,7 @@ class _SelectDateWidgetState extends State<SelectDateWidget> {
               controller: _dateBirth,
               decoration: InputDecoration(
                 border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
                 hintText: AppLocalizations.of(context).dateBirth,
                 prefixIcon: Icon(Icons.calendar_today, color: Colors.black),
               ),
