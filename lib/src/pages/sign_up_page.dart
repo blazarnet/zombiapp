@@ -21,31 +21,33 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: Form(
-        child: Padding(
-          padding: EdgeInsets.all(20),
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 30, bottom: 30),
-              child: Column(
-                children: <Widget>[
-                  // Padding(padding: EdgeInsets.only(top: 30)),
-                  Text(
-                    AppLocalizations.of(context).createAccount,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 23,
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Form(
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 30, bottom: 30),
+                child: Column(
+                  children: <Widget>[
+                    // Padding(padding: EdgeInsets.only(top: 30)),
+                    Text(
+                      AppLocalizations.of(context).createAccount,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 23,
+                      ),
                     ),
-                  ),
-                  _widgetSignUp()
-                ],
+                    _widgetSignUp()
+                  ],
+                ),
               ),
             ),
           ),
         ),
       ),
-    ));
+    );
   }
 
   // _background() => Stack(
@@ -135,7 +137,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget _textFormField(BuildContext context) => Container(
         child: Column(
           children: <Widget>[
-            Padding(padding: EdgeInsets.symmetric(vertical: 20)),
+            Padding(padding: EdgeInsets.symmetric(vertical: 10)),
             _textFormsNameComplete(),
             _textFormsData(),
           ],
@@ -164,6 +166,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
   TextFormFieldWidget _names() {
     return TextFormFieldWidget(
+      // height: 50,
       controller: null,
       keyboardType: TextInputType.emailAddress,
       textCapitalization: TextCapitalization.words,
@@ -172,33 +175,37 @@ class _SignUpPageState extends State<SignUpPage> {
         color: Colors.black,
       ),
       hintText: '',
-      lableText: AppLocalizations.of(context).names,
+      labelText: AppLocalizations.of(context).names,
       obscureText: false,
     );
   }
 
   TextFormFieldWidget _lastName() {
     return TextFormFieldWidget(
+      // height: 50,
       width: 180,
       controller: null,
       keyboardType: TextInputType.emailAddress,
       textCapitalization: TextCapitalization.words,
       // icon: Icons.person_outline_rounded,
       hintText: '',
-      lableText: AppLocalizations.of(context).lastName,
+      labelText: AppLocalizations.of(context).lastName,
       obscureText: false,
     );
   }
 
   TextFormFieldWidget _secondLastName() {
     return TextFormFieldWidget(
+      // height: 50,
       width: 180,
+      
       controller: null,
       keyboardType: TextInputType.emailAddress,
       textCapitalization: TextCapitalization.words,
       // icon: Icons.person_outline_rounded,
       hintText: '',
-      lableText: AppLocalizations.of(context).secondLastName,
+      labelText: AppLocalizations.of(context).secondLastName,
+      
       obscureText: false,
     );
   }
@@ -208,20 +215,6 @@ class _SignUpPageState extends State<SignUpPage> {
           children: [
             Padding(padding: EdgeInsets.only(top: 10)),
             _dateBirth(),
-            Padding(padding: EdgeInsets.only(top: 10)),
-            // Row(
-            //   children: <Widget>[
-            //     Column(
-            //       children: <Widget>[
-            //         Expanded(
-            //           child: _dropdownCodes(),
-            //         ),
-            //         _phoneNumber(),
-            //       ],
-            //     )
-            //   ],
-            // ),
-            // _dropdownCodes(),
             Padding(padding: EdgeInsets.only(top: 10)),
             _phoneNumber(),
             // _number(),
@@ -244,7 +237,7 @@ class _SignUpPageState extends State<SignUpPage> {
         color: Colors.black,
       ),
       hintText: 'ejemplo@correo.com',
-      lableText: AppLocalizations.of(context).email,
+      labelText: AppLocalizations.of(context).email,
       obscureText: false,
     );
   }
@@ -263,7 +256,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
   Widget _dropdownCodes() {
     return Container(
-      width: 52,
+      width: 55,
       child: DropdownButton(
         value: _codeSelected,
         items: _getCodes(),
@@ -291,7 +284,7 @@ class _SignUpPageState extends State<SignUpPage> {
         color: Colors.black,
       ),
       hintText: '',
-      lableText: AppLocalizations.of(context).phoneNumber,
+      labelText: AppLocalizations.of(context).phoneNumber,
       obscureText: false,
     );
   }
@@ -309,7 +302,7 @@ class _SignUpPageState extends State<SignUpPage> {
         color: Colors.black,
       ),
       hintText: '',
-      lableText: AppLocalizations.of(context).password,
+      labelText: AppLocalizations.of(context).password,
       obscureText: true,
     );
   }
@@ -320,7 +313,7 @@ class _SignUpPageState extends State<SignUpPage> {
       enableInteractiveSelection: false,
       // icon: Icons.lock_outline_rounded,
       hintText: '',
-      lableText: AppLocalizations.of(context).confirmPassword,
+      labelText: AppLocalizations.of(context).confirmPassword,
       obscureText: true,
     );
   }
