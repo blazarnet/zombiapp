@@ -11,6 +11,7 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Form(
           child: Padding(
@@ -76,7 +77,7 @@ class SignInPage extends StatelessWidget {
         color: Colors.black,
       ),
       hintText: 'ejemplo@correo.com',
-      lableText: AppLocalizations.of(context).email,
+      labelText: AppLocalizations.of(context).email,
       obscureText: false,
     );
   }
@@ -91,7 +92,7 @@ class SignInPage extends StatelessWidget {
         color: Colors.black,
       ),
       suffix: _lostPassword(context),
-      lableText: AppLocalizations.of(context).password,
+      labelText: AppLocalizations.of(context).password,
     );
   }
 
