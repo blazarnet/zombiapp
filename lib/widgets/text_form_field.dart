@@ -30,7 +30,7 @@ class TextFormFieldWidget extends StatefulWidget {
   final String hintText;
   final String helperText;
   final String lableText;
-  final double cursorWidth;
+  final double cursorWidth, height, width;
   final Radius cursorRadius;
   final Color cursorColor;
   final Color defaultBorderColor;
@@ -38,6 +38,7 @@ class TextFormFieldWidget extends StatefulWidget {
   final EdgeInsets scrollPadding;
   final FormFieldValidator<String> validator;
   final ValueChanged<String> onFieldSubmitted;
+  final Widget prefixIcon, prefix, suffix;
 
   final FormFieldSetter<String> onSaved;
 
@@ -71,6 +72,8 @@ class TextFormFieldWidget extends StatefulWidget {
     this.inputFormatters,
     this.enabled,
     this.cursorWidth = 2.0,
+    this.height,
+    this.width,
     this.cursorRadius,
     this.cursorColor,
     this.focusBorderColor,
@@ -78,6 +81,9 @@ class TextFormFieldWidget extends StatefulWidget {
     this.scrollPadding,
     this.validator,
     this.onFieldSubmitted,
+    this.prefixIcon,
+    this.prefix,
+    this.suffix,
   })  : assert(textAlign != null),
         assert(autofocus != null),
         assert(obscureText != null),
@@ -113,11 +119,10 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
 
   @override
   Widget build(BuildContext context) {
-    width = MediaQuery.of(context).size.width;
-    height = MediaQuery.of(context).size.height;
-
     return Container(
       alignment: Alignment.center,
+      height: widget.height,
+      width: widget.width,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(30),
@@ -134,10 +139,9 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
         enableInteractiveSelection: widget.enableInteractiveSelection,
         decoration: InputDecoration(
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-          prefixIcon: Icon(
-            widget.icon,
-            color: Colors.black,
-          ),
+          prefixIcon: widget.prefixIcon,
+          prefix: widget.prefix,
+          suffix: widget.suffix,
           labelText: widget.lableText,
           hintText: widget.hintText,
           helperText: widget.helperText,
