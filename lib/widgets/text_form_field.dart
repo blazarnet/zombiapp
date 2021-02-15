@@ -29,7 +29,8 @@ class TextFormFieldWidget extends StatefulWidget {
   final Color focusBorderColor;
   final String hintText;
   final String helperText;
-  final String lableText;
+  final String labelText;
+  final TextStyle labelStyle;
   final double cursorWidth, height, width;
   final Radius cursorRadius;
   final Color cursorColor;
@@ -60,7 +61,8 @@ class TextFormFieldWidget extends StatefulWidget {
     this.onSaved,
     this.hintText,
     this.helperText,
-    this.lableText,
+    this.labelText,
+    this.labelStyle,
     this.maxLengthEnforced = true,
     this.onChanged,
     this.defaultBorderColor,
@@ -121,7 +123,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      height: widget.height,
+      height: 55,
       width: widget.width,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -142,7 +144,8 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
           prefixIcon: widget.prefixIcon,
           prefix: widget.prefix,
           suffix: widget.suffix,
-          labelText: widget.lableText,
+          labelText: widget.labelText,
+          labelStyle: TextStyle(fontSize: 14),
           hintText: widget.hintText,
           helperText: widget.helperText,
         ),
