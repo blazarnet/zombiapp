@@ -15,6 +15,7 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final double _size = 18;
   List<String> _codes = ['+52', '+48', '-35', '+15'];
   String _codeSelected = '+52';
   File file;
@@ -175,6 +176,7 @@ class _SignUpPageState extends State<SignUpPage> {
       prefixIcon: Icon(
         Icons.person_outline_outlined,
         color: Colors.black,
+        size: _size,
       ),
       hintText: '',
       labelText: AppLocalizations.of(context).names,
@@ -237,6 +239,7 @@ class _SignUpPageState extends State<SignUpPage> {
       prefixIcon: Icon(
         Icons.email_outlined,
         color: Colors.black,
+        size: _size,
       ),
       hintText: 'ejemplo@correo.com',
       labelText: AppLocalizations.of(context).email,
@@ -284,6 +287,7 @@ class _SignUpPageState extends State<SignUpPage> {
       prefixIcon: Icon(
         Icons.phone_iphone_outlined,
         color: Colors.black,
+        size: _size,
       ),
       hintText: '',
       labelText: AppLocalizations.of(context).phoneNumber,
@@ -302,6 +306,7 @@ class _SignUpPageState extends State<SignUpPage> {
       prefixIcon: Icon(
         Icons.lock_outline_rounded,
         color: Colors.black,
+        size: _size,
       ),
       hintText: '',
       labelText: AppLocalizations.of(context).password,

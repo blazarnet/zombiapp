@@ -9,6 +9,7 @@ import 'package:zombifi_app/widgets/button_round.dart';
 import 'package:zombifi_app/widgets/text_form_field.dart';
 
 class SignInPage extends StatelessWidget {
+  final double _size = 18;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,6 +77,7 @@ class SignInPage extends StatelessWidget {
       prefixIcon: Icon(
         Icons.email_outlined,
         color: Colors.black,
+        size: _size,
       ),
       hintText: 'ejemplo@correo.com',
       labelText: AppLocalizations.of(context).email,
@@ -91,6 +93,7 @@ class SignInPage extends StatelessWidget {
       prefixIcon: Icon(
         Icons.lock_outline_rounded,
         color: Colors.black,
+        size: _size,
       ),
       suffix: _lostPassword(context),
       labelText: AppLocalizations.of(context).password,

@@ -52,7 +52,11 @@ class _SelectDateWidgetState extends State<SelectDateWidget> {
                     OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
                 hintText: AppLocalizations.of(context).dateBirth,
                 hintStyle: TextStyle(fontSize: 14),
-                prefixIcon: Icon(Icons.calendar_today, color: Colors.black),
+                prefixIcon: Icon(
+                  Icons.calendar_today,
+                  color: Colors.black,
+                  size: 18,
+                ),
               ),
               onTap: () {
                 FocusScope.of(context).requestFocus(new FocusNode());
