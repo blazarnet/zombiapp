@@ -117,7 +117,7 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30),
       ),
-      onPressed: () {},
+      onPressed: _onRechargePressed,
     );
   }
 
@@ -153,7 +153,7 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
               _buy(),
               _buy(),
               _buy(),
-              _buy(),
+              // _buy(),
             ],
           ),
         ],
@@ -190,6 +190,107 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
           )
         ],
       ),
+    );
+  }
+
+  void _onRechargePressed() {
+    showModalBottomSheet(
+      // shape: ShapeBorder(BorderRadius.only()),
+      context: context,
+      elevation: 0,
+      barrierColor: Color.fromRGBO(117, 117, 117, .5),
+      builder: (context) {
+        return Container(
+          color: Color.fromRGBO(117, 117, 117, .5),
+          // color: Colors.transparent,
+          height: 400,
+          child: Container(
+            child: Column(
+              children: <Widget>[
+                Positioned(top: -50, right: 50, child: _iconCredit()),
+                _creditButtons(),
+              ],
+            ),
+            decoration: BoxDecoration(
+              color: Theme.of(context).canvasColor,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _iconCredit() {
+    return Container(
+      // color: Colors.red,
+      height: 60,
+      width: 90,
+      child: Image.asset('assets/money-check-alt-solid.png'),
+    );
+  }
+
+  Widget _creditButtons() {
+    return Container(
+      // color: Colors.red,
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: <Widget>[
+            Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                border: Border.all(
+                  color: Colors.grey,
+                  width: 1.5,
+                ),
+              ),
+              child: _credit(),
+            ),
+            Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                border: Border.all(
+                  color: Colors.grey,
+                  width: 1.5,
+                ),
+              ),
+              child: _credit(),
+            ),
+            Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                border: Border.all(
+                  color: Colors.grey,
+                  width: 1.5,
+                ),
+              ),
+              child: _credit(),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  ButtonRoundWidget _credit() {
+    return ButtonRoundWidget(
+      child: Text(
+        '\$150',
+        style: TextStyle(),
+      ),
+      height: 60,
+      minWidth: 270,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30),
+      ),
+      onPressed: () {},
     );
   }
 }
