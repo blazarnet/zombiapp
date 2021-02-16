@@ -145,7 +145,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
           prefix: widget.prefix,
           suffix: widget.suffix,
           labelText: widget.labelText,
-          labelStyle: TextStyle(fontSize: 14),
+          labelStyle: TextStyle(fontSize: 12.8),
           hintText: widget.hintText,
           helperText: widget.helperText,
         ),
