@@ -7,3 +7,4 @@ List<Color> colorGradient = <Color>[
 ];
 
 Color colorTextSign = Color.fromRGBO(8, 104, 37, 1);
+Color colorGreen = Color.fromRGBO(0, 185, 99, 1);
