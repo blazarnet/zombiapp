@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/home_page.dart';
 import 'package:zombifi_app/src/pages/sign_up_page.dart';
+import 'package:zombifi_app/utils/utils.dart';
 
 //Importaciones propias
 import 'package:zombifi_app/widgets/button_round.dart';
@@ -103,7 +104,13 @@ class SignInPage extends StatelessWidget {
             // Padding(padding: EdgeInsets.only(top: 10)),
             // // _lostPassword(context),
             Padding(padding: EdgeInsets.only(top: 10)),
-            _signIn(context),
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  gradient: LinearGradient(
+                      colors: colorGradient, end: Alignment.topLeft)),
+              child: _signIn(context),
+            ),
             Padding(padding: EdgeInsets.only(top: 25)),
             _signUp(context),
             Padding(padding: EdgeInsets.only(top: 50)),
@@ -145,7 +152,6 @@ class SignInPage extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      colorButton: Color.fromRGBO(24, 210, 134, 1),
       elevetion: 1,
       height: 60,
       minWidth: 400,
