@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/status_tab.dart';
+import 'package:zombifi_app/utils/colors.dart';
 
 class CardStatusOnWidget extends StatefulWidget {
   @override
@@ -26,10 +27,10 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
           // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
-              gradient: LinearGradient(colors: <Color>[
-                Color.fromRGBO(7, 227, 131, .80),
-                Color.fromRGBO(0, 126, 70, .70),
-              ], end: Alignment.topLeft)
+              gradient: LinearGradient(
+                colors: colorGradient,
+                end: Alignment.topLeft,
+              )
               // gradient: LinearGradient
               ),
           // color: Colors.greenAccent,
