@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
+import 'package:zombifi_app/src/pages/buy_credit_page.dart';
 import 'package:zombifi_app/widgets/card_chips.dart';
 import 'package:zombifi_app/widgets/card_map_widget.dart';
 import 'package:zombifi_app/widgets/card_status_on.dart';
@@ -26,10 +27,7 @@ class _HomePageState extends State<HomePage> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10),
-            child: Icon(
-              Icons.notifications,
-              color: Color.fromRGBO(112, 112, 112, 1),
-            ),
+            child: _myCredit(),
           )
         ],
         backgroundColor: Colors.white,
@@ -82,6 +80,50 @@ class _HomePageState extends State<HomePage> {
         child: Text(
           'AM',
           style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+  }
+
+  Widget _myCredit() {
+    return GestureDetector(
+      onTap: () {
+        final route = MaterialPageRoute(
+          builder: (context) {
+            return BuyCreditPage();
+          },
+        );
+        Navigator.push(context, route);
+      },
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              AppLocalizations.of(context).myCredit,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Container(
+                  height: 15,
+                  width: 15,
+                  child: Image.asset('assets/coin-stack.png'),
+                ),
+                Text(
+                  " \$200.00",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              ],
+            )
+          ],
         ),
       ),
     );
