@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/src/pages/sign_in_page.dart';
+import 'package:zombifi_app/utils/colors.dart';
 import 'package:zombifi_app/widgets/button_round.dart';
 
 import 'package:zombifi_app/widgets/select_date.dart';
@@ -28,7 +29,7 @@ class _SignUpPageState extends State<SignUpPage> {
             padding: EdgeInsets.all(20),
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.only(top: 30, bottom: 30),
+                padding: const EdgeInsets.only(top: 40, bottom: 30),
                 child: Column(
                   children: <Widget>[
                     // Padding(padding: EdgeInsets.only(top: 30)),
@@ -39,6 +40,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         fontSize: 23,
                       ),
                     ),
+                    Padding(padding: EdgeInsets.only(top: 15)),
                     _widgetSignUp()
                   ],
                 ),
@@ -198,14 +200,14 @@ class _SignUpPageState extends State<SignUpPage> {
     return TextFormFieldWidget(
       // height: 50,
       width: 180,
-      
+
       controller: null,
       keyboardType: TextInputType.emailAddress,
       textCapitalization: TextCapitalization.words,
       // icon: Icons.person_outline_rounded,
       hintText: '',
       labelText: AppLocalizations.of(context).secondLastName,
-      
+
       obscureText: false,
     );
   }
@@ -218,7 +220,7 @@ class _SignUpPageState extends State<SignUpPage> {
             Padding(padding: EdgeInsets.only(top: 10)),
             _phoneNumber(),
             // _number(),
-            Padding(padding: EdgeInsets.only(top: 10)),
+            Padding(padding: EdgeInsets.only(top: 25)),
             _email(),
             Padding(padding: EdgeInsets.only(top: 10)),
             _password(),
@@ -321,7 +323,16 @@ class _SignUpPageState extends State<SignUpPage> {
   _buttons(BuildContext context) => Container(
         child: Column(
           children: <Widget>[
-            _signUp(context),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                gradient: LinearGradient(
+                  colors: colorGradient,
+                  end: Alignment.topLeft,
+                ),
+              ),
+              child: _signUp(context),
+            ),
             Padding(padding: EdgeInsets.only(top: 15)),
             _signIn(context),
           ],
@@ -338,7 +349,6 @@ class _SignUpPageState extends State<SignUpPage> {
           color: Colors.white,
         ),
       ),
-      colorButton: Color.fromRGBO(24, 210, 134, 1),
       elevetion: 1,
       height: 60,
       minWidth: 400,
@@ -375,7 +385,7 @@ class _SignUpPageState extends State<SignUpPage> {
           child: Text(
             AppLocalizations.of(context).signInLower,
             style: TextStyle(
-              color: Color.fromRGBO(24, 210, 134, 1),
+              color: colorTextSign,
               fontSize: 15,
             ),
           ),
