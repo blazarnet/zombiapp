@@ -245,6 +245,46 @@ class AppLocalizations {
     );
   }
 
+  /// `Mi crédito`
+  String get myCredit {
+    return Intl.message(
+      'Mi crédito',
+      name: 'myCredit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Comprar crédito`
+  String get buyCredit {
+    return Intl.message(
+      'Comprar crédito',
+      name: 'buyCredit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recargar`
+  String get recharge {
+    return Intl.message(
+      'Recargar',
+      name: 'recharge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mis compras`
+  String get myShopping {
+    return Intl.message(
+      'Mis compras',
+      name: 'myShopping',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Estado de ficha actual`
   String get statusChip {
     return Intl.message(

@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "buyChips" : MessageLookupByLibrary.simpleMessage("Comprar fichas"),
+    "buyCredit" : MessageLookupByLibrary.simpleMessage("Comprar crédito"),
     "bytesDownload" : MessageLookupByLibrary.simpleMessage("bytes Descarga"),
     "bytesUpload" : MessageLookupByLibrary.simpleMessage("bytes Subida"),
     "cash" : MessageLookupByLibrary.simpleMessage("Efectivo"),
@@ -45,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "hello" : MessageLookupByLibrary.simpleMessage("Hola"),
     "ipAddress" : MessageLookupByLibrary.simpleMessage("Dirección IP"),
     "lastName" : MessageLookupByLibrary.simpleMessage("Primer apellido"),
+    "myCredit" : MessageLookupByLibrary.simpleMessage("Mi crédito"),
+    "myShopping" : MessageLookupByLibrary.simpleMessage("Mis compras"),
     "nameChip" : MessageLookupByLibrary.simpleMessage("Nombre"),
     "names" : MessageLookupByLibrary.simpleMessage("Nombre(s)"),
     "orSignInWith" : MessageLookupByLibrary.simpleMessage("O registrate con:"),
@@ -53,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "paymentMethod" : MessageLookupByLibrary.simpleMessage("Método de pago"),
     "phoneNumber" : MessageLookupByLibrary.simpleMessage("Número de celular"),
     "promotions" : MessageLookupByLibrary.simpleMessage("Promociones"),
+    "recharge" : MessageLookupByLibrary.simpleMessage("Recargar"),
     "reconnect" : MessageLookupByLibrary.simpleMessage("Reconectar"),
     "secondLastName" : MessageLookupByLibrary.simpleMessage("Segundo apellido"),
     "signInLower" : MessageLookupByLibrary.simpleMessage("Iniciar Sesión"),

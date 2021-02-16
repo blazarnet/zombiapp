@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "buyChips" : MessageLookupByLibrary.simpleMessage("Buy chips"),
+    "buyCredit" : MessageLookupByLibrary.simpleMessage("Buy credir"),
     "bytesDownload" : MessageLookupByLibrary.simpleMessage("bytes Download"),
     "bytesUpload" : MessageLookupByLibrary.simpleMessage("bytes Upload"),
     "cash" : MessageLookupByLibrary.simpleMessage("Cash"),
@@ -45,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "hello" : MessageLookupByLibrary.simpleMessage("Hello"),
     "ipAddress" : MessageLookupByLibrary.simpleMessage("IP Address"),
     "lastName" : MessageLookupByLibrary.simpleMessage("Last name"),
+    "myCredit" : MessageLookupByLibrary.simpleMessage("My credit"),
+    "myShopping" : MessageLookupByLibrary.simpleMessage("My shopping"),
     "nameChip" : MessageLookupByLibrary.simpleMessage("Name"),
     "names" : MessageLookupByLibrary.simpleMessage("Name(s)"),
     "orSignInWith" : MessageLookupByLibrary.simpleMessage("Or sign in with:"),
@@ -53,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "paymentMethod" : MessageLookupByLibrary.simpleMessage("Payment method"),
     "phoneNumber" : MessageLookupByLibrary.simpleMessage("Phone number"),
     "promotions" : MessageLookupByLibrary.simpleMessage("Promotions"),
+    "recharge" : MessageLookupByLibrary.simpleMessage("Recharge"),
     "reconnect" : MessageLookupByLibrary.simpleMessage("Reconnect"),
     "secondLastName" : MessageLookupByLibrary.simpleMessage("Second last name"),
     "signInLower" : MessageLookupByLibrary.simpleMessage("Sign In"),
