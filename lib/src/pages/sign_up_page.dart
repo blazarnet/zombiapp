@@ -390,7 +390,7 @@ class _SignUpPageState extends State<SignUpPage> {
           child: Text(
             AppLocalizations.of(context).signInLower,
             style: TextStyle(
-              color: colorTextSign,
+              color: colorGreen,
               fontSize: 15,
             ),
           ),

@@ -111,7 +111,10 @@ class SignInPage extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
                   gradient: LinearGradient(
-                      colors: colorGradient, end: Alignment.topLeft)),
+                    colors: colorGradient,
+                    tileMode: TileMode.clamp,
+                    end: Alignment.topLeft,
+                  )),
               child: _signIn(context),
             ),
             Padding(padding: EdgeInsets.only(top: 25)),
@@ -191,7 +194,7 @@ class SignInPage extends StatelessWidget {
           child: Text(
             AppLocalizations.of(context).signUpLower,
             style: TextStyle(
-              color: Color.fromRGBO(24, 210, 134, 1),
+              color: colorGreen,
               fontSize: 15,
             ),
           ),
