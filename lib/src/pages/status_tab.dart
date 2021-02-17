@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
+import 'package:zombifi_app/utils/colors.dart';
 import 'package:zombifi_app/widgets/button_round.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
@@ -16,221 +17,225 @@ class StatusTab extends StatelessWidget {
     final double _iconSize = 18;
     final double _indent = 35;
 
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 15),
-          child: Container(
-            width: size.width * 1,
-            height: size.height * 1,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(25), topRight: Radius.circular(25)),
-              gradient: LinearGradient(colors: <Color>[
-                Color.fromRGBO(7, 227, 131, .80),
-                Color.fromRGBO(0, 126, 70, .80)
-              ], begin: Alignment.topCenter),
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 5),
+        child: Container(
+          width: size.width * 1,
+          height: size.height * 1,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(25),
+              topRight: Radius.circular(25),
             ),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 25, right: 25),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    SafeArea(
-                        child: Container(
-                      height: size.height * .04,
-                    )),
-                    Padding(padding: EdgeInsets.all(7)),
-                    Text(
-                      AppLocalizations.of(context).statusChip,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 7)),
-                    SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [_progressBar(context)],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Column(
-                                children: <Widget>[
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Row(
-                                        children: <Widget>[
-                                          Icon(
-                                            Icons.wifi_tethering_rounded,
-                                            color: Colors.white,
-                                            size: _iconSize,
-                                          ),
-                                          Text(
-                                              "${AppLocalizations.of(context).nameChip}: ",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: _textSize)),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: <Widget>[
-                                          Icon(
-                                            Icons.watch_later_outlined,
-                                            color: Colors.white,
-                                            size: _iconSize,
-                                          ),
-                                          Text(
-                                              "${AppLocalizations.of(context).duration}: ",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: _textSize)),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: <Widget>[
-                                          Icon(
-                                            Icons.arrow_circle_down_outlined,
-                                            color: Colors.white,
-                                            size: _iconSize,
-                                          ),
-                                          Text(
-                                              "${AppLocalizations.of(context).download}: ",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: _textSize)),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: <Widget>[
-                                          Icon(
-                                            Icons.arrow_circle_up_outlined,
-                                            color: Colors.white,
-                                            size: _iconSize,
-                                          ),
-                                          Text(
-                                              "${AppLocalizations.of(context).upload}: ",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: _textSize)),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  // SvgPicture.asset(
-                                  //   'assets/icons/tag.svg',
-                                  //   color: Colors.white,
-                                  // ),
-
-                                  Text('Basic 15',
-                                      style: TextStyle(
+            gradient: LinearGradient(
+              colors: colorGradient,
+              begin: Alignment.topCenter,
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 25, right: 25),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  SafeArea(
+                      child: Container(
+                    height: size.height * .04,
+                  )),
+                  Padding(padding: EdgeInsets.all(7)),
+                  Text(
+                    AppLocalizations.of(context).statusChip,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 7)),
+                  SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [_progressBar(context)],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Row(
+                                      children: <Widget>[
+                                        Icon(
+                                          Icons.wifi_tethering_rounded,
                                           color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: _textSize)),
-                                  Text('1h',
-                                      style: TextStyle(
+                                          size: _iconSize,
+                                        ),
+                                        Text(
+                                            "${AppLocalizations.of(context).nameChip}: ",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: _textSize)),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: <Widget>[
+                                        Icon(
+                                          Icons.watch_later_outlined,
                                           color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: _textSize)),
-                                  Text('2Mbps',
-                                      style: TextStyle(
+                                          size: _iconSize,
+                                        ),
+                                        Text(
+                                            "${AppLocalizations.of(context).duration}: ",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: _textSize)),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: <Widget>[
+                                        Icon(
+                                          Icons.arrow_circle_down_outlined,
                                           color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: _textSize)),
-                                  Text('1Mbps',
-                                      style: TextStyle(
+                                          size: _iconSize,
+                                        ),
+                                        Text(
+                                            "${AppLocalizations.of(context).download}: ",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: _textSize)),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: <Widget>[
+                                        Icon(
+                                          Icons.arrow_circle_up_outlined,
                                           color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: _textSize))
-                                ],
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: Divider(
-                              color: Colors.white,
-                              indent: _indent,
-                              endIndent: _indent,
+                                          size: _iconSize,
+                                        ),
+                                        Text(
+                                            "${AppLocalizations.of(context).upload}: ",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: _textSize)),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                // SvgPicture.asset(
+                                //   'assets/icons/tag.svg',
+                                //   color: Colors.white,
+                                // ),
+
+                                Text('Basic 15',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: _textSize)),
+                                Text('1h',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: _textSize)),
+                                Text('2Mbps',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: _textSize)),
+                                Text('1Mbps',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: _textSize))
+                              ],
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Divider(
+                            color: Colors.white,
+                            indent: _indent,
+                            endIndent: _indent,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: <Widget>[
-                                  Text(
-                                      "${AppLocalizations.of(context).ipAddress}: ",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: _textSize)),
-                                  Text(
-                                      "${AppLocalizations.of(context).connectionTime}: ",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: _textSize)),
-                                  Text(
-                                      "${AppLocalizations.of(context).bytesUpload}: ",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: _textSize)),
-                                  Text(
-                                      "${AppLocalizations.of(context).bytesDownload}: ",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: _textSize))
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text('192.168.88.123',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: _textSize)),
-                                  Text('30m',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: _textSize)),
-                                  Text('1499 B',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: _textSize)),
-                                  Text('6.5 KiB',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: _textSize))
-                                ],
-                              ),
-                            ],
-                          ),
-                          Padding(padding: EdgeInsets.only(top: 30)),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [_disconect(context)],
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: <Widget>[
+                                Text(
+                                    "${AppLocalizations.of(context).ipAddress}: ",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: _textSize)),
+                                Text(
+                                    "${AppLocalizations.of(context).connectionTime}: ",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: _textSize)),
+                                Text(
+                                    "${AppLocalizations.of(context).bytesUpload}: ",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: _textSize)),
+                                Text(
+                                    "${AppLocalizations.of(context).bytesDownload}: ",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: _textSize))
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text('192.168.88.123',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: _textSize)),
+                                Text('30m',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: _textSize)),
+                                Text('1499 B',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: _textSize)),
+                                Text('6.5 KiB',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: _textSize))
+                              ],
+                            ),
+                          ],
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 30)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 15.0),
+                              child: _disconect(context),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  )
+                ],
               ),
             ),
           ),
