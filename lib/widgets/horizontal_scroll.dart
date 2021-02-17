@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
+import 'package:zombifi_app/src/pages/buy_chips_page.dart';
 
 class HorizontalScrollWidget extends StatefulWidget {
   final List<Widget> children;
@@ -19,9 +20,19 @@ class _HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Text(
-                AppLocalizations.of(context).buyChips,
-                style: TextStyle(fontSize: 16),
+              GestureDetector(
+                onTap: () {
+                  final route = MaterialPageRoute(
+                    builder: (context) {
+                      return BuyChipsPage();
+                    },
+                  );
+                  Navigator.push(context, route);
+                },
+                child: Text(
+                  AppLocalizations.of(context).buyChips,
+                  style: TextStyle(fontSize: 16),
+                ),
               ),
               Icon(Icons.arrow_forward_ios_rounded)
             ],
