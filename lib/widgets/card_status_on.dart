@@ -13,12 +13,7 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return FlatButton(
-      onPressed: () {
-        final route = MaterialPageRoute(builder: (context) {
-          return StatusTab();
-        });
-        Navigator.push(context, route);
-      },
+      onPressed: _onCardPressed,
       child: Card(
         elevation: 15,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
@@ -29,6 +24,7 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
               borderRadius: BorderRadius.circular(25),
               gradient: LinearGradient(
                 colors: colorGradient,
+                tileMode: TileMode.clamp,
                 end: Alignment.topLeft,
               )
               // gradient: LinearGradient
@@ -240,6 +236,25 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
           ),
         ),
       ),
+    );
+  }
+
+  void _onCardPressed() {
+    showModalBottomSheet(
+      context: context,
+      elevation: 0,
+      barrierColor: colorBarrier,
+      builder: (context) {
+        final size = MediaQuery.of(context).size;
+        return Container(
+          height: 1000,
+          // height: size.height * 1,
+          child: Container(
+            color: colorBarrier,
+            child: StatusTab(),
+          ),
+        );
+      },
     );
   }
 }
