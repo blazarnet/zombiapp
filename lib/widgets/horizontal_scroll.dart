@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
-import 'package:zombifi_app/src/pages/buy_chips_page.dart';
+import 'package:zombifi_app/src/pages/chips_page.dart';
 
 class HorizontalScrollWidget extends StatefulWidget {
   final List<Widget> children;
@@ -24,7 +24,7 @@ class _HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
                 onTap: () {
                   final route = MaterialPageRoute(
                     builder: (context) {
-                      return BuyChipsPage();
+                      return ChipsPage();
                     },
                   );
                   Navigator.push(context, route);
