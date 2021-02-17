@@ -198,11 +198,10 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
       // shape: ShapeBorder(BorderRadius.only()),
       context: context,
       elevation: 0,
-      barrierColor: Color.fromRGBO(117, 117, 117, .5),
+      barrierColor: colorBarrier,
       builder: (context) {
         return Container(
-          color: Color.fromRGBO(117, 117, 117, .5),
-          // color: Colors.transparent,
+          color: colorBarrier,
           height: 400,
           child: Container(
             child: Column(
