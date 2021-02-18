@@ -38,26 +38,118 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-          child: SingleChildScrollView(
+          child: Container(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(top: 7),
-                  child: Text(
-                    AppLocalizations.of(context).buyCredit,
-                    style: TextStyle(fontSize: 25),
+                Container(
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(top: 7, bottom: 7),
+                            child: Text(
+                              AppLocalizations.of(context).buyCredit,
+                              style: TextStyle(fontSize: 25),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        height: 60,
+                        width: 60,
+                        child: Image.asset('assets/coin-stack.png'),
+                      ),
+                      Padding(padding: EdgeInsets.only(top: 10)),
+                      Text(
+                        AppLocalizations.of(context).myCredit,
+                        style: TextStyle(
+                          fontSize: _fontSize,
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.only(top: 7)),
+                      Text(
+                        '\$200.00',
+                        style: TextStyle(
+                          fontSize: _fontSize,
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.only(top: 10)),
+                      _recharge(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            AppLocalizations.of(context).myShopping,
+                            style: TextStyle(
+                              fontSize: _fontSize,
+                            ),
+                          ),
+                          Icon(
+                            Icons.format_indent_decrease,
+                            size: 25,
+                          )
+                        ],
+                      ),
+                    ],
                   ),
                 ),
                 Container(
                   width: size.width * 1,
                   color: Colors.white,
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    padding: EdgeInsets.symmetric(horizontal: 5),
                     child: Column(
                       children: <Widget>[
-                        _myCredit(),
+                        Container(
+                          width: size.width * 1,
+                          height: size.height * .45,
+                          child: ListView(
+                            scrollDirection: Axis.vertical,
+                            shrinkWrap: true,
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                child: _buy(),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                child: _buy(),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                child: _buy(),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                child: _buy(),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                child: _buy(),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                child: _buy(),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                child: _buy(),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                child: _buy(),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                child: _buy(),
+                              ),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -66,39 +158,6 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _myCredit() {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      child: Column(
-        children: <Widget>[
-          Container(
-            height: 60,
-            width: 60,
-            child: Image.asset('assets/coin-stack.png'),
-          ),
-          Padding(padding: EdgeInsets.only(top: 10)),
-          Text(
-            AppLocalizations.of(context).myCredit,
-            style: TextStyle(
-              fontSize: _fontSize,
-            ),
-          ),
-          Padding(padding: EdgeInsets.only(top: 7)),
-          Text(
-            '\$200.00',
-            style: TextStyle(
-              fontSize: _fontSize,
-            ),
-          ),
-          Padding(padding: EdgeInsets.only(top: 10)),
-          _recharge(),
-          Padding(padding: EdgeInsets.only(top: 25)),
-          _myShopping(context),
-        ],
       ),
     );
   }
@@ -118,46 +177,6 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
         borderRadius: BorderRadius.circular(30),
       ),
       onPressed: _onRechargePressed,
-    );
-  }
-
-  Widget _myShopping(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return Container(
-      height: size.height * .58,
-      child: Column(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Text(
-                AppLocalizations.of(context).myShopping,
-                style: TextStyle(
-                  fontSize: _fontSize,
-                ),
-              ),
-              Icon(
-                Icons.format_indent_decrease,
-                size: 25,
-              )
-            ],
-          ),
-          Padding(padding: EdgeInsets.only(top: 20)),
-          ListView(
-            shrinkWrap: true,
-            physics: ScrollPhysics(),
-            children: <Widget>[
-              _buy(),
-              _buy(),
-              _buy(),
-              _buy(),
-              _buy(),
-              _buy(),
-              // _buy(),
-            ],
-          ),
-        ],
-      ),
     );
   }
 
