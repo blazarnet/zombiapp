@@ -3,9 +3,10 @@ import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/buy_credit_page.dart';
 import 'package:zombifi_app/widgets/card_chips.dart';
 import 'package:zombifi_app/widgets/card_map_widget.dart';
-import 'package:zombifi_app/widgets/card_status_on.dart';
+import 'package:zombifi_app/widgets/card_paused.dart';
+import 'package:zombifi_app/widgets/card_connect.dart';
+import 'package:zombifi_app/widgets/card_expired.dart';
 import 'package:zombifi_app/widgets/horizontal_scroll.dart';
-import 'package:zombifi_app/widgets/horizontal_scroll_promo.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -51,15 +52,15 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.only(top: 20, bottom: 20),
                   child: Column(
                     children: <Widget>[
-                      _statusOnWidget(),
+                      _statusConnect(),
+                      // _statusDisconnect(),
+                      // _statusOff(),
                       Padding(
                         padding: EdgeInsets.only(top: 20),
                       ),
                       _cardMapWidget(),
                       Padding(padding: EdgeInsets.only(top: 20)),
                       _scrollWidgetChips(context),
-                      Padding(padding: EdgeInsets.only(top: 20)),
-                      _scrollWidgetPromotions(context),
                     ],
                   ),
                 ),
@@ -160,8 +161,16 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  CardStatusOnWidget _statusOnWidget() {
-    return CardStatusOnWidget();
+  CardConnectWidget _statusConnect() {
+    return CardConnectWidget();
+  }
+
+  CardPausedWidget _statusDisconnect() {
+    return CardPausedWidget();
+  }
+
+  CardExpiredWidget _statusOff() {
+    return CardExpiredWidget();
   }
 
   CardMapWidget _cardMapWidget() {
@@ -186,30 +195,6 @@ class _HomePageState extends State<HomePage> {
         Padding(
           padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
           child: _cardChips(context),
-        ),
-      ],
-    );
-  }
-
-  HorizontalScrollPromoWidget _scrollWidgetPromotions(BuildContext context) {
-    return HorizontalScrollPromoWidget(
-      children: <Widget>[
-        Padding(
-          // padding: const EdgeInsets.all(3.0),
-          padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
-          child: _cardPromotions(context),
-        ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
-          child: _cardPromotions(context),
-        ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
-          child: _cardPromotions(context),
-        ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
-          child: _cardPromotions(context),
         ),
       ],
     );
@@ -338,28 +323,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               )
             ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  CardChipsWidget _cardPromotions(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return CardChipsWidget(
-      elevation: 10,
-      child: Container(
-        child: FlatButton(
-          onPressed: () {},
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-          child: Container(
-            width: size.width * 0.52,
-            child: Image(
-              fit: BoxFit.fill,
-              image: NetworkImage(
-                  "https://image.freepik.com/free-vector/flat-cartoon-quick-rocket-rocketship-launch-from-mobile-phone-cellphone_101884-411.jpg"),
-            ),
           ),
         ),
       ),
