@@ -68,11 +68,11 @@ class _ChipsPageState extends State<ChipsPage> {
                             shrinkWrap: true,
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
                                 child: _cardChips(context),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
                                 child: _cardChips1(context),
                               ),
                             ],
