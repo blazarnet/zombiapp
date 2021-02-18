@@ -9,10 +9,10 @@ class FullScreenMap extends StatefulWidget {
 
 class _FullScreenMapState extends State<FullScreenMap> {
   MapboxMapController mapController;
-  final center = LatLng(21.00314054128376, -89.69979878720912);
-  // String selectedStyle = 'mapbox://styles/alanmar11/ckl1celhn0c0c17pt5jntwcff';
-  // final obscureStyle = 'mapbox://styles/alanmar11/ckl1cp64j0cbb17mlevc9y4zj';
-  final streetStyle = 'mapbox://styles/alanmar11/ckl1celhn0c0c17pt5jntwcff';
+  final center = LatLng(20.966997449381108, -89.6241699816832);
+  String selectedStyle = 'mapbox://styles/alanmar11/cklb4aprc0noh17nwrtprqp1c';
+  final obscureStyle = 'mapbox://styles/alanmar11/cklb4fgdm2ivi17nxf7nh8ga8';
+  final streetStyle = 'mapbox://styles/alanmar11/cklb4aprc0noh17nwrtprqp1c';
 
   void _onMapCreated(MapboxMapController controller) {
     mapController = controller;
@@ -32,22 +32,6 @@ class _FullScreenMapState extends State<FullScreenMap> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
-        //Symbols
-        // FloatingActionButton(
-        //   child: Icon(Icons.emoji_symbols_outlined),
-        //   onPressed: () {
-        //     mapController.addSymbol(
-        //       SymbolOptions(
-        //         geometry: center,
-        //         // iconSize: 3,
-        //         iconImage: 'attraction-15',
-        //         textField: 'Blazar Networks',
-        //         // textOffset: Offset(0, 2),
-        //       ),
-        //     );
-        //   },
-        // ),
-        // SizedBox(height: 5),
         //ZoomIn
         FloatingActionButton(
           child: Icon(Icons.zoom_in),
@@ -64,24 +48,24 @@ class _FullScreenMapState extends State<FullScreenMap> {
           },
         ),
         SizedBox(height: 5),
-        // FloatingActionButton(
-        //   child: Icon(Icons.add_to_home_screen),
-        //   onPressed: () {
-        //     if (selectedStyle == streetStyle) {
-        //       selectedStyle = obscureStyle;
-        //     } else {
-        //       selectedStyle = streetStyle;
-        //     }
-        //     setState(() {});
-        //   },
-        // )
+        FloatingActionButton(
+          child: Icon(Icons.add_to_home_screen),
+          onPressed: () {
+            if (selectedStyle == streetStyle) {
+              selectedStyle = obscureStyle;
+            } else {
+              selectedStyle = streetStyle;
+            }
+            setState(() {});
+          },
+        )
       ],
     );
   }
 
   MapboxMap createMap() {
     return MapboxMap(
-      styleString: streetStyle,
+      styleString: selectedStyle,
       onMapCreated: _onMapCreated,
       initialCameraPosition: CameraPosition(
         target: center,
