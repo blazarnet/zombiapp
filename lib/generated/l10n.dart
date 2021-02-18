@@ -315,11 +315,81 @@ class AppLocalizations {
     );
   }
 
-  /// `Subida`
+  /// `Carga`
   String get upload {
     return Intl.message(
-      'Subida',
+      'Carga',
       name: 'upload',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Créditos ZombiFi`
+  String get zombifiCredits {
+    return Intl.message(
+      'Créditos ZombiFi',
+      name: 'zombifiCredits',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tipo de ficha`
+  String get chipType {
+    return Intl.message(
+      'Tipo de ficha',
+      name: 'chipType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tiempo de actividad`
+  String get activityTime {
+    return Intl.message(
+      'Tiempo de actividad',
+      name: 'activityTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Velocidad de carga`
+  String get loadingSpeed {
+    return Intl.message(
+      'Velocidad de carga',
+      name: 'loadingSpeed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Velocidad de descarga`
+  String get downloadSpeed {
+    return Intl.message(
+      'Velocidad de descarga',
+      name: 'downloadSpeed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Comprar`
+  String get buy {
+    return Intl.message(
+      'Comprar',
+      name: 'buy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pagar`
+  String get pay {
+    return Intl.message(
+      'Pagar',
+      name: 'pay',
       desc: '',
       args: [],
     );
@@ -345,10 +415,10 @@ class AppLocalizations {
     );
   }
 
-  /// `Subida restante`
+  /// `Carga restante`
   String get uploadRemaining {
     return Intl.message(
-      'Subida restante',
+      'Carga restante',
       name: 'uploadRemaining',
       desc: '',
       args: [],
@@ -425,10 +495,10 @@ class AppLocalizations {
     );
   }
 
-  /// `bytes Subida`
+  /// `bytes Carga`
   String get bytesUpload {
     return Intl.message(
-      'bytes Subida',
+      'bytes Carga',
       name: 'bytesUpload',
       desc: '',
       args: [],
@@ -445,11 +515,21 @@ class AppLocalizations {
     );
   }
 
-  /// `Desconectar`
-  String get disconnect {
+  /// `Pausar`
+  String get pause {
     return Intl.message(
-      'Desconectar',
-      name: 'disconnect',
+      'Pausar',
+      name: 'pause',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ficha pausada`
+  String get pausedChip {
+    return Intl.message(
+      'Ficha pausada',
+      name: 'pausedChip',
       desc: '',
       args: [],
     );
