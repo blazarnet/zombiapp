@@ -105,7 +105,7 @@ class _ChipsPageState extends State<ChipsPage> {
           Navigator.push(context, route);
         },
         child: Container(
-          height: size.height * 0.45,
+          height: size.height * 0.55,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
             child: Column(
@@ -157,7 +157,7 @@ class _ChipsPageState extends State<ChipsPage> {
       elevation: 20,
       child: GestureDetector(
         child: Container(
-          height: size.height * 0.45,
+          height: size.height * 0.55,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
             child: Column(
