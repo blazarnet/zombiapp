@@ -29,7 +29,7 @@ class StatusTab extends StatelessWidget {
               topRight: Radius.circular(25),
             ),
             gradient: LinearGradient(
-              colors: colorGradient,
+              colors: colorGradientGreen,
               begin: Alignment.topCenter,
             ),
           ),
@@ -250,7 +250,7 @@ class StatusTab extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            "${AppLocalizations.of(context).disconnect} ",
+            "${AppLocalizations.of(context).pause} ",
             style: TextStyle(color: Colors.white),
           ),
           Icon(

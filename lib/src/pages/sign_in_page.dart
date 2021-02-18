@@ -111,7 +111,7 @@ class SignInPage extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
                   gradient: LinearGradient(
-                    colors: colorGradient,
+                    colors: colorGradientGreen,
                     tileMode: TileMode.clamp,
                     end: Alignment.topLeft,
                   )),

@@ -332,7 +332,7 @@ class _SignUpPageState extends State<SignUpPage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
                 gradient: LinearGradient(
-                  colors: colorGradient,
+                  colors: colorGradientGreen,
                   end: Alignment.topLeft,
                 ),
               ),
