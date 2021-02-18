@@ -3,6 +3,7 @@ import 'dart:ui';
 
 List<Color> colorGradientGreen = <Color>[
   Color.fromRGBO(7, 236, 136, 1),
+  Color.fromRGBO(0, 200, 113, 1),
   Color.fromRGBO(0, 125, 70, 1),
 ];
 
