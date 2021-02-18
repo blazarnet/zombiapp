@@ -3,12 +3,12 @@ import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/status_tab.dart';
 import 'package:zombifi_app/utils/colors.dart';
 
-class CardStatusOnWidget extends StatefulWidget {
+class CardConnectWidget extends StatefulWidget {
   @override
-  _CardStatusOnWidgetState createState() => _CardStatusOnWidgetState();
+  _CardConnectWidgetState createState() => _CardConnectWidgetState();
 }
 
-class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
+class _CardConnectWidgetState extends State<CardConnectWidget> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -21,15 +21,13 @@ class _CardStatusOnWidgetState extends State<CardStatusOnWidget> {
           // elevation: 5,
           // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25),
-              gradient: LinearGradient(
-                colors: colorGradient,
-                tileMode: TileMode.clamp,
-                end: Alignment.topLeft,
-              )
-              // gradient: LinearGradient
-              ),
-          // color: Colors.greenAccent,
+            borderRadius: BorderRadius.circular(25),
+            gradient: LinearGradient(
+              colors: colorGradientGreen,
+              tileMode: TileMode.clamp,
+              end: Alignment.topLeft,
+            ),
+          ),
           child: Column(
             children: <Widget>[
               Container(
