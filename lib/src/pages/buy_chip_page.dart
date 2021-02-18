@@ -97,7 +97,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
                                   ),
                                 ),
                                 Text(
-                                  "Créditos ZombiFi",
+                                  AppLocalizations.of(context).zombifiCredits,
                                   style: TextStyle(
                                     fontSize: 17,
                                   ),
@@ -111,7 +111,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              "Tipo de ficha",
+                              AppLocalizations.of(context).chipType,
                               style: TextStyle(fontSize: 19),
                             ),
                             Text(
@@ -125,7 +125,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              "Tiempo de actividad",
+                              AppLocalizations.of(context).activityTime,
                               style: TextStyle(fontSize: 19),
                             ),
                             Text(
@@ -139,7 +139,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              "Velocidad de descarga",
+                              AppLocalizations.of(context).downloadSpeed,
                               style: TextStyle(fontSize: 19),
                             ),
                             Text(
@@ -153,7 +153,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              "Velocidad de Carga",
+                              AppLocalizations.of(context).loadingSpeed,
                               style: TextStyle(fontSize: 19),
                             ),
                             Text(
@@ -172,7 +172,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(30),
                                       gradient: LinearGradient(
-                                        colors: colorGradient,
+                                        colors: colorGradientGreen,
                                         tileMode: TileMode.clamp,
                                         end: Alignment.topLeft,
                                       )),
@@ -198,7 +198,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
     final size = MediaQuery.of(context).size;
     return ButtonRoundWidget(
       child: Text(
-        "Comprar",
+        AppLocalizations.of(context).buy,
         style: TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.bold,
@@ -308,7 +308,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
   ButtonRoundWidget _payChip() {
     return ButtonRoundWidget(
       child: Text(
-        'Pagar',
+        AppLocalizations.of(context).pay,
         style: TextStyle(),
       ),
       height: 30,
