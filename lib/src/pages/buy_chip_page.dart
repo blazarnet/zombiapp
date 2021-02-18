@@ -64,6 +64,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
                             margin: EdgeInsets.only(top: 10),
                             // color: Colors.white,
                             width: size.width * 0.70,
+                            height: size.height * 0.23,
                             child: Image.asset(
                               "assets/undraw_Co_workers.png",
                               fit: BoxFit.contain,
@@ -77,7 +78,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
               ),
             ),
             Container(
-              height: size.height * 0.55,
+              height: size.height * 0.58,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                 child: Container(
@@ -161,7 +162,8 @@ class _BuyChipPageState extends State<BuyChipPage> {
                             ),
                           ],
                         ),
-                        Padding(padding: EdgeInsets.only(top: 200)),
+                        Padding(
+                            padding: EdgeInsets.only(top: size.height * 0.2)),
                         Row(
                           children: <Widget>[
                             Column(
@@ -193,6 +195,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
   }
 
   ButtonRoundWidget _buyChip(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return ButtonRoundWidget(
       child: Text(
         "Comprar",
@@ -204,7 +207,8 @@ class _BuyChipPageState extends State<BuyChipPage> {
       ),
       elevetion: 1,
       height: 60,
-      minWidth: 350,
+      // minWidth: 300,
+      minWidth: size.width * .833,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30),
       ),
