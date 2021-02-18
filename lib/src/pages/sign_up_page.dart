@@ -187,7 +187,7 @@ class _SignUpPageState extends State<SignUpPage> {
   TextFormFieldWidget _lastName() {
     return TextFormFieldWidget(
       // height: 50,
-      width: 165,
+      width: 160,
       controller: null,
       keyboardType: TextInputType.emailAddress,
       textCapitalization: TextCapitalization.words,
@@ -201,7 +201,7 @@ class _SignUpPageState extends State<SignUpPage> {
   TextFormFieldWidget _secondLastName() {
     return TextFormFieldWidget(
       // height: 50,
-      width: 165,
+      width: 160,
 
       controller: null,
       keyboardType: TextInputType.emailAddress,
