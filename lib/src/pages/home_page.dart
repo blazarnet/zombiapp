@@ -103,16 +103,17 @@ class _HomePageState extends State<HomePage> {
             Text(
               AppLocalizations.of(context).myCredit,
               style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16),
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Container(
-                  height: 15,
-                  width: 15,
+                  height: 17,
+                  width: 17,
                   child: Image.asset('assets/coin-stack.png'),
                 ),
                 Text(
@@ -120,6 +121,7 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
+                    fontSize: 16,
                   ),
                 )
               ],
