@@ -17,9 +17,8 @@ class StatusTab extends StatelessWidget {
     final double _iconSize = 18;
     final double _indent = 35;
 
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.only(top: 5),
+    return Scaffold(
+      body: Center(
         child: Container(
           width: size.width * 1,
           height: size.height * 1,
@@ -227,7 +226,7 @@ class StatusTab extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(bottom: 15.0),
+                              padding: const EdgeInsets.only(bottom: 0.0),
                               child: _disconect(context),
                             ),
                           ],
@@ -259,9 +258,12 @@ class StatusTab extends StatelessWidget {
           )
         ],
       ),
-      colorButton: Color.fromRGBO(3, 75, 43, 1),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      colorButton: colorGreen,
       height: 60,
-      minWidth: 100,
+      minWidth: 120,
     );
   }
 
