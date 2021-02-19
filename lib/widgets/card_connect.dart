@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/status_tab.dart';
@@ -12,6 +13,8 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final double _textSize1 = 13.8;
+    final double _textSize2 = 12;
     return FlatButton(
       onPressed: _onCardPressed,
       child: Card(
@@ -92,7 +95,8 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
                                       "${AppLocalizations.of(context).duration} " +
                                           "1h",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 13),
+                                          color: Colors.white,
+                                          fontSize: _textSize1),
                                     )
                                   ],
                                 )
@@ -112,7 +116,8 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
                                       "${AppLocalizations.of(context).download} " +
                                           "2Mbs",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 13),
+                                          color: Colors.white,
+                                          fontSize: _textSize1),
                                     )
                                   ],
                                 )
@@ -135,7 +140,8 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
                                       "${AppLocalizations.of(context).upload} " +
                                           "1Mbs",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 13),
+                                          color: Colors.white,
+                                          fontSize: _textSize1),
                                     )
                                   ],
                                 )
@@ -144,48 +150,54 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
                           )
                         ],
                       ),
-                      Padding(padding: EdgeInsets.only(top: 20)),
+                      Padding(padding: EdgeInsets.only(top: 10)),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
                           Column(
                             children: <Widget>[
                               FlatButton(
-                                  onPressed: () {},
-                                  padding: EdgeInsets.all(3),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
-                                  color: Color.fromRGBO(0, 190, 107, 0.5),
-                                  child: Column(
-                                    children: <Widget>[
-                                      Text(
-                                          "${AppLocalizations.of(context).timeRemaining}",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 11)),
-                                      Text('--',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 12.25,
-                                              fontWeight: FontWeight.bold)),
-                                    ],
-                                  )),
+                                onPressed: () {},
+                                padding: EdgeInsets.fromLTRB(3, 5, 3, 5),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10)),
+                                color: colorGreen,
+                                child: Column(
+                                  children: <Widget>[
+                                    Text(
+                                      "${AppLocalizations.of(context).timeRemaining}",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: _textSize2),
+                                    ),
+                                    Text(
+                                      '--',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 12.25,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ],
                           ),
                           Column(
                             children: <Widget>[
                               FlatButton(
                                 onPressed: () {},
-                                padding: EdgeInsets.all(3),
+                                padding: EdgeInsets.fromLTRB(3, 5, 3, 5),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)),
-                                color: Color.fromRGBO(0, 190, 107, 0.5),
+                                color: colorGreen,
                                 child: Column(
                                   children: <Widget>[
                                     Text(
-                                        "${AppLocalizations.of(context).downloadRemaining}",
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: 11)),
+                                      "${AppLocalizations.of(context).downloadRemaining}",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: _textSize2),
+                                    ),
                                     Text(
                                       '--',
                                       style: TextStyle(
@@ -201,27 +213,29 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
                           Column(
                             children: <Widget>[
                               FlatButton(
-                                  onPressed: () {},
-                                  padding: EdgeInsets.all(3),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
-                                  color: Color.fromRGBO(0, 190, 107, 0.5),
-                                  child: Column(
-                                    children: <Widget>[
-                                      Text(
-                                          "${AppLocalizations.of(context).uploadRemaining}",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 11)),
-                                      Text(
-                                        '--',
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 12.25,
-                                            fontWeight: FontWeight.bold),
-                                      )
-                                    ],
-                                  )),
+                                onPressed: () {},
+                                padding: EdgeInsets.fromLTRB(3, 5, 3, 5),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10)),
+                                color: colorGreen,
+                                child: Column(
+                                  children: <Widget>[
+                                    Text(
+                                      "${AppLocalizations.of(context).uploadRemaining}",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: _textSize2),
+                                    ),
+                                    Text(
+                                      '--',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 12.25,
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
+                                ),
+                              ),
                             ],
                           ),
                         ],
@@ -237,20 +251,34 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
     );
   }
 
+  // void _onCardPressed() {
+  //   showCupertinoModalPopup(
+  //     context: context,
+  //     builder: (context) {
+  //       return Container(
+  //         color: Colors.white,
+  //         child: Text("Prueba"),
+  //       );
+  //     },
+  //   );
+  // }
+
   void _onCardPressed() {
-    showModalBottomSheet(
+    showBottomSheet(
       context: context,
-      elevation: 0,
-      barrierColor: colorBarrier,
+      elevation: 10,
+      // backgroundColor: colorBarrier,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(25),
+          topRight: Radius.circular(25),
+        ),
+      ),
       builder: (context) {
         final size = MediaQuery.of(context).size;
         return Container(
-          height: 1000,
-          // height: size.height * 1,
-          child: Container(
-            color: colorBarrier,
-            child: StatusTab(),
-          ),
+          height: size.height * 0.85,
+          child: StatusTab(),
         );
       },
     );
