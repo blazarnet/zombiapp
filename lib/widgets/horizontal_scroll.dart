@@ -42,7 +42,7 @@ class _HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
             children: <Widget>[
               Container(
                 width: size.width * .9,
-                height: 170.0,
+                height: 200.0,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
