@@ -33,12 +33,36 @@ class _BuyChipPageState extends State<BuyChipPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          Text(
-                            "Basic 15",
-                            style: TextStyle(
-                              fontSize: 27,
-                              color: Colors.white,
-                            ),
+                          Column(
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  GestureDetector(
+                                    onTap: () {
+                                      final route = MaterialPageRoute(
+                                        builder: (context) {
+                                          return ChipsPage();
+                                        },
+                                      );
+                                      Navigator.pop(context, route);
+                                    },
+                                    child: Icon(
+                                      Icons.arrow_back,
+                                      color: Colors.white,
+                                      // size: 25,
+                                    ),
+                                  ),
+                                  Padding(padding: EdgeInsets.only(left: 5)),
+                                  Text(
+                                    "Basic 15",
+                                    style: TextStyle(
+                                      fontSize: 27,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
                           ),
                           GestureDetector(
                             onTap: () {
