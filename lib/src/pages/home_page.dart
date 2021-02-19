@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/buy_chip_page.dart';
 import 'package:zombifi_app/src/pages/buy_credit_page.dart';
+import 'package:zombifi_app/src/pages/profile_page.dart';
 import 'package:zombifi_app/utils/colors.dart';
 import 'package:zombifi_app/widgets/card_chips.dart';
 import 'package:zombifi_app/widgets/card_map_widget.dart';
@@ -76,14 +77,24 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _avatar() {
-    return Padding(
-      padding: const EdgeInsets.only(
-        left: 10,
-      ),
-      child: CircleAvatar(
-        child: Text(
-          'AM',
-          style: TextStyle(color: Colors.white),
+    return GestureDetector(
+      onTap: () {
+        final route = MaterialPageRoute(
+          builder: (context) {
+            return ProfilePage();
+          },
+        );
+        Navigator.push(context, route);
+      },
+      child: Padding(
+        padding: const EdgeInsets.only(
+          left: 10,
+        ),
+        child: CircleAvatar(
+          child: Text(
+            'AM',
+            style: TextStyle(color: Colors.white),
+          ),
         ),
       ),
     );
