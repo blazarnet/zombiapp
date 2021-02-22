@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/fullscreen_map.dart';
+import 'package:zombifi_app/src/pages/test_map_page.dart';
 
 class CardMapWidget extends StatefulWidget {
   @override
@@ -19,7 +20,8 @@ class _MapWidgetState extends State<CardMapWidget> {
     return FlatButton(
       onPressed: () {
         final route = MaterialPageRoute(builder: (context) {
-          return FullScreenMap();
+          // return FullScreenMap();
+          return TestMapPage();
         });
         Navigator.push(context, route);
       },
