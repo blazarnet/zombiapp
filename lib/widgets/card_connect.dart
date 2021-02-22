@@ -277,7 +277,7 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
       builder: (context) {
         final size = MediaQuery.of(context).size;
         return Container(
-          height: size.height * 0.85,
+          height: size.height * 0.75,
           child: StatusTab(),
         );
       },
