@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/home_page.dart';
+import 'package:zombifi_app/src/pages/main_page.dart';
 import 'package:zombifi_app/src/pages/sign_up_page.dart';
 import 'package:zombifi_app/utils/utils.dart';
 
@@ -167,7 +168,7 @@ class SignInPage extends StatelessWidget {
       onPressed: () {
         final route = MaterialPageRoute(
           builder: (context) {
-            return HomePage();
+            return MainPage();
           },
         );
         Navigator.push(context, route);
