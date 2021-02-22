@@ -13,15 +13,39 @@ class ProfilePhotoWidget extends StatefulWidget {
 class _ProfilePhotoWidgetState extends State<ProfilePhotoWidget> {
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return Container(
-      margin: EdgeInsets.all(8),
-      height:
-          (widget.photo != null) ? size.height * 0.300 : size.height * 0.290,
-      width: double.infinity,
-      child: (widget.photo != null)
-          ? Image.file(widget.photo, fit: BoxFit.contain)
-          : Image.asset('assets/man.png', fit: BoxFit.contain),
+    return CircleAvatar(
+      radius: 80,
+      child: ClipOval(
+        child: SizedBox(
+          width: 200.0,
+          height: 200.0,
+          child: (widget.photo != null)
+              ? Image.file(
+                  widget.photo,
+                  fit: BoxFit.fill,
+                  // ):(_persona.fotoUrl!=null)?Image.network(
+                  //   _persona.fotoUrl,
+                  //   fit: BoxFit.fill,
+                )
+              : Image.asset(
+                  'assets/man.png',
+                  fit: BoxFit.contain,
+                ),
+        ),
+      ),
     );
   }
+
+  // Widget build(BuildContext context) {
+  //   final size = MediaQuery.of(context).size;
+  //   return Container(
+  //     margin: EdgeInsets.all(8),
+  //     height:
+  //         (widget.photo != null) ? size.height * 0.300 : size.height * 0.290,
+  //     width: double.infinity,
+  //     child: (widget.photo != null)
+  //         ? Image.file(widget.photo, fit: BoxFit.contain)
+  //         : Image.asset('assets/man.png', fit: BoxFit.contain),
+  //   );
+  // }
 }
