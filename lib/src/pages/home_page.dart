@@ -79,12 +79,12 @@ class _HomePageState extends State<HomePage> {
   Widget _avatar() {
     return GestureDetector(
       onTap: () {
-        final route = MaterialPageRoute(
-          builder: (context) {
-            return ProfilePage();
-          },
-        );
-        Navigator.push(context, route);
+        // final route = MaterialPageRoute(
+        //   builder: (context) {
+        //     return ProfilePage();
+        //   },
+        // );
+        // Navigator.push(context, route);
       },
       child: Padding(
         padding: const EdgeInsets.only(
@@ -103,12 +103,12 @@ class _HomePageState extends State<HomePage> {
   Widget _myCredit() {
     return GestureDetector(
       onTap: () {
-        final route = MaterialPageRoute(
-          builder: (context) {
-            return BuyCreditPage();
-          },
-        );
-        Navigator.push(context, route);
+        // final route = MaterialPageRoute(
+        //   builder: (context) {
+        //     return BuyCreditPage();
+        //   },
+        // );
+        // Navigator.push(context, route);
       },
       child: Container(
         child: Column(

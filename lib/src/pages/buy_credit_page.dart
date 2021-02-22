@@ -18,18 +18,18 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
     return Scaffold(
       appBar: AppBar(
         // automaticallyImplyLeading: false,
-        leading: IconButton(
-          onPressed: () {
-            final route = MaterialPageRoute(builder: (context) {
-              return HomePage();
-            });
-            Navigator.pop(context, route);
-          },
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-        ),
+        // leading: IconButton(
+        //   onPressed: () {
+        //     final route = MaterialPageRoute(builder: (context) {
+        //       return HomePage();
+        //     });
+        //     Navigator.pop(context, route);
+        //   },
+        //   icon: Icon(
+        //     Icons.arrow_back,
+        //     color: Colors.black,
+        //   ),
+        // ),
         backgroundColor: Colors.white,
         elevation: 0,
       ),
@@ -39,122 +39,133 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
           child: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(top: 7, bottom: 7),
-                            child: Text(
-                              AppLocalizations.of(context).buyCredit,
-                              style: TextStyle(fontSize: 25),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        height: 60,
-                        width: 60,
-                        child: Image.asset('assets/coin-stack.png'),
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 10)),
-                      Text(
-                        AppLocalizations.of(context).myCredit,
-                        style: TextStyle(
-                          fontSize: _fontSize,
-                        ),
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 7)),
-                      Text(
-                        '\$200.00',
-                        style: TextStyle(
-                          fontSize: _fontSize,
-                        ),
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 10)),
-                      _recharge(),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Text(
-                            AppLocalizations.of(context).myShopping,
-                            style: TextStyle(
-                              fontSize: _fontSize,
-                            ),
-                          ),
-                          Icon(
-                            Icons.format_indent_decrease,
-                            size: 25,
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  width: size.width * 1,
-                  color: Colors.white,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 5),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Container(
                     child: Column(
                       children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(top: 7, bottom: 7),
+                              child: Text(
+                                AppLocalizations.of(context).buyCredit,
+                                style: TextStyle(fontSize: 25),
+                              ),
+                            ),
+                          ],
+                        ),
                         Container(
-                          width: size.width * 1,
-                          height: size.height * .45,
-                          child: ListView(
-                            scrollDirection: Axis.vertical,
-                            shrinkWrap: true,
-                            children: <Widget>[
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
-                                child: _buy(),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
-                                child: _buy(),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
-                                child: _buy(),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
-                                child: _buy(),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
-                                child: _buy(),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
-                                child: _buy(),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
-                                child: _buy(),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
-                                child: _buy(),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
-                                child: _buy(),
-                              ),
-                            ],
+                          height: 60,
+                          width: 60,
+                          child: Image.asset('assets/coin-stack.png'),
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 10)),
+                        Text(
+                          AppLocalizations.of(context).myCredit,
+                          style: TextStyle(
+                            fontSize: _fontSize,
                           ),
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 7)),
+                        Text(
+                          '\$200.00',
+                          style: TextStyle(
+                            fontSize: _fontSize,
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 10)),
+                        _recharge(),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text(
+                              AppLocalizations.of(context).myShopping,
+                              style: TextStyle(
+                                fontSize: _fontSize,
+                              ),
+                            ),
+                            Icon(
+                              Icons.format_indent_decrease,
+                              size: 25,
+                            )
+                          ],
                         ),
                       ],
                     ),
                   ),
-                )
-              ],
+                  Container(
+                    width: size.width * 1,
+                    color: Colors.white,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5),
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            width: size.width * 1,
+                            height: size.height * .45,
+                            child: ListView(
+                              scrollDirection: Axis.vertical,
+                              shrinkWrap: true,
+                              children: <Widget>[
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                  child: _buy(),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                  child: _buy(),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                  child: _buy(),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                  child: _buy(),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                  child: _buy(),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                  child: _buy(),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                  child: _buy(),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                  child: _buy(),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                  child: _buy(),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),

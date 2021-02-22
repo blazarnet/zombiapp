@@ -16,18 +16,18 @@ class _ChipsPageState extends State<ChipsPage> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            final route = MaterialPageRoute(builder: (context) {
-              return HomePage();
-            });
-            Navigator.pop(context, route);
-          },
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-        ),
+        // leading: IconButton(
+        //   onPressed: () {
+        //     final route = MaterialPageRoute(builder: (context) {
+        //       return HomePage();
+        //     });
+        //     Navigator.pop(context, route);
+        //   },
+        //   icon: Icon(
+        //     Icons.arrow_back,
+        //     color: Colors.black,
+        //   ),
+        // ),
         backgroundColor: Colors.white,
         elevation: 0,
       ),

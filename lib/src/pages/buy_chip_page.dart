@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/chips_page.dart';
+import 'package:zombifi_app/src/pages/home_page.dart';
+import 'package:zombifi_app/src/pages/main_page.dart';
 import 'package:zombifi_app/utils/colors.dart';
 import 'package:zombifi_app/widgets/button_round.dart';
 
@@ -16,194 +18,85 @@ class _BuyChipPageState extends State<BuyChipPage> {
     return Scaffold(
       body: Container(
         color: Colors.white,
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: size.height * 0.4,
-              color: colorGreen,
-              child: SafeArea(
-                top: true,
-                left: true,
-                right: true,
-                bottom: true,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Column(
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  GestureDetector(
-                                    onTap: () {
-                                      final route = MaterialPageRoute(
-                                        builder: (context) {
-                                          return ChipsPage();
-                                        },
-                                      );
-                                      Navigator.pop(context, route);
-                                    },
-                                    child: Icon(
-                                      Icons.arrow_back,
-                                      color: Colors.white,
-                                      // size: 25,
-                                    ),
-                                  ),
-                                  Padding(padding: EdgeInsets.only(left: 5)),
-                                  Text(
-                                    "Basic 15",
-                                    style: TextStyle(
-                                      fontSize: 27,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              final route = MaterialPageRoute(
-                                builder: (context) {
-                                  return ChipsPage();
-                                },
-                              );
-                              Navigator.pop(context, route);
-                            },
-                            child: Icon(
-                              Icons.cancel_rounded,
-                              color: Colors.white,
-                              size: 30,
-                            ),
-                          )
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          Container(
-                            margin: EdgeInsets.only(top: 10),
-                            // color: Colors.white,
-                            width: size.width * 0.70,
-                            height: size.height * 0.23,
-                            child: Image.asset(
-                              "assets/undraw_Co_workers.png",
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: size.height * 0.58,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                child: Container(
-                  child: SingleChildScrollView(
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Container(
+                height: size.height * 0.4,
+                color: colorGreen,
+                child: SafeArea(
+                  top: true,
+                  left: true,
+                  right: true,
+                  bottom: true,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: <Widget>[
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Column(
                               children: <Widget>[
-                                Text(
-                                  "\$15.00",
-                                  style: TextStyle(
-                                    fontSize: 30,
-                                  ),
-                                ),
-                                Text(
-                                  AppLocalizations.of(context).zombifiCredits,
-                                  style: TextStyle(
-                                    fontSize: 17,
-                                  ),
-                                ),
+                                Row(
+                                  children: <Widget>[
+                                    GestureDetector(
+                                      onTap: () {
+                                        final route = MaterialPageRoute(
+                                          builder: (context) {
+                                            return MainPage();
+                                          },
+                                        );
+                                        Navigator.pop(context, route);
+                                      },
+                                      child: Icon(
+                                        Icons.arrow_back,
+                                        color: Colors.white,
+                                        // size: 25,
+                                      ),
+                                    ),
+                                    Padding(padding: EdgeInsets.only(left: 5)),
+                                    Text(
+                                      "Basic 15",
+                                      style: TextStyle(
+                                        fontSize: 27,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                )
                               ],
-                            )
+                            ),
+                            // GestureDetector(
+                            //   onTap: () {
+                            //     final route = MaterialPageRoute(
+                            //       builder: (context) {
+                            //         return ChipsPage();
+                            //       },
+                            //     );
+                            //     Navigator.pop(context, route);
+                            //   },
+                            //   child: Icon(
+                            //     Icons.cancel_rounded,
+                            //     color: Colors.white,
+                            //     size: 30,
+                            //   ),
+                            // )
                           ],
                         ),
-                        Padding(padding: EdgeInsets.only(top: 10)),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: <Widget>[
-                            Text(
-                              AppLocalizations.of(context).loadingSpeed,
-                              style: TextStyle(fontSize: 19),
+                            Container(
+                              margin: EdgeInsets.only(top: 10),
+                              // color: Colors.white,
+                              width: size.width * 0.70,
+                              height: size.height * 0.23,
+                              child: Image.asset(
+                                "assets/undraw_Co_workers.png",
+                                fit: BoxFit.contain,
+                              ),
                             ),
-                            Text(
-                              "1 Mpbs",
-                              style: TextStyle(fontSize: 19),
-                            ),
-                          ],
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 7)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Text(
-                              AppLocalizations.of(context).downloadSpeed,
-                              style: TextStyle(fontSize: 19),
-                            ),
-                            Text(
-                              "2 Mbps",
-                              style: TextStyle(fontSize: 19),
-                            ),
-                          ],
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 7)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Text(
-                              AppLocalizations.of(context).activityTime,
-                              style: TextStyle(fontSize: 19),
-                            ),
-                            Text(
-                              "1 hora",
-                              style: TextStyle(fontSize: 19),
-                            ),
-                          ],
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 7)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Text(
-                              AppLocalizations.of(context).chipType,
-                              style: TextStyle(fontSize: 19),
-                            ),
-                            Text(
-                              "Tiempo",
-                              style: TextStyle(fontSize: 19),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                            padding: EdgeInsets.only(top: size.height * 0.2)),
-                        Row(
-                          children: <Widget>[
-                            Column(
-                              children: <Widget>[
-                                Container(
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30),
-                                      gradient: LinearGradient(
-                                        colors: colorGradientGreen,
-                                        tileMode: TileMode.clamp,
-                                        end: Alignment.topLeft,
-                                      )),
-                                  child: _buyChip(context),
-                                ),
-                              ],
-                            )
                           ],
                         )
                       ],
@@ -211,8 +104,119 @@ class _BuyChipPageState extends State<BuyChipPage> {
                   ),
                 ),
               ),
-            )
-          ],
+              Container(
+                height: size.height * 0.58,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                  child: Container(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Column(
+                                children: <Widget>[
+                                  Text(
+                                    "\$15.00",
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                    ),
+                                  ),
+                                  Text(
+                                    AppLocalizations.of(context).zombifiCredits,
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                          Padding(padding: EdgeInsets.only(top: 10)),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Text(
+                                AppLocalizations.of(context).loadingSpeed,
+                                style: TextStyle(fontSize: 19),
+                              ),
+                              Text(
+                                "1 Mpbs",
+                                style: TextStyle(fontSize: 19),
+                              ),
+                            ],
+                          ),
+                          Padding(padding: EdgeInsets.only(top: 7)),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Text(
+                                AppLocalizations.of(context).downloadSpeed,
+                                style: TextStyle(fontSize: 19),
+                              ),
+                              Text(
+                                "2 Mbps",
+                                style: TextStyle(fontSize: 19),
+                              ),
+                            ],
+                          ),
+                          Padding(padding: EdgeInsets.only(top: 7)),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Text(
+                                AppLocalizations.of(context).activityTime,
+                                style: TextStyle(fontSize: 19),
+                              ),
+                              Text(
+                                "1 hora",
+                                style: TextStyle(fontSize: 19),
+                              ),
+                            ],
+                          ),
+                          Padding(padding: EdgeInsets.only(top: 7)),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Text(
+                                AppLocalizations.of(context).chipType,
+                                style: TextStyle(fontSize: 19),
+                              ),
+                              Text(
+                                "Tiempo",
+                                style: TextStyle(fontSize: 19),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                              padding: EdgeInsets.only(top: size.height * 0.2)),
+                          Row(
+                            children: <Widget>[
+                              Column(
+                                children: <Widget>[
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(30),
+                                        gradient: LinearGradient(
+                                          colors: colorGradientGreen,
+                                          tileMode: TileMode.clamp,
+                                          end: Alignment.topLeft,
+                                        )),
+                                    child: _buyChip(context),
+                                  ),
+                                ],
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

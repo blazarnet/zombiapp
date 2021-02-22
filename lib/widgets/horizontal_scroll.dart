@@ -22,12 +22,12 @@ class _HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
             children: <Widget>[
               GestureDetector(
                 onTap: () {
-                  final route = MaterialPageRoute(
-                    builder: (context) {
-                      return ChipsPage();
-                    },
-                  );
-                  Navigator.push(context, route);
+                  // final route = MaterialPageRoute(
+                  //   builder: (context) {
+                  //     return ChipsPage();
+                  //   },
+                  // );
+                  // Navigator.push(context, route);
                 },
                 child: Text(
                   AppLocalizations.of(context).buyChips,
