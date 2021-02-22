@@ -125,11 +125,41 @@ class AppLocalizations {
     );
   }
 
-  /// `Subir foto`
-  String get uploadPhoto {
+  /// `Seleccionar foto`
+  String get selectPhoto {
     return Intl.message(
-      'Subir foto',
-      name: 'uploadPhoto',
+      'Seleccionar foto',
+      name: 'selectPhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tomar foto`
+  String get takePhoto {
+    return Intl.message(
+      'Tomar foto',
+      name: 'takePhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Abrir cámara`
+  String get openCamera {
+    return Intl.message(
+      'Abrir cámara',
+      name: 'openCamera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Abrir galería`
+  String get openGallery {
+    return Intl.message(
+      'Abrir galería',
+      name: 'openGallery',
       desc: '',
       args: [],
     );
