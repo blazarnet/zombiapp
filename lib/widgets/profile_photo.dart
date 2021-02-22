@@ -14,11 +14,11 @@ class _ProfilePhotoWidgetState extends State<ProfilePhotoWidget> {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      radius: 80,
+      radius: 75,
       child: ClipOval(
         child: SizedBox(
-          width: 200.0,
-          height: 200.0,
+          width: 195.0,
+          height: 195.0,
           child: (widget.photo != null)
               ? Image.file(
                   widget.photo,
