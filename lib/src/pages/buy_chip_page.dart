@@ -135,25 +135,11 @@ class _BuyChipPageState extends State<BuyChipPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              AppLocalizations.of(context).chipType,
+                              AppLocalizations.of(context).loadingSpeed,
                               style: TextStyle(fontSize: 19),
                             ),
                             Text(
-                              "Tiempo",
-                              style: TextStyle(fontSize: 19),
-                            ),
-                          ],
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 7)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Text(
-                              AppLocalizations.of(context).activityTime,
-                              style: TextStyle(fontSize: 19),
-                            ),
-                            Text(
-                              "1 hora",
+                              "1 Mpbs",
                               style: TextStyle(fontSize: 19),
                             ),
                           ],
@@ -177,11 +163,25 @@ class _BuyChipPageState extends State<BuyChipPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              AppLocalizations.of(context).loadingSpeed,
+                              AppLocalizations.of(context).activityTime,
                               style: TextStyle(fontSize: 19),
                             ),
                             Text(
-                              "1 Mpbs",
+                              "1 hora",
+                              style: TextStyle(fontSize: 19),
+                            ),
+                          ],
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 7)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text(
+                              AppLocalizations.of(context).chipType,
+                              style: TextStyle(fontSize: 19),
+                            ),
+                            Text(
+                              "Tiempo",
                               style: TextStyle(fontSize: 19),
                             ),
                           ],

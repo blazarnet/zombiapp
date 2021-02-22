@@ -173,50 +173,62 @@ class StatusTab extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: <Widget>[
                                 Text(
-                                    "${AppLocalizations.of(context).ipAddress}: ",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: _textSize)),
+                                  "${AppLocalizations.of(context).bytesUpload}: ",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: _textSize),
+                                ),
                                 Text(
-                                    "${AppLocalizations.of(context).connectionTime}: ",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: _textSize)),
+                                  "${AppLocalizations.of(context).bytesDownload}: ",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: _textSize),
+                                ),
                                 Text(
-                                    "${AppLocalizations.of(context).bytesUpload}: ",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: _textSize)),
+                                  "${AppLocalizations.of(context).connectionTime}: ",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: _textSize),
+                                ),
                                 Text(
-                                    "${AppLocalizations.of(context).bytesDownload}: ",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: _textSize))
+                                  "${AppLocalizations.of(context).ipAddress}: ",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: _textSize),
+                                ),
                               ],
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text('192.168.88.123',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: _textSize)),
-                                Text('30m',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: _textSize)),
-                                Text('1499 B',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: _textSize)),
-                                Text('6.5 KiB',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: _textSize))
+                                Text(
+                                  '1499 B',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: _textSize,
+                                  ),
+                                ),
+                                Text(
+                                  '6.5 KiB',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: _textSize,
+                                  ),
+                                ),
+                                Text(
+                                  '30m',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: _textSize,
+                                  ),
+                                ),
+                                Text(
+                                  '192.168.88.123',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: _textSize,
+                                  ),
+                                ),
                               ],
                             ),
                           ],
@@ -227,7 +239,7 @@ class StatusTab extends StatelessWidget {
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(bottom: 0.0),
-                              child: _disconect(context),
+                              child: _pause(context),
                             ),
                           ],
                         ),
@@ -243,7 +255,7 @@ class StatusTab extends StatelessWidget {
     );
   }
 
-  ButtonRoundWidget _disconect(BuildContext context) {
+  ButtonRoundWidget _pause(BuildContext context) {
     return ButtonRoundWidget(
       onPressed: () {},
       child: Row(
