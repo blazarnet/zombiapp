@@ -265,11 +265,51 @@ class AppLocalizations {
     );
   }
 
-  /// `Hola`
-  String get hello {
+  /// `Inicio`
+  String get home {
     return Intl.message(
-      'Hola',
-      name: 'hello',
+      'Inicio',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mapa`
+  String get map {
+    return Intl.message(
+      'Mapa',
+      name: 'map',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fichas`
+  String get chips {
+    return Intl.message(
+      'Fichas',
+      name: 'chips',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crédito`
+  String get credit {
+    return Intl.message(
+      'Crédito',
+      name: 'credit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mi perfil`
+  String get profile {
+    return Intl.message(
+      'Mi perfil',
+      name: 'profile',
       desc: '',
       args: [],
     );
@@ -315,10 +355,10 @@ class AppLocalizations {
     );
   }
 
-  /// `Estado de ficha actual`
+  /// `Mi ficha activa`
   String get statusChip {
     return Intl.message(
-      'Estado de ficha actual',
+      'Mi ficha activa',
       name: 'statusChip',
       desc: '',
       args: [],
@@ -455,11 +495,21 @@ class AppLocalizations {
     );
   }
 
-  /// `Explora zonas Zombiwifi`
+  /// `Explora zonas infectadas`
   String get exploreZones {
     return Intl.message(
-      'Explora zonas Zombiwifi',
+      'Explora zonas infectadas',
       name: 'exploreZones',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Zonas infectadas`
+  String get infectedZones {
+    return Intl.message(
+      'Zonas infectadas',
+      name: 'infectedZones',
       desc: '',
       args: [],
     );
@@ -545,11 +595,21 @@ class AppLocalizations {
     );
   }
 
-  /// `Pausar`
+  /// `Pausar mi tiempo`
   String get pause {
     return Intl.message(
-      'Pausar',
+      'Pausar mi tiempo',
       name: 'pause',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `El usuario tiene la posibilidad pausar el tiempo de uso de una ficha comprada, esta acción solo se permite una vez por ficha.`
+  String get infoPause {
+    return Intl.message(
+      'El usuario tiene la posibilidad pausar el tiempo de uso de una ficha comprada, esta acción solo se permite una vez por ficha.',
+      name: 'infoPause',
       desc: '',
       args: [],
     );
