@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
-import 'package:zombifi_app/src/pages/chips_page.dart';
 
 class HorizontalScrollWidget extends StatefulWidget {
   final List<Widget> children;
