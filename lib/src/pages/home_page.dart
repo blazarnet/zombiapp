@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/buy_chip_page.dart';
 import 'package:zombifi_app/src/pages/buy_credit_page.dart';
-import 'package:zombifi_app/src/pages/profile_page.dart';
 import 'package:zombifi_app/utils/colors.dart';
 import 'package:zombifi_app/widgets/card_chips.dart';
 import 'package:zombifi_app/widgets/card_map_widget.dart';
@@ -25,6 +24,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: bgGreen,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: _avatar(),
@@ -34,24 +34,24 @@ class _HomePageState extends State<HomePage> {
             child: _myCredit(),
           )
         ],
-        backgroundColor: Colors.white,
+        backgroundColor: bgGreen,
         elevation: 0,
       ),
       body: Container(
         width: size.width * 1,
         height: size.height * 1,
-        color: Colors.white,
+        // color: Colors.white,
         child: SingleChildScrollView(
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(top: 7),
-                child: _welcome(context),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.only(top: 7),
+              //   child: _welcome(context),
+              // ),
               Container(
                 width: size.width * 1,
-                color: Colors.white,
+                // color: Colors.white,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 20, bottom: 20),
                   child: Column(
@@ -62,9 +62,28 @@ class _HomePageState extends State<HomePage> {
                       Padding(
                         padding: EdgeInsets.only(top: 20),
                       ),
-                      _cardMapWidget(),
-                      Padding(padding: EdgeInsets.only(top: 20)),
                       _scrollWidgetChips(context),
+                      // Padding(padding: EdgeInsets.only(top: 10)),
+                      Container(
+                        width: size.width * .95,
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              width: size.width * .90,
+                              child: Row(
+                                children: <Widget>[
+                                  Text(
+                                    AppLocalizations.of(context).exploreZones,
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                  Icon(Icons.arrow_forward_ios)
+                                ],
+                              ),
+                            ),
+                            _cardMapWidget(),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -103,35 +122,36 @@ class _HomePageState extends State<HomePage> {
   Widget _myCredit() {
     return GestureDetector(
       onTap: () {
-        // final route = MaterialPageRoute(
-        //   builder: (context) {
-        //     return BuyCreditPage();
-        //   },
-        // );
-        // Navigator.push(context, route);
+        final route = MaterialPageRoute(
+          builder: (context) {
+            return BuyCreditPage();
+          },
+        );
+        Navigator.push(context, route);
       },
       child: Container(
-        child: Column(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              AppLocalizations.of(context).myCredit,
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
+            Container(
+              height: 37,
+              width: 37,
+              child: Image.asset('assets/coin-stack.png'),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Container(
-                  height: 20,
-                  width: 20,
-                  child: Image.asset('assets/coin-stack.png'),
+                Text(
+                  AppLocalizations.of(context).myCredit,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
                 ),
                 Text(
-                  " \$200.00",
+                  "200.00",
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
@@ -143,37 +163,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-    );
-  }
-
-  Widget _welcome(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Stack(
-          children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(left: 12),
-                  child: Text(
-                    "${AppLocalizations.of(context).hello},",
-                    style: TextStyle(fontSize: 25),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 12),
-                  child: Text(
-                    "$_name " + "$_lastName " + "$_secondaLastName",
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        )
-      ],
     );
   }
 
@@ -197,130 +186,188 @@ class _HomePageState extends State<HomePage> {
     return HorizontalScrollWidget(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
-          child: _cardChips(context),
+          padding: const EdgeInsets.all(0),
+          child: _cardChipsWidget(context),
         ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(3, 3, 3, 8),
-          child: _cardChips1(context),
+          padding: const EdgeInsets.all(0),
+          child: _cardChipsWidget(context),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(0),
+          child: _cardChipsWidget(context),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(0),
+          child: _cardChipsWidget(context),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(0),
+          child: _cardChipsWidget(context),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(0),
+          // child: _cardChips1(context),
         ),
       ],
     );
   }
 
-  CardChipsWidget _cardChips(BuildContext context) {
+  Widget _cardChipsWidget(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return CardChipsWidget(
-      color: colorGreen,
-      elevation: 20,
-      child: GestureDetector(
-        onTap: () {
-          final route = MaterialPageRoute(
-            builder: (context) {
-              return BuyChipPage();
-            },
-          );
-          Navigator.push(context, route);
-        },
-        child: Container(
-          height: size.height * 0.3,
-          width: size.width * 0.6,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+    return Container(
+      // height: size.height * 1,
+      width: size.width * .5,
+      child: Stack(
+        alignment: AlignmentDirectional.center,
+        children: <Widget>[
+          Image.asset(
+            "assets/card_chip.png",
+            height: size.height * 1,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(45),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  'Basic 15',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 23,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 5),
-                ),
-                Text(
-                  '\$15.00',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Container(
-                      // margin: EdgeInsets.only(top: 10),
-                      // color: Colors.white,
-                      width: size.width * 0.4,
-                      height: size.height * 0.095,
-                      child: Image.asset(
-                        "assets/undraw_Co_workers.png",
-                        fit: BoxFit.contain,
+                    Text(
+                      "Basic",
+                      style: TextStyle(fontSize: 17),
+                    ),
+                    Text(
+                      "15.00",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
                 )
               ],
             ),
-          ),
-        ),
+          )
+        ],
+        // width: size.width * 1,
       ),
     );
   }
 
-  CardChipsWidget _cardChips1(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return CardChipsWidget(
-      color: Color.fromRGBO(0, 185, 172, 1),
-      elevation: 20,
-      child: GestureDetector(
-        child: Container(
-          height: size.height * 0.52,
-          width: size.width * 0.6,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  'Plus Double',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 23,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 5),
-                ),
-                Text(
-                  '\$30.00',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    Container(
-                      // margin: EdgeInsets.only(top: 10),
-                      // color: Colors.white,
-                      width: size.width * 0.4,
-                      height: size.height * 0.095,
-                      child: Image.asset(
-                        "assets/undraw_Social_life.png",
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+  // CardChipsWidget _cardChips(BuildContext context) {
+  //   final size = MediaQuery.of(context).size;
+  //   return CardChipsWidget(
+  //     color: colorGreen,
+  //     elevation: 20,
+  //     child: GestureDetector(
+  //       onTap: () {
+  //         final route = MaterialPageRoute(
+  //           builder: (context) {
+  //             return BuyChipPage();
+  //           },
+  //         );
+  //         Navigator.push(context, route);
+  //       },
+  //       child: Container(
+  //         height: size.height * 0.3,
+  //         width: size.width * 0.6,
+  //         child: Padding(
+  //           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+  //           child: Column(
+  //             crossAxisAlignment: CrossAxisAlignment.start,
+  //             children: <Widget>[
+  //               Text(
+  //                 'Basic 15',
+  //                 style: TextStyle(
+  //                   color: Colors.white,
+  //                   fontSize: 23,
+  //                 ),
+  //               ),
+  //               Padding(
+  //                 padding: EdgeInsets.only(top: 5),
+  //               ),
+  //               Text(
+  //                 '\$15.00',
+  //                 style: TextStyle(
+  //                   color: Colors.white,
+  //                   fontSize: 20,
+  //                 ),
+  //               ),
+  //               Row(
+  //                 mainAxisAlignment: MainAxisAlignment.end,
+  //                 children: <Widget>[
+  //                   Container(
+  //                     // margin: EdgeInsets.only(top: 10),
+  //                     // color: Colors.white,
+  //                     width: size.width * 0.4,
+  //                     height: size.height * 0.095,
+  //                     child: Image.asset(
+  //                       "assets/undraw_Co_workers.png",
+  //                       fit: BoxFit.contain,
+  //                     ),
+  //                   ),
+  //                 ],
+  //               )
+  //             ],
+  //           ),
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
+
+  // CardChipsWidget _cardChips1(BuildContext context) {
+  //   final size = MediaQuery.of(context).size;
+  //   return CardChipsWidget(
+  //     color: Color.fromRGBO(0, 185, 172, 1),
+  //     elevation: 20,
+  //     child: GestureDetector(
+  //       child: Container(
+  //         height: size.height * 0.52,
+  //         width: size.width * 0.6,
+  //         child: Padding(
+  //           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+  //           child: Column(
+  //             crossAxisAlignment: CrossAxisAlignment.start,
+  //             children: <Widget>[
+  //               Text(
+  //                 'Plus Double',
+  //                 style: TextStyle(
+  //                   color: Colors.white,
+  //                   fontSize: 23,
+  //                 ),
+  //               ),
+  //               Padding(
+  //                 padding: EdgeInsets.only(top: 5),
+  //               ),
+  //               Text(
+  //                 '\$30.00',
+  //                 style: TextStyle(
+  //                   color: Colors.white,
+  //                   fontSize: 20,
+  //                 ),
+  //               ),
+  //               Row(
+  //                 mainAxisAlignment: MainAxisAlignment.end,
+  //                 children: <Widget>[
+  //                   Container(
+  //                     // margin: EdgeInsets.only(top: 10),
+  //                     // color: Colors.white,
+  //                     width: size.width * 0.4,
+  //                     height: size.height * 0.095,
+  //                     child: Image.asset(
+  //                       "assets/undraw_Social_life.png",
+  //                       fit: BoxFit.contain,
+  //                     ),
+  //                   ),
+  //                 ],
+  //               )
+  //             ],
+  //           ),
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 }
