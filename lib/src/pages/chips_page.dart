@@ -15,74 +15,61 @@ class _ChipsPageState extends State<ChipsPage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        // leading: IconButton(
-        //   onPressed: () {
-        //     final route = MaterialPageRoute(builder: (context) {
-        //       return HomePage();
-        //     });
-        //     Navigator.pop(context, route);
-        //   },
-        //   icon: Icon(
-        //     Icons.arrow_back,
-        //     color: Colors.black,
-        //   ),
-        // ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
-      body: Container(
-        width: size.width * 1,
-        color: Colors.white,
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            vertical: 5,
-            horizontal: 20,
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(top: 7),
-                  child: Text(
-                    AppLocalizations.of(context).buyChips,
-                    style: TextStyle(fontSize: 25),
-                  ),
-                ),
-                Container(
-                  width: size.width * 1,
-                  color: Colors.white,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 10,
-                    ),
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          width: size.width * .9,
-                          height: size.height * .84,
-                          child: ListView(
-                            scrollDirection: Axis.vertical,
-                            shrinkWrap: true,
-                            children: <Widget>[
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
-                                child: _cardChips(context),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
-                                child: _cardChips1(context),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        minimum: EdgeInsets.only(top: 50),
+        child: Container(
+          width: size.width * 1,
+          color: Colors.white,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 0),
+                    child: Text(
+                      AppLocalizations.of(context).buyChips,
+                      style: TextStyle(fontSize: 25),
                     ),
                   ),
-                ),
-              ],
+                  Container(
+                    width: size.width * 1,
+                    color: Colors.white,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10,
+                      ),
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            width: size.width * .9,
+                            height: size.height * .837,
+                            child: ListView(
+                              scrollDirection: Axis.vertical,
+                              shrinkWrap: true,
+                              children: <Widget>[
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                  child: _cardChips(context),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                                  child: _cardChips1(context),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:zombifi_app/generated/l10n.dart';
-import 'package:zombifi_app/src/pages/home_page.dart';
 import 'package:zombifi_app/utils/colors.dart';
 import 'package:zombifi_app/widgets/button_round.dart';
 import 'package:zombifi_app/widgets/profile_photo.dart';
@@ -20,80 +19,62 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      // body: nested(),
-      appBar: AppBar(
-        // leading: IconButton(
-        //   onPressed: () {
-        //     final route = MaterialPageRoute(
-        //       builder: (context) {
-        //         return HomePage();
-        //       },
-        //     );
-        //     Navigator.pop(context, route);
-        //   },
-        //   icon: Icon(
-        //     Icons.arrow_back,
-        //     color: Colors.black,
-        //   ),
-        // ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
-      body: Container(
-        width: size.width * 1,
-        color: Colors.white,
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            vertical: 5,
-            horizontal: 20,
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.only(top: 7),
-                          child: Text(
-                            "Alan",
-                            style: TextStyle(fontSize: 22),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 7),
-                          child: Text(
-                            "Moreno Martinez",
-                            style: TextStyle(fontSize: 22),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 7.0),
-                          child: Text(
-                            "Izamal-Yucatán",
-                            style: TextStyle(
-                              fontSize: 18,
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        minimum: EdgeInsets.only(top: 50),
+        child: Container(
+          width: size.width * 1,
+          color: Colors.white,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.only(top: 0),
+                            child: Text(
+                              "Alan",
+                              style: TextStyle(fontSize: 22),
                             ),
                           ),
-                        )
-                      ],
-                    ),
-                    GestureDetector(
-                      onTap: _onPressedPhoto,
-                      child: _photoWidget(),
-                    )
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: _data(context),
-                ),
-              ],
+                          Padding(
+                            padding: EdgeInsets.only(top: 7),
+                            child: Text(
+                              "Moreno Martinez",
+                              style: TextStyle(fontSize: 22),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 7.0),
+                            child: Text(
+                              "Izamal-Yucatán",
+                              style: TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      GestureDetector(
+                        onTap: _onPressedPhoto,
+                        child: _photoWidget(),
+                      )
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    child: _data(context),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
