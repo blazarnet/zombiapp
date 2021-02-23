@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/status_tab.dart';
 import 'package:zombifi_app/utils/colors.dart';
+import 'package:zombifi_app/widgets/button_round.dart';
 
 class CardConnectWidget extends StatefulWidget {
   @override
@@ -13,61 +14,55 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final double _textSize1 = 13.8;
-    final double _textSize2 = 12;
     return FlatButton(
       onPressed: _onCardPressed,
       child: Card(
         elevation: 15,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(35)),
         child: Container(
           // elevation: 5,
           // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25),
-            gradient: LinearGradient(
-              colors: colorGradientGreen,
-              tileMode: TileMode.clamp,
-              end: Alignment.topLeft,
-            ),
+            borderRadius: BorderRadius.circular(35),
+            color: colorGreen,
           ),
           child: Column(
             children: <Widget>[
               Container(
                 width: size.width * 1,
                 child: Padding(
-                  padding: EdgeInsets.all(7),
+                  padding: EdgeInsets.all(10),
                   child: Column(
                     children: <Widget>[
                       Row(
                         children: <Widget>[
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
                                   AppLocalizations.of(context).statusChip,
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 17),
+                                      color: Colors.white, fontSize: 18),
                                 ),
-                                Text("Basic 15",
+                                Text("Ficha Basic",
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 20,
+                                        fontSize: 22,
                                         fontWeight: FontWeight.bold)),
                               ],
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 75),
+                            padding: const EdgeInsets.only(left: 125),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
+                              children: <Widget>[
                                 Icon(
                                   Icons.wifi_rounded,
-                                  size: 42,
+                                  size: 50,
                                   color: Colors.white,
                                 ),
                               ],
@@ -75,171 +70,37 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
                           )
                         ],
                       ),
-                      Row(
-                        // crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 0, vertical: 4),
-                            child: Column(
-                              children: <Widget>[
-                                Row(
-                                  children: <Widget>[
-                                    Icon(
-                                      Icons.watch_later_outlined,
-                                      color: Colors.white,
-                                      size: 15,
-                                    ),
-                                    Text(
-                                      "${AppLocalizations.of(context).duration} " +
-                                          "1h",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: _textSize1),
-                                    )
-                                  ],
-                                )
-                              ],
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(8, 0, 8, 3),
+                        child: Row(
+                          children: <Widget>[
+                            Icon(
+                              Icons.watch_later_outlined,
+                              color: Colors.white,
+                              size: 15,
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 0, vertical: 4),
-                            child: Column(
-                              children: <Widget>[
-                                Row(
-                                  children: <Widget>[
-                                    Icon(Icons.arrow_circle_down_outlined,
-                                        color: Colors.white, size: 15),
-                                    Text(
-                                      "${AppLocalizations.of(context).download} " +
-                                          "2Mbs",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: _textSize1),
-                                    )
-                                  ],
-                                )
-                              ],
+                            Text(
+                              "${AppLocalizations.of(context).timeRemaining}: ",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 0, vertical: 4),
-                            child: Column(
-                              children: <Widget>[
-                                Row(
-                                  children: <Widget>[
-                                    Icon(
-                                      Icons.arrow_circle_up_outlined,
-                                      color: Colors.white,
-                                      size: 15,
-                                    ),
-                                    Text(
-                                      "${AppLocalizations.of(context).upload} " +
-                                          "1Mbs",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: _textSize1),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                          )
-                        ],
+                            Text(
+                              "00h:43m:33s",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                      Padding(padding: EdgeInsets.only(top: 10)),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          Column(
-                            children: <Widget>[
-                              FlatButton(
-                                onPressed: () {},
-                                padding: EdgeInsets.fromLTRB(3, 5, 3, 5),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10)),
-                                color: colorGreen,
-                                child: Column(
-                                  children: <Widget>[
-                                    Text(
-                                      "${AppLocalizations.of(context).timeRemaining}",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: _textSize2),
-                                    ),
-                                    Text(
-                                      '--',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 12.25,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            children: <Widget>[
-                              FlatButton(
-                                onPressed: () {},
-                                padding: EdgeInsets.fromLTRB(3, 5, 3, 5),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10)),
-                                color: colorGreen,
-                                child: Column(
-                                  children: <Widget>[
-                                    Text(
-                                      "${AppLocalizations.of(context).downloadRemaining}",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: _textSize2),
-                                    ),
-                                    Text(
-                                      '--',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 12.25,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: <Widget>[
-                              FlatButton(
-                                onPressed: () {},
-                                padding: EdgeInsets.fromLTRB(3, 5, 3, 5),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10)),
-                                color: colorGreen,
-                                child: Column(
-                                  children: <Widget>[
-                                    Text(
-                                      "${AppLocalizations.of(context).uploadRemaining}",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: _textSize2),
-                                    ),
-                                    Text(
-                                      '--',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 12.25,
-                                          fontWeight: FontWeight.bold),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      )
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(8, 25, 8, 8),
+                        child: _pauseTime(context),
+                      ),
                     ],
                   ),
                 ),
@@ -248,6 +109,44 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
           ),
         ),
       ),
+    );
+  }
+
+  ButtonRoundWidget _pauseTime(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return ButtonRoundWidget(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Icon(
+            Icons.pause_circle_filled_outlined,
+            color: Colors.white,
+          ),
+          Text(
+            AppLocalizations.of(context).pause,
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+      colorButton: Color.fromRGBO(0, 151, 81, 1),
+      elevetion: 1,
+      height: 55,
+      minWidth: size.width * 0.82,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(25),
+      ),
+      onPressed: () {
+        // final route = MaterialPageRoute(
+        //   builder: (context) {
+        //     return HomePage();
+        //   },
+        // );
+        // Navigator.push(context, route);
+      },
     );
   }
 
