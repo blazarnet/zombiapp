@@ -264,20 +264,20 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
   // }
 
   void _onCardPressed() {
-    showBottomSheet(
+    showCupertinoModalPopup(
       context: context,
-      elevation: 10,
-      // backgroundColor: colorBarrier,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(25),
-          topRight: Radius.circular(25),
-        ),
-      ),
+      // elevation: 10,
+      // // backgroundColor: colorBarrier,
+      // shape: RoundedRectangleBorder(
+      //   borderRadius: BorderRadius.only(
+      //     topLeft: Radius.circular(25),
+      //     topRight: Radius.circular(25),
+      //   ),
+      // ),
       builder: (context) {
         final size = MediaQuery.of(context).size;
         return Container(
-          height: size.height * 0.75,
+          height: size.height * 0.85,
           child: StatusTab(),
         );
       },
