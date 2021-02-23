@@ -119,15 +119,15 @@ class _HomePageState extends State<HomePage> {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Container(
-                  height: 17,
-                  width: 17,
+                  height: 20,
+                  width: 20,
                   child: Image.asset('assets/coin-stack.png'),
                 ),
                 Text(
@@ -135,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 16,
+                    fontSize: 17,
                   ),
                 )
               ],
