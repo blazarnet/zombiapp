@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 //Mis importaciones
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/splash_screen.dart';
+import 'package:zombifi_app/utils/colors.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:zombifi_app/src/pages/login_page.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+    ),
+  );
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
