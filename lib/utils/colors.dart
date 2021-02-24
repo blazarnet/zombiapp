@@ -14,4 +14,4 @@ List<Color> colorGradientGrey = <Color>[
 Color colorGreen = Color.fromRGBO(0, 185, 99, 1);
 Color colorMustard = Color.fromRGBO(190, 171, 0, 1);
 Color colorBarrier = Color.fromRGBO(117, 117, 117, .5);
-Color bgGreen = Color.fromRGBO(223, 255, 240, 1);
+Color bgGreen = Color.fromRGBO(245, 255, 250, 1);
