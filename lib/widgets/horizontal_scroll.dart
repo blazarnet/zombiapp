@@ -30,7 +30,10 @@ class _HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
                 },
                 child: Text(
                   AppLocalizations.of(context).buyChips,
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: "gibson",
+                  ),
                 ),
               ),
               Icon(Icons.arrow_forward_ios_rounded)
@@ -43,6 +46,7 @@ class _HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
                 width: size.width * .9,
                 height: 200.0,
                 child: ListView(
+                  physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
                   children: widget.children,

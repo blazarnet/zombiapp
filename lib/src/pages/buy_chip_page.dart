@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
-import 'package:zombifi_app/src/pages/chips_page.dart';
-import 'package:zombifi_app/src/pages/home_page.dart';
 import 'package:zombifi_app/src/pages/main_page.dart';
 import 'package:zombifi_app/utils/colors.dart';
 import 'package:zombifi_app/widgets/button_round.dart';
@@ -19,6 +17,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
       body: Container(
         color: Colors.white,
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             children: <Widget>[
               Container(
@@ -60,6 +59,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
                                       "Basic 15",
                                       style: TextStyle(
                                         fontSize: 27,
+                                        fontFamily: "gibson",
                                         color: Colors.white,
                                       ),
                                     ),
@@ -127,6 +127,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
                                     AppLocalizations.of(context).zombifiCredits,
                                     style: TextStyle(
                                       fontSize: 17,
+                                      fontFamily: "gibson",
                                     ),
                                   ),
                                 ],
@@ -139,11 +140,17 @@ class _BuyChipPageState extends State<BuyChipPage> {
                             children: <Widget>[
                               Text(
                                 AppLocalizations.of(context).loadingSpeed,
-                                style: TextStyle(fontSize: 19),
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  fontFamily: "gibson",
+                                ),
                               ),
                               Text(
                                 "1 Mpbs",
-                                style: TextStyle(fontSize: 19),
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  fontFamily: "gibson",
+                                ),
                               ),
                             ],
                           ),
@@ -153,11 +160,17 @@ class _BuyChipPageState extends State<BuyChipPage> {
                             children: <Widget>[
                               Text(
                                 AppLocalizations.of(context).downloadSpeed,
-                                style: TextStyle(fontSize: 19),
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  fontFamily: "gibson",
+                                ),
                               ),
                               Text(
                                 "2 Mbps",
-                                style: TextStyle(fontSize: 19),
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  fontFamily: "gibson",
+                                ),
                               ),
                             ],
                           ),
@@ -167,11 +180,17 @@ class _BuyChipPageState extends State<BuyChipPage> {
                             children: <Widget>[
                               Text(
                                 AppLocalizations.of(context).activityTime,
-                                style: TextStyle(fontSize: 19),
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  fontFamily: "gibson",
+                                ),
                               ),
                               Text(
                                 "1 hora",
-                                style: TextStyle(fontSize: 19),
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  fontFamily: "gibson",
+                                ),
                               ),
                             ],
                           ),
@@ -181,11 +200,17 @@ class _BuyChipPageState extends State<BuyChipPage> {
                             children: <Widget>[
                               Text(
                                 AppLocalizations.of(context).chipType,
-                                style: TextStyle(fontSize: 19),
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  fontFamily: "gibson",
+                                ),
                               ),
                               Text(
                                 "Tiempo",
-                                style: TextStyle(fontSize: 19),
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  fontFamily: "gibson",
+                                ),
                               ),
                             ],
                           ),
@@ -197,12 +222,9 @@ class _BuyChipPageState extends State<BuyChipPage> {
                                 children: <Widget>[
                                   Container(
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(30),
-                                        gradient: LinearGradient(
-                                          colors: colorGradientGreen,
-                                          tileMode: TileMode.clamp,
-                                          end: Alignment.topLeft,
-                                        )),
+                                      borderRadius: BorderRadius.circular(30),
+                                      color: colorGreen,
+                                    ),
                                     child: _buyChip(context),
                                   ),
                                 ],
@@ -230,6 +252,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
         style: TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.bold,
+          fontFamily: "gibson",
           color: Colors.white,
         ),
       ),
@@ -294,6 +317,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
               "Mi credito ZombiFi",
               style: TextStyle(
                 fontSize: 17,
+                fontFamily: "gibson",
               ),
             ),
             Padding(padding: EdgeInsets.only(top: 7)),
@@ -302,6 +326,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
               style: TextStyle(
                 fontSize: 19,
                 fontWeight: FontWeight.bold,
+                fontFamily: "gibson",
               ),
             ),
             Padding(padding: EdgeInsets.only(top: 7)),
@@ -309,6 +334,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
               "Monto a pagar",
               style: TextStyle(
                 fontSize: 17,
+                fontFamily: "gibson",
               ),
             ),
             Padding(padding: EdgeInsets.only(top: 7)),
@@ -316,6 +342,7 @@ class _BuyChipPageState extends State<BuyChipPage> {
               "\$15.00",
               style: TextStyle(
                 fontSize: 21,
+                fontFamily: "gibson",
               ),
             ),
           ],
@@ -337,7 +364,9 @@ class _BuyChipPageState extends State<BuyChipPage> {
     return ButtonRoundWidget(
       child: Text(
         AppLocalizations.of(context).pay,
-        style: TextStyle(),
+        style: TextStyle(
+          fontFamily: "gibson",
+        ),
       ),
       height: 30,
       minWidth: 270,

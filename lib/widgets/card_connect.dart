@@ -44,13 +44,20 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
                                 Text(
                                   AppLocalizations.of(context).statusChip,
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 18),
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontFamily: "gibson",
+                                  ),
                                 ),
-                                Text("Ficha Basic",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold)),
+                                Text(
+                                  "Ficha Basic",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: "gibson",
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -84,6 +91,7 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
+                                fontFamily: "gibson",
                               ),
                             ),
                             Text(
@@ -92,6 +100,7 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
                                 color: Colors.white,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
+                                fontFamily: "gibson",
                               ),
                             )
                           ],
@@ -122,11 +131,13 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
             Icons.pause_circle_filled_outlined,
             color: Colors.white,
           ),
+          Padding(padding: EdgeInsets.only(left: 5)),
           Text(
             AppLocalizations.of(context).pause,
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
+              fontFamily: "gibson",
               color: Colors.white,
             ),
           ),

@@ -71,11 +71,12 @@ class _SelectDateWidgetState extends State<SelectDateWidget> {
 
   _selectDate(BuildContext context) async {
     DateTime picked = await showDatePicker(
-        context: context,
-        initialDate: new DateTime.now(),
-        firstDate: new DateTime(1960),
-        lastDate: new DateTime(2030),
-        locale: Locale('es', 'ES'));
+      context: context,
+      initialDate: new DateTime.now(),
+      firstDate: new DateTime(1960),
+      lastDate: new DateTime(2030),
+      locale: Locale('es', 'ES'),
+    );
     if (picked != null) {
       setState(() {
         _date =

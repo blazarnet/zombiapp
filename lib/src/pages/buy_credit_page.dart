@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
-import 'package:zombifi_app/src/pages/home_page.dart';
 import 'package:zombifi_app/utils/colors.dart';
 import 'package:zombifi_app/widgets/button_round.dart';
 
@@ -27,6 +26,7 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Container(
               child: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +41,10 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
                                 padding: EdgeInsets.only(bottom: 10),
                                 child: Text(
                                   AppLocalizations.of(context).buyCredit,
-                                  style: TextStyle(fontSize: 25),
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontFamily: "gibson",
+                                  ),
                                 ),
                               ),
                             ],
@@ -56,6 +59,7 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
                             AppLocalizations.of(context).myCredit,
                             style: TextStyle(
                               fontSize: _fontSize,
+                              fontFamily: "gibson",
                             ),
                           ),
                           Padding(padding: EdgeInsets.only(top: 7)),
@@ -63,6 +67,7 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
                             '\$200.00',
                             style: TextStyle(
                               fontSize: _fontSize,
+                              fontFamily: "gibson",
                             ),
                           ),
                           Padding(padding: EdgeInsets.only(top: 10)),
@@ -75,6 +80,7 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
                                 AppLocalizations.of(context).myShopping,
                                 style: TextStyle(
                                   fontSize: _fontSize,
+                                  fontFamily: "gibson",
                                 ),
                               ),
                               Icon(
@@ -168,6 +174,7 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
         AppLocalizations.of(context).recharge,
         style: TextStyle(
           color: Colors.white,
+          fontFamily: "gibson",
         ),
       ),
       height: 40,
@@ -191,12 +198,21 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
             children: <Widget>[
               Text(
                 "23/Feb/2021",
+                style: TextStyle(
+                  fontFamily: "gibson",
+                ),
               ),
               Text(
                 "Compra de créditos para fichas",
+                style: TextStyle(
+                  fontFamily: "gibson",
+                ),
               ),
               Text(
                 "ZombiFi",
+                style: TextStyle(
+                  fontFamily: "gibson",
+                ),
               ),
             ],
           ),
@@ -204,6 +220,9 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
             children: <Widget>[
               Text(
                 "\$150.00",
+                style: TextStyle(
+                  fontFamily: "gibson",
+                ),
               ),
             ],
           )
@@ -301,7 +320,9 @@ class _BuyCreditPageState extends State<BuyCreditPage> {
     return ButtonRoundWidget(
       child: Text(
         '\$150',
-        style: TextStyle(),
+        style: TextStyle(
+          fontFamily: "gibson",
+        ),
       ),
       height: 60,
       minWidth: 270,

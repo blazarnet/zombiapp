@@ -43,13 +43,20 @@ class _CardExpiredWidgetState extends State<CardExpiredWidget> {
                                 Text(
                                   AppLocalizations.of(context).chipDisconnected,
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 17),
+                                    color: Colors.white,
+                                    fontSize: 17,
+                                    fontFamily: "gibson",
+                                  ),
                                 ),
-                                Text("Basic 15",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold)),
+                                Text(
+                                  "Basic 15",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: "gibson",
+                                  ),
+                                ),
                               ],
                             ),
                           ),

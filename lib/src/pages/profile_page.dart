@@ -19,7 +19,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: bgGreen,
       body: SafeArea(
         minimum: EdgeInsets.only(top: 50),
         child: Container(
@@ -28,6 +28,7 @@ class _ProfilePageState extends State<ProfilePage> {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,14 +43,20 @@ class _ProfilePageState extends State<ProfilePage> {
                             padding: EdgeInsets.only(top: 0),
                             child: Text(
                               "Alan",
-                              style: TextStyle(fontSize: 22),
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontFamily: "gibson",
+                              ),
                             ),
                           ),
                           Padding(
                             padding: EdgeInsets.only(top: 7),
                             child: Text(
                               "Moreno Martinez",
-                              style: TextStyle(fontSize: 22),
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontFamily: "gibson",
+                              ),
                             ),
                           ),
                           Padding(
@@ -58,6 +65,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               "Izamal-Yucatán",
                               style: TextStyle(
                                 fontSize: 18,
+                                fontFamily: "gibson",
                               ),
                             ),
                           )
@@ -95,6 +103,7 @@ class _ProfilePageState extends State<ProfilePage> {
         style: TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.bold,
+          fontFamily: "gibson",
           color: Colors.white,
         ),
       ),
@@ -146,7 +155,12 @@ class _ProfilePageState extends State<ProfilePage> {
                   Icon(
                     Icons.phone_iphone_outlined,
                   ),
-                  Text(AppLocalizations.of(context).phoneNumber)
+                  Text(
+                    AppLocalizations.of(context).phoneNumber,
+                    style: TextStyle(
+                      fontFamily: "gibson",
+                    ),
+                  )
                 ],
               )
             ],
@@ -176,7 +190,12 @@ class _ProfilePageState extends State<ProfilePage> {
                   Icon(
                     Icons.email,
                   ),
-                  Text(AppLocalizations.of(context).email)
+                  Text(
+                    AppLocalizations.of(context).email,
+                    style: TextStyle(
+                      fontFamily: "gibson",
+                    ),
+                  )
                 ],
               )
             ],
@@ -206,7 +225,12 @@ class _ProfilePageState extends State<ProfilePage> {
                   Icon(
                     Icons.lock,
                   ),
-                  Text(AppLocalizations.of(context).password)
+                  Text(
+                    AppLocalizations.of(context).password,
+                    style: TextStyle(
+                      fontFamily: "gibson",
+                    ),
+                  )
                 ],
               )
             ],
@@ -236,7 +260,12 @@ class _ProfilePageState extends State<ProfilePage> {
                   // Icon(
                   //     // Icons,
                   //     ),
-                  Text(AppLocalizations.of(context).ubication)
+                  Text(
+                    AppLocalizations.of(context).ubication,
+                    style: TextStyle(
+                      fontFamily: "gibson",
+                    ),
+                  )
                 ],
               )
             ],
@@ -278,15 +307,35 @@ class _ProfilePageState extends State<ProfilePage> {
         children: <Widget>[
           ListTile(
             trailing: Icon(Icons.add_a_photo),
-            title: Text(AppLocalizations.of(context).takePhoto),
-            subtitle: Text(AppLocalizations.of(context).openCamera),
+            title: Text(
+              AppLocalizations.of(context).takePhoto,
+              style: TextStyle(
+                fontFamily: "gibson",
+              ),
+            ),
+            subtitle: Text(
+              AppLocalizations.of(context).openCamera,
+              style: TextStyle(
+                fontFamily: "gibson",
+              ),
+            ),
             onTap: _takePhoto,
           ),
           Divider(),
           ListTile(
             trailing: Icon(Icons.add_photo_alternate),
-            title: Text(AppLocalizations.of(context).selectPhoto),
-            subtitle: Text(AppLocalizations.of(context).openGallery),
+            title: Text(
+              AppLocalizations.of(context).selectPhoto,
+              style: TextStyle(
+                fontFamily: "gibson",
+              ),
+            ),
+            subtitle: Text(
+              AppLocalizations.of(context).openGallery,
+              style: TextStyle(
+                fontFamily: "gibson",
+              ),
+            ),
             onTap: _selectPhoto,
           ),
         ],

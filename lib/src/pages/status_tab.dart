@@ -27,14 +27,12 @@ class StatusTab extends StatelessWidget {
               topLeft: Radius.circular(25),
               topRight: Radius.circular(25),
             ),
-            gradient: LinearGradient(
-              colors: colorGradientGreen,
-              begin: Alignment.topCenter,
-            ),
+            color: colorGreen,
           ),
           child: Padding(
             padding: const EdgeInsets.only(left: 25, right: 25),
             child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -46,9 +44,11 @@ class StatusTab extends StatelessWidget {
                   Text(
                     AppLocalizations.of(context).statusChip,
                     style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "gibson",
+                    ),
                   ),
                   Padding(padding: EdgeInsets.only(top: 7)),
                   SingleChildScrollView(
@@ -74,10 +74,13 @@ class StatusTab extends StatelessWidget {
                                           size: _iconSize,
                                         ),
                                         Text(
-                                            "${AppLocalizations.of(context).nameChip}: ",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: _textSize)),
+                                          "${AppLocalizations.of(context).nameChip}: ",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: _textSize,
+                                            fontFamily: "gibson",
+                                          ),
+                                        ),
                                       ],
                                     ),
                                     Row(
@@ -88,10 +91,13 @@ class StatusTab extends StatelessWidget {
                                           size: _iconSize,
                                         ),
                                         Text(
-                                            "${AppLocalizations.of(context).duration}: ",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: _textSize)),
+                                          "${AppLocalizations.of(context).duration}: ",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: _textSize,
+                                            fontFamily: "gibson",
+                                          ),
+                                        ),
                                       ],
                                     ),
                                     Row(
@@ -102,10 +108,13 @@ class StatusTab extends StatelessWidget {
                                           size: _iconSize,
                                         ),
                                         Text(
-                                            "${AppLocalizations.of(context).download}: ",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: _textSize)),
+                                          "${AppLocalizations.of(context).download}: ",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: _textSize,
+                                            fontFamily: "gibson",
+                                          ),
+                                        ),
                                       ],
                                     ),
                                     Row(
@@ -116,10 +125,13 @@ class StatusTab extends StatelessWidget {
                                           size: _iconSize,
                                         ),
                                         Text(
-                                            "${AppLocalizations.of(context).upload}: ",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: _textSize)),
+                                          "${AppLocalizations.of(context).upload}: ",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: _textSize,
+                                            fontFamily: "gibson",
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ],
@@ -134,26 +146,42 @@ class StatusTab extends StatelessWidget {
                                 //   color: Colors.white,
                                 // ),
 
-                                Text('Basic 15',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: _textSize)),
-                                Text('1h',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: _textSize)),
-                                Text('2Mbps',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: _textSize)),
-                                Text('1Mbps',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: _textSize))
+                                Text(
+                                  'Basic 15',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: _textSize,
+                                    fontFamily: "gibson",
+                                  ),
+                                ),
+                                Text(
+                                  '1h',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: _textSize,
+                                    fontFamily: "gibson",
+                                  ),
+                                ),
+                                Text(
+                                  '2Mbps',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: _textSize,
+                                    fontFamily: "gibson",
+                                  ),
+                                ),
+                                Text(
+                                  '1Mbps',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: _textSize,
+                                    fontFamily: "gibson",
+                                  ),
+                                )
                               ],
                             ),
                           ],
@@ -175,22 +203,34 @@ class StatusTab extends StatelessWidget {
                                 Text(
                                   "${AppLocalizations.of(context).bytesUpload}: ",
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: _textSize),
+                                    color: Colors.white,
+                                    fontSize: _textSize,
+                                    fontFamily: "gibson",
+                                  ),
                                 ),
                                 Text(
                                   "${AppLocalizations.of(context).bytesDownload}: ",
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: _textSize),
+                                    color: Colors.white,
+                                    fontSize: _textSize,
+                                    fontFamily: "gibson",
+                                  ),
                                 ),
                                 Text(
                                   "${AppLocalizations.of(context).connectionTime}: ",
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: _textSize),
+                                    color: Colors.white,
+                                    fontSize: _textSize,
+                                    fontFamily: "gibson",
+                                  ),
                                 ),
                                 Text(
                                   "${AppLocalizations.of(context).ipAddress}: ",
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: _textSize),
+                                    color: Colors.white,
+                                    fontSize: _textSize,
+                                    fontFamily: "gibson",
+                                  ),
                                 ),
                               ],
                             ),
@@ -203,6 +243,7 @@ class StatusTab extends StatelessWidget {
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: _textSize,
+                                    fontFamily: "gibson",
                                   ),
                                 ),
                                 Text(
@@ -211,6 +252,7 @@ class StatusTab extends StatelessWidget {
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: _textSize,
+                                    fontFamily: "gibson",
                                   ),
                                 ),
                                 Text(
@@ -219,6 +261,7 @@ class StatusTab extends StatelessWidget {
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: _textSize,
+                                    fontFamily: "gibson",
                                   ),
                                 ),
                                 Text(
@@ -227,6 +270,7 @@ class StatusTab extends StatelessWidget {
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: _textSize,
+                                    fontFamily: "gibson",
                                   ),
                                 ),
                               ],
@@ -262,7 +306,10 @@ class StatusTab extends StatelessWidget {
         children: [
           Text(
             "${AppLocalizations.of(context).pause} ",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: "gibson",
+            ),
           ),
           Icon(
             Icons.logout,
@@ -308,14 +355,24 @@ class StatusTab extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text('30m',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold)),
+                  Text(
+                    '30m',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "gibson",
+                    ),
+                  ),
                   Padding(padding: EdgeInsets.only(top: 5)),
-                  Text(AppLocalizations.of(context).timeRemaining,
-                      style: TextStyle(color: Colors.white, fontSize: 22))
+                  Text(
+                    AppLocalizations.of(context).timeRemaining,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22,
+                      fontFamily: "gibson",
+                    ),
+                  )
                 ],
               ),
             ),

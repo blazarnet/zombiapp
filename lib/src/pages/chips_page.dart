@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/buy_chip_page.dart';
-import 'package:zombifi_app/src/pages/home_page.dart';
 import 'package:zombifi_app/utils/colors.dart';
 import 'package:zombifi_app/widgets/card_chips.dart';
 
@@ -24,6 +23,7 @@ class _ChipsPageState extends State<ChipsPage> {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,7 +32,10 @@ class _ChipsPageState extends State<ChipsPage> {
                     padding: EdgeInsets.only(bottom: 0),
                     child: Text(
                       AppLocalizations.of(context).buyChips,
-                      style: TextStyle(fontSize: 25),
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontFamily: "gibson",
+                      ),
                     ),
                   ),
                   Container(
@@ -48,6 +51,7 @@ class _ChipsPageState extends State<ChipsPage> {
                             width: size.width * .9,
                             height: size.height * .837,
                             child: ListView(
+                              physics: BouncingScrollPhysics(),
                               scrollDirection: Axis.vertical,
                               shrinkWrap: true,
                               children: <Widget>[
@@ -103,6 +107,7 @@ class _ChipsPageState extends State<ChipsPage> {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 23,
+                    fontFamily: "gibson",
                   ),
                 ),
                 Padding(
@@ -113,6 +118,7 @@ class _ChipsPageState extends State<ChipsPage> {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
+                    fontFamily: "gibson",
                   ),
                 ),
                 Row(
@@ -155,6 +161,7 @@ class _ChipsPageState extends State<ChipsPage> {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 23,
+                    fontFamily: "gibson",
                   ),
                 ),
                 Padding(
@@ -165,6 +172,7 @@ class _ChipsPageState extends State<ChipsPage> {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
+                    fontFamily: "gibson",
                   ),
                 ),
                 Row(

@@ -44,13 +44,20 @@ class _CardPausedWidgetState extends State<CardPausedWidget> {
                                 Text(
                                   AppLocalizations.of(context).pausedChip,
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 17),
+                                    color: Colors.white,
+                                    fontSize: 17,
+                                    fontFamily: "gibson",
+                                  ),
                                 ),
-                                Text("Basic 15",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold)),
+                                Text(
+                                  "Basic 15",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: "gibson",
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -93,6 +100,7 @@ class _CardPausedWidgetState extends State<CardPausedWidget> {
         style: TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.bold,
+          fontFamily: "gibson",
           color: Colors.white,
         ),
       ),

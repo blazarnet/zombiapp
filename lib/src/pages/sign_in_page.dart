@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
-import 'package:zombifi_app/src/pages/home_page.dart';
 import 'package:zombifi_app/src/pages/main_page.dart';
 import 'package:zombifi_app/src/pages/sign_up_page.dart';
 import 'package:zombifi_app/utils/utils.dart';
@@ -20,6 +19,7 @@ class SignInPage extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(20),
             child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -30,6 +30,7 @@ class SignInPage extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 23,
+                      fontFamily: "gibson",
                     ),
                   ),
                   _widgetsSignIn(context),
@@ -82,6 +83,9 @@ class SignInPage extends StatelessWidget {
       ),
       hintText: 'ejemplo@correo.com',
       labelText: AppLocalizations.of(context).email,
+      style: TextStyle(
+        fontFamily: "gibson",
+      ),
       obscureText: false,
     );
   }
@@ -98,6 +102,9 @@ class SignInPage extends StatelessWidget {
       ),
       suffix: _lostPassword(context),
       labelText: AppLocalizations.of(context).password,
+      style: TextStyle(
+        fontFamily: "gibson",
+      ),
     );
   }
 
@@ -108,16 +115,7 @@ class SignInPage extends StatelessWidget {
             // Padding(padding: EdgeInsets.only(top: 10)),
             // // _lostPassword(context),
             Padding(padding: EdgeInsets.only(top: 10)),
-            Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  gradient: LinearGradient(
-                    colors: colorGradientGreen,
-                    tileMode: TileMode.clamp,
-                    end: Alignment.topLeft,
-                  )),
-              child: _signIn(context),
-            ),
+            _signIn(context),
             Padding(padding: EdgeInsets.only(top: 25)),
             _signUp(context),
             Padding(padding: EdgeInsets.only(top: 50)),
@@ -138,9 +136,11 @@ class SignInPage extends StatelessWidget {
             child: Text(
               AppLocalizations.of(context).forgotPassword,
               style: TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
+                fontSize: 10,
+                fontWeight: FontWeight.bold,
+                fontFamily: "gibson",
+                color: Colors.black,
+              ),
             ),
           ),
         ],
@@ -156,9 +156,11 @@ class SignInPage extends StatelessWidget {
         style: TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.bold,
+          fontFamily: "gibson",
           color: Colors.white,
         ),
       ),
+      colorButton: colorGreen,
       elevetion: 1,
       height: 60,
       minWidth: 400,
@@ -182,7 +184,10 @@ class SignInPage extends StatelessWidget {
       children: <Widget>[
         Text(
           AppLocalizations.of(context).dontAccount,
-          style: TextStyle(fontSize: 15),
+          style: TextStyle(
+            fontSize: 15,
+            fontFamily: "gibson",
+          ),
         ),
         Padding(padding: EdgeInsets.only(left: 10)),
         GestureDetector(
@@ -197,6 +202,7 @@ class SignInPage extends StatelessWidget {
             style: TextStyle(
               color: colorGreen,
               fontSize: 15,
+              fontFamily: "gibson",
             ),
           ),
         ),
@@ -218,6 +224,7 @@ class SignInPage extends StatelessWidget {
             AppLocalizations.of(context).orSignInWith,
             style: TextStyle(
               fontSize: 15,
+              fontFamily: "gibson",
             ),
           ),
           Padding(padding: EdgeInsets.only(top: 15)),

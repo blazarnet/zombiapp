@@ -29,6 +29,7 @@ class _SignUpPageState extends State<SignUpPage> {
           child: Padding(
             padding: EdgeInsets.all(20),
             child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
               child: Padding(
                 padding: const EdgeInsets.only(top: 40, bottom: 30),
                 child: Column(
@@ -39,6 +40,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 23,
+                        fontFamily: "gibson",
                       ),
                     ),
                     Padding(padding: EdgeInsets.only(top: 15)),
@@ -180,6 +182,9 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
       hintText: '',
       labelText: AppLocalizations.of(context).names,
+      style: TextStyle(
+        fontFamily: "gibson",
+      ),
       obscureText: false,
     );
   }
@@ -194,6 +199,9 @@ class _SignUpPageState extends State<SignUpPage> {
       // icon: Icons.person_outline_rounded,
       hintText: '',
       labelText: AppLocalizations.of(context).lastName,
+      style: TextStyle(
+        fontFamily: "gibson",
+      ),
       obscureText: false,
     );
   }
@@ -209,6 +217,9 @@ class _SignUpPageState extends State<SignUpPage> {
       // icon: Icons.person_outline_rounded,
       hintText: '',
       labelText: AppLocalizations.of(context).secondLastName,
+      style: TextStyle(
+        fontFamily: "gibson",
+      ),
 
       obscureText: false,
     );
@@ -243,6 +254,9 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
       hintText: 'ejemplo@correo.com',
       labelText: AppLocalizations.of(context).email,
+      style: TextStyle(
+        fontFamily: "gibson",
+      ),
       obscureText: false,
     );
   }
@@ -267,7 +281,12 @@ class _SignUpPageState extends State<SignUpPage> {
         items: _getCodes(),
         isDense: true,
         isExpanded: true,
-        hint: Text(AppLocalizations.of(context).countryCode),
+        hint: Text(
+          AppLocalizations.of(context).countryCode,
+          style: TextStyle(
+            fontFamily: "gibson",
+          ),
+        ),
         onChanged: (opt) {
           setState(() {
             _codeSelected = opt;
@@ -291,6 +310,9 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
       hintText: '',
       labelText: AppLocalizations.of(context).phoneNumber,
+      style: TextStyle(
+        fontFamily: "gibson",
+      ),
       obscureText: false,
     );
   }
@@ -310,6 +332,9 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
       hintText: '',
       labelText: AppLocalizations.of(context).password,
+      style: TextStyle(
+        fontFamily: "gibson",
+      ),
       obscureText: true,
     );
   }
@@ -321,6 +346,9 @@ class _SignUpPageState extends State<SignUpPage> {
       // icon: Icons.lock_outline_rounded,
       hintText: '',
       labelText: AppLocalizations.of(context).confirmPassword,
+      style: TextStyle(
+        fontFamily: "gibson",
+      ),
       obscureText: true,
     );
   }
@@ -328,16 +356,7 @@ class _SignUpPageState extends State<SignUpPage> {
   _buttons(BuildContext context) => Container(
         child: Column(
           children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                gradient: LinearGradient(
-                  colors: colorGradientGreen,
-                  end: Alignment.topLeft,
-                ),
-              ),
-              child: _signUp(context),
-            ),
+            _signUp(context),
             Padding(padding: EdgeInsets.only(top: 15)),
             _signIn(context),
           ],
@@ -351,9 +370,11 @@ class _SignUpPageState extends State<SignUpPage> {
         style: TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.bold,
+          fontFamily: "gibson",
           color: Colors.white,
         ),
       ),
+      colorButton: colorGreen,
       elevetion: 1,
       height: 60,
       minWidth: 400,
@@ -377,7 +398,10 @@ class _SignUpPageState extends State<SignUpPage> {
       children: <Widget>[
         Text(
           AppLocalizations.of(context).haveAccount,
-          style: TextStyle(fontSize: 15),
+          style: TextStyle(
+            fontSize: 15,
+            fontFamily: "gibson",
+          ),
         ),
         Padding(padding: EdgeInsets.only(left: 10)),
         GestureDetector(
@@ -392,6 +416,7 @@ class _SignUpPageState extends State<SignUpPage> {
             style: TextStyle(
               color: colorGreen,
               fontSize: 15,
+              fontFamily: "gibson",
             ),
           ),
         ),
