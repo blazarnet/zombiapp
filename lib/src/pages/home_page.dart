@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/pages/buy_chip_page.dart';
 import 'package:zombifi_app/src/pages/buy_credit_page.dart';
@@ -11,15 +12,22 @@ import 'package:zombifi_app/widgets/card_expired.dart';
 import 'package:zombifi_app/widgets/horizontal_scroll.dart';
 
 class HomePage extends StatefulWidget {
+  // void main() {
+  //   SystemChrome.setSystemUIOverlayStyle(
+  //     SystemUiOverlayStyle(
+  //       statusBarColor: Colors.transparent,
+  //       statusBarBrightness: Brightness.dark,
+  //       statusBarIconBrightness: Brightness.dark,
+  //       systemNavigationBarIconBrightness: Brightness.dark,
+  //     ),
+  //   );
+  // }
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  String _name = 'Alan';
-  String _lastName = 'Moreno';
-  String _secondaLastName = 'Martinez';
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -40,20 +48,15 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         width: size.width * 1,
         height: size.height * 1,
-        // color: Colors.white,
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 7),
-              //   child: _welcome(context),
-              // ),
               Container(
                 width: size.width * 1,
                 // color: Colors.white,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 20, bottom: 20),
+                  padding: const EdgeInsets.only(top: 20, bottom: 0),
                   child: Column(
                     children: <Widget>[
                       _statusConnect(),
@@ -65,7 +68,8 @@ class _HomePageState extends State<HomePage> {
                       _scrollWidgetChips(context),
                       // Padding(padding: EdgeInsets.only(top: 10)),
                       Container(
-                        width: size.width * .95,
+                        // color: Colors.green,
+                        width: size.width * 1,
                         child: Column(
                           children: <Widget>[
                             Container(
@@ -80,7 +84,10 @@ class _HomePageState extends State<HomePage> {
                                 ],
                               ),
                             ),
-                            _cardMapWidget(),
+                            Container(
+                              width: size.width * 1,
+                              child: _cardMapWidget(),
+                            ),
                           ],
                         ),
                       ),
@@ -112,7 +119,10 @@ class _HomePageState extends State<HomePage> {
         child: CircleAvatar(
           child: Text(
             'AM',
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: "gibson",
+            ),
           ),
         ),
       ),
@@ -148,6 +158,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
+                    fontFamily: "gibson",
                   ),
                 ),
                 Text(
@@ -156,6 +167,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 17,
+                    fontFamily: "gibson",
                   ),
                 )
               ],
@@ -186,27 +198,27 @@ class _HomePageState extends State<HomePage> {
     return HorizontalScrollWidget(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(0),
+          padding: const EdgeInsets.all(10),
           child: _cardChipsWidget(context),
         ),
         Padding(
-          padding: const EdgeInsets.all(0),
+          padding: const EdgeInsets.all(10),
           child: _cardChipsWidget(context),
         ),
         Padding(
-          padding: const EdgeInsets.all(0),
+          padding: const EdgeInsets.all(10),
           child: _cardChipsWidget(context),
         ),
         Padding(
-          padding: const EdgeInsets.all(0),
+          padding: const EdgeInsets.all(10),
           child: _cardChipsWidget(context),
         ),
         Padding(
-          padding: const EdgeInsets.all(0),
+          padding: const EdgeInsets.all(10),
           child: _cardChipsWidget(context),
         ),
         Padding(
-          padding: const EdgeInsets.all(0),
+          padding: const EdgeInsets.all(10),
           // child: _cardChips1(context),
         ),
       ],
@@ -216,8 +228,11 @@ class _HomePageState extends State<HomePage> {
   Widget _cardChipsWidget(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      // height: size.height * 1,
-      width: size.width * .5,
+      width: size.width * .4,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(35),
+        // color: Colors.red,
+      ),
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: <Widget>[
@@ -226,7 +241,7 @@ class _HomePageState extends State<HomePage> {
             height: size.height * 1,
           ),
           Padding(
-            padding: const EdgeInsets.all(45),
+            padding: const EdgeInsets.fromLTRB(15, 25, 15, 25),
             child: Column(
               children: <Widget>[
                 Row(
@@ -234,13 +249,17 @@ class _HomePageState extends State<HomePage> {
                   children: <Widget>[
                     Text(
                       "Basic",
-                      style: TextStyle(fontSize: 17),
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontFamily: "gibson",
+                      ),
                     ),
                     Text(
                       "15.00",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
+                        fontFamily: "gibson",
                         fontWeight: FontWeight.bold,
                       ),
                     ),
