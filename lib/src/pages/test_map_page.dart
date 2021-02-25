@@ -1,8 +1,7 @@
 import 'dart:async';
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:zombifi_app/src/pages/main_page.dart';
 import 'package:zombifi_app/utils/colors.dart';
 
 class TestMapPage extends StatefulWidget {
@@ -39,24 +38,38 @@ class _TestMapPageState extends State<TestMapPage> {
             markers: _markers,
             onCameraMove: _onCameraMove,
           ),
-          Padding(
-            padding: EdgeInsets.all(15.0),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: Column(
-                children: <Widget>[
-                  _button(_onMapTypeButtonPressed, Icons.map_outlined),
-                  SizedBox(height: 15),
-                  _button(_onAddMarkerButtonPressed, Icons.add_location_alt),
-                  SizedBox(height: 15),
-                  _button(_goToPosition1, Icons.location_searching),
-                ],
+          SafeArea(
+            child: Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Align(
+                alignment: Alignment.topRight,
+                // child: Row(
+                //   children: <Widget>[_button()],
+                // ),
+                child: Column(
+                  children: <Widget>[
+                    _button(_onMapTypeButtonPressed, Icons.map_outlined),
+                    SizedBox(height: 15),
+                    _button(_onAddMarkerButtonPressed, Icons.add_location_alt),
+                    SizedBox(height: 15),
+                    _button(_goToPosition1, Icons.location_searching),
+                  ],
+                ),
               ),
             ),
           )
         ],
       ),
     );
+  }
+
+  _backPage() {
+    final route = MaterialPageRoute(
+      builder: (context) {
+        return MainPage();
+      },
+    );
+    Navigator.pop(context, route);
   }
 
   _onMapCreated(GoogleMapController controller) {
@@ -99,10 +112,27 @@ class _TestMapPageState extends State<TestMapPage> {
       onPressed: function,
       materialTapTargetSize: MaterialTapTargetSize.padded,
       backgroundColor: colorGreen,
-      child: Icon(
-        icon,
-        size: 35.0,
-      ),
+      child: Icon(icon, size: 35.0, color: Colors.white),
     );
   }
+
+  // Widget _button() {
+  //   return FloatingActionButton(
+  //     onPressed: () {
+  //       final route = MaterialPageRoute(
+  //         builder: (context) {
+  //           return MainPage();
+  //         },
+  //       );
+  //       Navigator.pop(context, route);
+  //     },
+  //     materialTapTargetSize: MaterialTapTargetSize.padded,
+  //     backgroundColor: Colors.white,
+  //     child: Icon(
+  //       Icons.arrow_back,
+  //       size: 35.0,
+  //       color: Colors.black,
+  //     ),
+  //   );
+  // }
 }
