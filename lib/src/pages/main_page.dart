@@ -23,7 +23,13 @@ class _MainPageState extends State<MainPage> {
       body: _callPage(_currentIndex),
       bottomNavigationBar: Container(
         height: 80,
-        color: Colors.white,
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
+        ),
         child: Container(
           height: 70,
           decoration: BoxDecoration(
@@ -45,7 +51,7 @@ class _MainPageState extends State<MainPage> {
             child: Container(
               child: BottomNavigationBar(
                 elevation: 0,
-                backgroundColor: Colors.white,
+                backgroundColor: Colors.transparent,
                 // index: _currentIndex,
                 onTap: (index) {
                   setState(() {
