@@ -295,6 +295,16 @@ class AppLocalizations {
     );
   }
 
+  /// `Fichas ZombiFi`
+  String get zombifiChips {
+    return Intl.message(
+      'Fichas ZombiFi',
+      name: 'zombifiChips',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Crédito`
   String get credit {
     return Intl.message(

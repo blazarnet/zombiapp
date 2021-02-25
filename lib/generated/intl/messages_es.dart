@@ -112,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "warningPause" : MessageLookupByLibrary.simpleMessage("El usuario tiene la posibilidad pausar el tiempo de uso de una ficha comprada, esta acción solo se permite una vez por ficha."),
     "year" : MessageLookupByLibrary.simpleMessage("Año"),
     "zmbiCredit" : MessageLookupByLibrary.simpleMessage("Créditos ZMBI"),
+    "zombifiChips" : MessageLookupByLibrary.simpleMessage("Fichas ZombiFi"),
     "zombifiCredits" : MessageLookupByLibrary.simpleMessage("Créditos ZombiFi")
   };
 }

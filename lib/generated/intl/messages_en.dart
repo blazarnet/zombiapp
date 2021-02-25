@@ -112,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "warningPause" : MessageLookupByLibrary.simpleMessage("The user has the possibility to pause the usage time of a purchased chip, this action is only allowed once per chip."),
     "year" : MessageLookupByLibrary.simpleMessage("Year"),
     "zmbiCredit" : MessageLookupByLibrary.simpleMessage("ZMBI credit"),
+    "zombifiChips" : MessageLookupByLibrary.simpleMessage("ZombiFi chips"),
     "zombifiCredits" : MessageLookupByLibrary.simpleMessage("ZombiFi credits")
   };
 }
