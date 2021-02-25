@@ -335,6 +335,186 @@ class AppLocalizations {
     );
   }
 
+  /// `Escoger el monto de crédito`
+  String get chooseCredit {
+    return Intl.message(
+      'Escoger el monto de crédito',
+      name: 'chooseCredit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Siguiente`
+  String get next {
+    return Intl.message(
+      'Siguiente',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Por favor, ingrese los datos de su tarjeta bancaria y proceda  con la finalización del pago del crédito seleccionado.`
+  String get warningCreditCard {
+    return Intl.message(
+      'Por favor, ingrese los datos de su tarjeta bancaria y proceda  con la finalización del pago del crédito seleccionado.',
+      name: 'warningCreditCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pago con tarjeta`
+  String get cardPayment {
+    return Intl.message(
+      'Pago con tarjeta',
+      name: 'cardPayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Nombre`
+  String get cardName {
+    return Intl.message(
+      'Nombre',
+      name: 'cardName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Número de tarjeta`
+  String get cardNumber {
+    return Intl.message(
+      'Número de tarjeta',
+      name: 'cardNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fecha de expiración`
+  String get expirationDate {
+    return Intl.message(
+      'Fecha de expiración',
+      name: 'expirationDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mes`
+  String get month {
+    return Intl.message(
+      'Mes',
+      name: 'month',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Año`
+  String get year {
+    return Intl.message(
+      'Año',
+      name: 'year',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Código de seguridad`
+  String get securityCode {
+    return Intl.message(
+      'Código de seguridad',
+      name: 'securityCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finalizar pago`
+  String get finalizePayment {
+    return Intl.message(
+      'Finalizar pago',
+      name: 'finalizePayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pago realizado por el monto de`
+  String get titleTicket {
+    return Intl.message(
+      'Pago realizado por el monto de',
+      name: 'titleTicket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Créditos ZMBI`
+  String get zmbiCredit {
+    return Intl.message(
+      'Créditos ZMBI',
+      name: 'zmbiCredit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Concepto`
+  String get concept {
+    return Intl.message(
+      'Concepto',
+      name: 'concept',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Folio de compra`
+  String get purchaseFolio {
+    return Intl.message(
+      'Folio de compra',
+      name: 'purchaseFolio',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Servicio`
+  String get service {
+    return Intl.message(
+      'Servicio',
+      name: 'service',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fecha`
+  String get date {
+    return Intl.message(
+      'Fecha',
+      name: 'date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ir al menú principal`
+  String get goMenu {
+    return Intl.message(
+      'Ir al menú principal',
+      name: 'goMenu',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Recargar`
   String get recharge {
     return Intl.message(
@@ -365,11 +545,11 @@ class AppLocalizations {
     );
   }
 
-  /// `Duración`
-  String get duration {
+  /// `Tiempo`
+  String get time {
     return Intl.message(
-      'Duración',
-      name: 'duration',
+      'Tiempo',
+      name: 'time',
       desc: '',
       args: [],
     );
@@ -515,11 +695,11 @@ class AppLocalizations {
     );
   }
 
-  /// `Comprar fichas`
-  String get buyChips {
+  /// `Comprar ficha`
+  String get buyChip {
     return Intl.message(
-      'Comprar fichas',
-      name: 'buyChips',
+      'Comprar ficha',
+      name: 'buyChip',
       desc: '',
       args: [],
     );
@@ -606,10 +786,80 @@ class AppLocalizations {
   }
 
   /// `El usuario tiene la posibilidad pausar el tiempo de uso de una ficha comprada, esta acción solo se permite una vez por ficha.`
-  String get infoPause {
+  String get warningPause {
     return Intl.message(
       'El usuario tiene la posibilidad pausar el tiempo de uso de una ficha comprada, esta acción solo se permite una vez por ficha.',
-      name: 'infoPause',
+      name: 'warningPause',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ofrece la conexión suficientemente rápida para compartir y comunicarte con tus amigos y seres queridos, disfruta de la conectividad que ZombiFi te ofrece con la duración de 1 hora.`
+  String get warningChip {
+    return Intl.message(
+      'Ofrece la conexión suficientemente rápida para compartir y comunicarte con tus amigos y seres queridos, disfruta de la conectividad que ZombiFi te ofrece con la duración de 1 hora.',
+      name: 'warningChip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirmar orden de compra`
+  String get confirmOrder {
+    return Intl.message(
+      'Confirmar orden de compra',
+      name: 'confirmOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Por favor, ingrese los datos de su tarjeta bancaria y proceda  con la finalización del pago del crédito seleccionado.`
+  String get warningOrder {
+    return Intl.message(
+      'Por favor, ingrese los datos de su tarjeta bancaria y proceda  con la finalización del pago del crédito seleccionado.',
+      name: 'warningOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crédito a pagar`
+  String get creditToPay {
+    return Intl.message(
+      'Crédito a pagar',
+      name: 'creditToPay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `El costo de la ficha será cobrada desde la cartera de créditos ZombiFi.`
+  String get warningCost {
+    return Intl.message(
+      'El costo de la ficha será cobrada desde la cartera de créditos ZombiFi.',
+      name: 'warningCost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pagos seguros y protegidos`
+  String get paymentSecure {
+    return Intl.message(
+      'Pagos seguros y protegidos',
+      name: 'paymentSecure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirmar pago`
+  String get confirmPayment {
+    return Intl.message(
+      'Confirmar pago',
+      name: 'confirmPayment',
       desc: '',
       args: [],
     );
@@ -640,16 +890,6 @@ class AppLocalizations {
     return Intl.message(
       'Reconectar',
       name: 'reconnect',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Pagar ficha`
-  String get payChip {
-    return Intl.message(
-      'Pagar ficha',
-      name: 'payChip',
       desc: '',
       args: [],
     );
@@ -690,6 +930,26 @@ class AppLocalizations {
     return Intl.message(
       'Editar',
       name: 'edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Conectarse a Zona Wifi`
+  String get connectWifi {
+    return Intl.message(
+      'Conectarse a Zona Wifi',
+      name: 'connectWifi',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cambiar`
+  String get change {
+    return Intl.message(
+      'Cambiar',
+      name: 'change',
       desc: '',
       args: [],
     );
