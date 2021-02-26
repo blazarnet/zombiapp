@@ -14,12 +14,12 @@ class _ChipsPageState extends State<ChipsPage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: bgGreen,
       body: SafeArea(
         minimum: EdgeInsets.only(top: 50),
         child: Container(
           width: size.width * 1,
-          color: Colors.white,
+          color: bgGreen,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: SingleChildScrollView(
@@ -31,7 +31,7 @@ class _ChipsPageState extends State<ChipsPage> {
                   Padding(
                     padding: EdgeInsets.only(bottom: 0),
                     child: Text(
-                      AppLocalizations.of(context).buyChips,
+                      AppLocalizations.of(context).chips,
                       style: TextStyle(
                         fontSize: 25,
                         fontFamily: "gibson",
@@ -40,10 +40,11 @@ class _ChipsPageState extends State<ChipsPage> {
                   ),
                   Container(
                     width: size.width * 1,
-                    color: Colors.white,
+                    color: bgGreen,
                     child: Padding(
                       padding: EdgeInsets.symmetric(
                         horizontal: 10,
+                        vertical: 10,
                       ),
                       child: Column(
                         children: <Widget>[
@@ -56,14 +57,12 @@ class _ChipsPageState extends State<ChipsPage> {
                               shrinkWrap: true,
                               children: <Widget>[
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(8, 3, 8, 3),
-                                  child: _cardChips(context),
+                                  padding: EdgeInsets.fromLTRB(8, 0, 8, 10),
+                                  child: _cardChipsWidget(context),
                                 ),
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(8, 3, 8, 3),
-                                  child: _cardChips1(context),
+                                  padding: EdgeInsets.fromLTRB(8, 0, 8, 10),
+                                  child: _cardChipsWidget(context),
                                 ),
                               ],
                             ),
@@ -81,118 +80,52 @@ class _ChipsPageState extends State<ChipsPage> {
     );
   }
 
-  CardChipsWidget _cardChips(BuildContext context) {
+  Widget _cardChipsWidget(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return CardChipsWidget(
-      color: colorGreen,
-      elevation: 20,
-      child: GestureDetector(
-        onTap: () {
-          final route = MaterialPageRoute(
-            builder: (context) {
-              return BuyChipPage();
-            },
-          );
-          Navigator.push(context, route);
-        },
-        child: Container(
-          height: size.height * 0.52,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  'Basic 15',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 23,
-                    fontFamily: "gibson",
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 5),
-                ),
-                Text(
-                  '\$15.00',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontFamily: "gibson",
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(top: 10),
-                      // color: Colors.white,
-                      width: size.width * 0.55,
-                      child: Image.asset(
-                        "assets/undraw_Co_workers.png",
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
-        ),
+    return Container(
+      width: size.width * .4,
+      height: size.height * 0.5,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(35),
+        // color: Colors.red,
       ),
-    );
-  }
-
-  CardChipsWidget _cardChips1(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return CardChipsWidget(
-      color: Color.fromRGBO(0, 185, 172, 1),
-      elevation: 20,
-      child: GestureDetector(
-        child: Container(
-          height: size.height * 0.52,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+      child: Stack(
+        alignment: AlignmentDirectional.center,
+        children: <Widget>[
+          Image.asset(
+            "assets/card_chip.png",
+            height: size.height * 1,
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(40, 45, 40, 25),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  'Plus Double',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 23,
-                    fontFamily: "gibson",
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 5),
-                ),
-                Text(
-                  '\$30.00',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontFamily: "gibson",
-                  ),
-                ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(top: 10),
-                      // color: Colors.white,
-                      width: size.width * 0.55,
-                      child: Image.asset(
-                        "assets/undraw_Social_life.png",
-                        fit: BoxFit.contain,
+                    Text(
+                      "Basic",
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontFamily: "gibson",
+                      ),
+                    ),
+                    Text(
+                      "15.00",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 27,
+                        fontFamily: "gibson",
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
                 )
               ],
             ),
-          ),
-        ),
+          )
+        ],
+        // width: size.width * 1,
       ),
     );
   }
