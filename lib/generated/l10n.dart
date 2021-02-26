@@ -546,10 +546,30 @@ class AppLocalizations {
   }
 
   /// `Mi ficha activa`
-  String get statusChip {
+  String get myActiveChip {
     return Intl.message(
       'Mi ficha activa',
-      name: 'statusChip',
+      name: 'myActiveChip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Estado de`
+  String get statusOf {
+    return Intl.message(
+      'Estado de',
+      name: 'statusOf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `mi ficha`
+  String get myChip {
+    return Intl.message(
+      'mi ficha',
+      name: 'myChip',
       desc: '',
       args: [],
     );
@@ -795,10 +815,10 @@ class AppLocalizations {
     );
   }
 
-  /// `El usuario tiene la posibilidad pausar el tiempo de uso de una ficha comprada, esta acción solo se permite una vez por ficha.`
+  /// `El usuario tiene la posibilidad pausar el tiempo de uso de \nuna ficha comprada, esta acción solo se permite una vez \npor ficha.`
   String get warningPause {
     return Intl.message(
-      'El usuario tiene la posibilidad pausar el tiempo de uso de una ficha comprada, esta acción solo se permite una vez por ficha.',
+      'El usuario tiene la posibilidad pausar el tiempo de uso de \nuna ficha comprada, esta acción solo se permite una vez \npor ficha.',
       name: 'warningPause',
       desc: '',
       args: [],
