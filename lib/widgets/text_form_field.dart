@@ -30,6 +30,7 @@ class TextFormFieldWidget extends StatefulWidget {
   final String hintText;
   final String helperText;
   final String labelText;
+  final String errorText;
   final TextStyle labelStyle;
   final double cursorWidth, height, width;
   final Radius cursorRadius;
@@ -62,6 +63,7 @@ class TextFormFieldWidget extends StatefulWidget {
     this.hintText,
     this.helperText,
     this.labelText,
+    this.errorText,
     this.labelStyle,
     this.maxLengthEnforced = true,
     this.onChanged,
@@ -141,6 +143,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
         enableInteractiveSelection: widget.enableInteractiveSelection,
         decoration: InputDecoration(
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
+          errorText: widget.errorText,
           prefixIcon: widget.prefixIcon,
           prefix: widget.prefix,
           suffix: widget.suffix,
