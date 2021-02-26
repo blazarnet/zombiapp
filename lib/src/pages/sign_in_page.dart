@@ -1,16 +1,10 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:zombifi_app/generated/l10n.dart';
 import 'package:zombifi_app/src/bloc/provider.dart';
-import 'package:zombifi_app/src/controllers/login_controller.dart';
 import 'package:zombifi_app/src/model/login.dart';
-import 'package:zombifi_app/src/pages/main_page.dart';
 import 'package:zombifi_app/src/pages/sign_up_page.dart';
 import 'package:zombifi_app/src/providers/user_provider.dart';
 import 'package:zombifi_app/utils/utils.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:http/http.dart' as http;
 
 //Importaciones propias
 import 'package:zombifi_app/widgets/button_round.dart';
@@ -24,8 +18,6 @@ class SignInPage extends StatefulWidget {
 class _SignInPageState extends State<SignInPage> {
   TextEditingController _userEmailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
-  // final _loginController = new LoginController();
-  Login _userLogin = Login();
   final _userProvider = new UserProvider();
 
   final double _size = 18;
