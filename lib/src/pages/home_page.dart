@@ -198,28 +198,20 @@ class _HomePageState extends State<HomePage> {
     return HorizontalScrollWidget(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(7),
           child: _cardChipsWidget(context),
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(7),
           child: _cardChipsWidget(context),
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(7),
           child: _cardChipsWidget(context),
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(7),
           child: _cardChipsWidget(context),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(10),
-          child: _cardChipsWidget(context),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(10),
-          // child: _cardChips1(context),
         ),
       ],
     );
@@ -241,7 +233,7 @@ class _HomePageState extends State<HomePage> {
             height: size.height * 1,
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(15, 25, 15, 25),
+            padding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
             child: Column(
               children: <Widget>[
                 Row(

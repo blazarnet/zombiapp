@@ -29,7 +29,7 @@ class _HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
                   // Navigator.push(context, route);
                 },
                 child: Text(
-                  AppLocalizations.of(context).buyChips,
+                  AppLocalizations.of(context).zombifiChips,
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: "gibson",
@@ -44,7 +44,7 @@ class _HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
             children: <Widget>[
               Container(
                 width: size.width * .9,
-                height: 200.0,
+                height: 180.0,
                 child: ListView(
                   physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
