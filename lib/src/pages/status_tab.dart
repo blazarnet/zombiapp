@@ -18,63 +18,163 @@ class StatusTab extends StatelessWidget {
     final double _indent = 35;
 
     return Scaffold(
-      body: Center(
-        child: Container(
-          width: size.width * 1,
-          height: size.height * 1,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(25),
-              topRight: Radius.circular(25),
-            ),
-            color: colorGreen,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 25, right: 25),
-            child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
-              child: Column(
+      backgroundColor: bgGreen,
+      body: Stack(
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  SafeArea(
-                      child: Container(
-                    height: size.height * .04,
-                  )),
-                  Padding(padding: EdgeInsets.all(7)),
-                  Text(
-                    AppLocalizations.of(context).statusChip,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "gibson",
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(25, 10, 0, 0),
+                    child: Text(
+                      AppLocalizations.of(context).statusOf,
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontFamily: "gibson",
+                      ),
+                      // textAlign: TextAlign.justify,
                     ),
                   ),
-                  Padding(padding: EdgeInsets.only(top: 7)),
-                  SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [_progressBar(context)],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 10),
+                        child: Text(
+                          AppLocalizations.of(context).myChip,
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontFamily: "gibson",
+                          ),
+                          // textAlign: TextAlign.justify,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Column(
-                              children: <Widget>[
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                      ),
+                      _logo(context),
+                    ],
+                  )
+                ],
+              ),
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Container(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  width: size.width * 1,
+                  height: size.height * .75,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(25),
+                      topRight: Radius.circular(25),
+                    ),
+                    color: colorGreen,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 25, right: 25),
+                    child: SingleChildScrollView(
+                      physics: BouncingScrollPhysics(),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          SafeArea(
+                              child: Container(
+                            height: size.height * .04,
+                          )),
+                          Padding(padding: EdgeInsets.all(7)),
+                          Text(
+                            "Ficha Basic",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "gibson",
+                            ),
+                          ),
+                          Padding(padding: EdgeInsets.only(top: 7)),
+                          SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [_progressBar(context)],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
                                   children: <Widget>[
-                                    Row(
+                                    _button(
+                                      "1hora",
+                                      Image.asset(
+                                        "assets/clock-solid.png",
+                                        color: Colors.grey,
+                                        height: 12,
+                                        width: 12,
+                                      ),
+                                      AppLocalizations.of(context).time,
+                                    ),
+                                    _button(
+                                      "1Mbps",
+                                      Image.asset(
+                                        "assets/arrow-up.png",
+                                        color: Colors.grey,
+                                        height: 12,
+                                        width: 12,
+                                      ),
+                                      AppLocalizations.of(context).upload,
+                                    ),
+                                    _button(
+                                      "2Mbps",
+                                      Image.asset(
+                                        "assets/arrow-down.png",
+                                        color: Colors.grey,
+                                        height: 12,
+                                        width: 12,
+                                      ),
+                                      AppLocalizations.of(context).download,
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(vertical: 10)),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
                                       children: <Widget>[
-                                        Icon(
-                                          Icons.wifi_tethering_rounded,
-                                          color: Colors.white,
-                                          size: _iconSize,
+                                        Text(
+                                          "${AppLocalizations.of(context).bytesUpload}: ",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: _textSize,
+                                            fontFamily: "gibson",
+                                          ),
                                         ),
                                         Text(
-                                          "${AppLocalizations.of(context).nameChip}: ",
+                                          "${AppLocalizations.of(context).bytesDownload}: ",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: _textSize,
+                                            fontFamily: "gibson",
+                                          ),
+                                        ),
+                                        Text(
+                                          "${AppLocalizations.of(context).connectionTime}: ",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: _textSize,
+                                            fontFamily: "gibson",
+                                          ),
+                                        ),
+                                        Text(
+                                          "${AppLocalizations.of(context).ipAddress}: ",
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontSize: _textSize,
@@ -83,51 +183,42 @@ class StatusTab extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    Row(
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: <Widget>[
-                                        Icon(
-                                          Icons.watch_later_outlined,
-                                          color: Colors.white,
-                                          size: _iconSize,
-                                        ),
                                         Text(
-                                          "${AppLocalizations.of(context).duration}: ",
+                                          '1499 B',
                                           style: TextStyle(
                                             color: Colors.white,
+                                            fontWeight: FontWeight.bold,
                                             fontSize: _textSize,
                                             fontFamily: "gibson",
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: <Widget>[
-                                        Icon(
-                                          Icons.arrow_circle_down_outlined,
-                                          color: Colors.white,
-                                          size: _iconSize,
-                                        ),
                                         Text(
-                                          "${AppLocalizations.of(context).download}: ",
+                                          '6.5 KiB',
                                           style: TextStyle(
                                             color: Colors.white,
+                                            fontWeight: FontWeight.bold,
                                             fontSize: _textSize,
                                             fontFamily: "gibson",
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: <Widget>[
-                                        Icon(
-                                          Icons.arrow_circle_up_outlined,
-                                          color: Colors.white,
-                                          size: _iconSize,
-                                        ),
                                         Text(
-                                          "${AppLocalizations.of(context).upload}: ",
+                                          '30m',
                                           style: TextStyle(
                                             color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: _textSize,
+                                            fontFamily: "gibson",
+                                          ),
+                                        ),
+                                        Text(
+                                          '192.168.88.123',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
                                             fontSize: _textSize,
                                             fontFamily: "gibson",
                                           ),
@@ -136,193 +227,128 @@ class StatusTab extends StatelessWidget {
                                     ),
                                   ],
                                 ),
+                                Padding(padding: EdgeInsets.only(top: 30)),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(bottom: 20.0),
+                                      child: _pause(context),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Icon(
+                                      Icons.error,
+                                      color: Colors.white,
+                                      size: 17,
+                                    ),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 9),
+                                      child: Text(
+                                        AppLocalizations.of(context)
+                                            .warningPause,
+                                        style: TextStyle(
+                                          fontSize: 10.8,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                Padding(padding: EdgeInsets.only(bottom: 15))
                               ],
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                // SvgPicture.asset(
-                                //   'assets/icons/tag.svg',
-                                //   color: Colors.white,
-                                // ),
-
-                                Text(
-                                  'Basic 15',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: _textSize,
-                                    fontFamily: "gibson",
-                                  ),
-                                ),
-                                Text(
-                                  '1h',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: _textSize,
-                                    fontFamily: "gibson",
-                                  ),
-                                ),
-                                Text(
-                                  '2Mbps',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: _textSize,
-                                    fontFamily: "gibson",
-                                  ),
-                                ),
-                                Text(
-                                  '1Mbps',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: _textSize,
-                                    fontFamily: "gibson",
-                                  ),
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: Divider(
-                            color: Colors.white,
-                            indent: _indent,
-                            endIndent: _indent,
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: <Widget>[
-                                Text(
-                                  "${AppLocalizations.of(context).bytesUpload}: ",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: _textSize,
-                                    fontFamily: "gibson",
-                                  ),
-                                ),
-                                Text(
-                                  "${AppLocalizations.of(context).bytesDownload}: ",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: _textSize,
-                                    fontFamily: "gibson",
-                                  ),
-                                ),
-                                Text(
-                                  "${AppLocalizations.of(context).connectionTime}: ",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: _textSize,
-                                    fontFamily: "gibson",
-                                  ),
-                                ),
-                                Text(
-                                  "${AppLocalizations.of(context).ipAddress}: ",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: _textSize,
-                                    fontFamily: "gibson",
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(
-                                  '1499 B',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: _textSize,
-                                    fontFamily: "gibson",
-                                  ),
-                                ),
-                                Text(
-                                  '6.5 KiB',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: _textSize,
-                                    fontFamily: "gibson",
-                                  ),
-                                ),
-                                Text(
-                                  '30m',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: _textSize,
-                                    fontFamily: "gibson",
-                                  ),
-                                ),
-                                Text(
-                                  '192.168.88.123',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: _textSize,
-                                    fontFamily: "gibson",
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 30)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 0.0),
-                              child: _pause(context),
-                            ),
-                          ],
-                        ),
-                      ],
+                          )
+                        ],
+                      ),
                     ),
-                  )
-                ],
+                  ),
+                ),
               ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _logo(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return Image.asset(
+      'assets/zombifi_logo_negro.png',
+      fit: BoxFit.contain,
+      height: size.height * 0.07,
+      width: size.width * 0.28,
+      alignment: Alignment.topLeft,
+    );
+  }
+
+  ButtonRoundWidget _button(String data, Image image, String type) {
+    return ButtonRoundWidget(
+      onPressed: () {},
+      colorButton: Colors.white,
+      minWidth: 100,
+      height: 55,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: Column(
+        children: <Widget>[
+          Text(
+            data,
+            style: TextStyle(
+              fontFamily: "gibson",
+              color: colorGreen,
             ),
           ),
-        ),
+          Row(
+            children: <Widget>[
+              image,
+              Padding(padding: EdgeInsets.only(left: 2)),
+              Text(
+                type,
+                style: TextStyle(
+                  fontFamily: "gibson",
+                  color: Colors.grey,
+                ),
+              )
+            ],
+          )
+        ],
       ),
     );
   }
 
   ButtonRoundWidget _pause(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return ButtonRoundWidget(
       onPressed: () {},
       child: Row(
         children: [
+          Icon(
+            Icons.pause_circle_filled,
+            color: Colors.white,
+          ),
           Text(
-            "${AppLocalizations.of(context).pause} ",
+            " ${AppLocalizations.of(context).pause}",
             style: TextStyle(
               color: Colors.white,
               fontFamily: "gibson",
+              fontSize: 18,
             ),
           ),
-          Icon(
-            Icons.logout,
-            color: Colors.white,
-          )
         ],
       ),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(35),
       ),
-      colorButton: colorGreen,
+      colorButton: Color.fromRGBO(0, 151, 81, 1),
+      elevetion: 1,
       height: 60,
-      minWidth: 120,
+      minWidth: size.width * .8,
     );
   }
 
@@ -356,10 +382,10 @@ class StatusTab extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    '30m',
+                    '00h:30m:15',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 32,
+                      fontSize: 28,
                       fontWeight: FontWeight.bold,
                       fontFamily: "gibson",
                     ),

@@ -42,7 +42,7 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  AppLocalizations.of(context).statusChip,
+                                  AppLocalizations.of(context).myActiveChip,
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18,
@@ -62,7 +62,7 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 125),
+                            padding: const EdgeInsets.only(left: 119),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -176,21 +176,50 @@ class _CardConnectWidgetState extends State<CardConnectWidget> {
   void _onCardPressed() {
     showCupertinoModalPopup(
       context: context,
-      // elevation: 10,
-      // // backgroundColor: colorBarrier,
-      // shape: RoundedRectangleBorder(
-      //   borderRadius: BorderRadius.only(
-      //     topLeft: Radius.circular(25),
-      //     topRight: Radius.circular(25),
-      //   ),
-      // ),
       builder: (context) {
         final size = MediaQuery.of(context).size;
         return Container(
-          height: size.height * 0.85,
-          child: StatusTab(),
+          color: bgGreen,
+          child: Scaffold(
+            backgroundColor: bgGreen,
+            appBar: AppBar(
+              backgroundColor: bgGreen,
+              leading: _back(),
+              elevation: 0,
+            ),
+            body: StatusTab(),
+          ),
         );
+        // return Container(
+        //   height: size.height * 1,
+        //   child: Column(children: <Widget>[
+
+        //     StatusTab(),
+        //   ]),
+        // );
       },
+    );
+  }
+
+  Widget _back() {
+    return GestureDetector(
+      onTap: () {
+        // final route = MaterialPageRoute(
+        //   builder: (context) {
+        //     return HomePage();
+        //   },
+        // );
+        Navigator.pop(context);
+      },
+      child: Padding(
+        padding: const EdgeInsets.only(
+          left: 10,
+        ),
+        child: Icon(
+          Icons.arrow_back,
+          color: Colors.black,
+        ),
+      ),
     );
   }
 }
